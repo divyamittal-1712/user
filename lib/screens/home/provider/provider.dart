@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:user_app/screens/home/bottom_navigation/consultant/views/consultantscreen.dart';
 
+import '../bottom_navigation/appointment/views/appointmentscreen.dart';
 import '../bottom_navigation/home_page/homepage_screen.dart';
 import '../bottom_navigation/setting_page/setting_screen.dart';
 import '../bottom_navigation/wallet_page/wallet_screen.dart';
@@ -17,9 +19,9 @@ class HomeProvider extends ChangeNotifier{
       case 0:
         return HomePage();
       case 1:
-        return HomePage();
+        return ConsultantScreen();
       case 2:
-        return WalletPage();
+        return AppointmentPage();
       case 3:
         return SettingPage();
       default:

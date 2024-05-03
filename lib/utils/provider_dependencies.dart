@@ -1,6 +1,8 @@
 
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
+import '../screens/home/bottom_navigation/appointment/controller/appointment_controller.dart';
+import '../screens/home/bottom_navigation/consultant/provider/consultant_provider.dart';
 import '../screens/home/bottom_navigation/home_page/provider/homepage_provider.dart';
 import '../screens/home/bottom_navigation/setting_page/provider/setting_provider.dart';
 import '../screens/home/bottom_navigation/wallet_page/provider/wallet_provider.dart';
@@ -19,6 +21,8 @@ class ProviderHandler {
       ListenableProvider<OTPProvider>(create: (_) => OTPProvider()),
       ListenableProvider<SettingProvider>(create: (_) => SettingProvider()),
       ListenableProvider<WalletProvider>(create: (_) => WalletProvider()),
+      ListenableProvider<AppointmentProvider>(create: (_) => AppointmentProvider()),
+      ListenableProvider<ConsultantProvider>(create: (_) => ConsultantProvider()),
 
     ];
     return independentServices;
