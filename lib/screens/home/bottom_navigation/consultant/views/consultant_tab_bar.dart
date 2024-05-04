@@ -19,7 +19,7 @@ class _TabBarPageState extends State<TabBarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple[100],
+      backgroundColor: AppColor.lightGray,
       appBar: MyAppBar(
         title: 'Consultants',
         actions: [],

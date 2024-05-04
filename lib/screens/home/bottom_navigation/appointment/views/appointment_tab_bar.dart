@@ -33,7 +33,7 @@ class _AppointmentTabBarState extends State<AppointmentTabBar> with SingleTicker
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: AppColor.lightGray,
       appBar: MyAppBar(
           title: 'Appointment',
           actions: [],
