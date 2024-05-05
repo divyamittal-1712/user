@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:user_app/screens/home/bottom_navigation/consultant/views/consultantscreen.dart';
 
+import '../screens/drawer/views/drawer.dart';
 import '../screens/home/bottom_navigation/appointment/views/appointmentscreen.dart';
+import '../screens/home/bottom_navigation/home_page/homepage_screen.dart';
 import '../screens/home/bottom_navigation/setting_page/setting_screen.dart';
 import '../screens/home/bottom_navigation/wallet_page/wallet_screen.dart';
 import '../screens/home/home.dart';
@@ -58,6 +60,12 @@ Route<dynamic> generateRouteNew(RouteSettings settings) {
       break;
     case ConsultantScreen.routeName:
       routeView = const ConsultantScreen();
+      break;
+    case HomePage.routeName:
+      routeView = const HomePage();
+      break;
+    case DrawerPage.routeName:
+      routeView = const DrawerPage();
       break;
 
     default:

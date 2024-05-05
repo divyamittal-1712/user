@@ -42,17 +42,17 @@ class SettingPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Positioned(
-                        top: 80,
-                        child: Container(
-                          width: 200,
-                          height: 200,
-                          color: AppColor.midGray,
-                          child: NormalText(
-                            text: "999",
-                          ),
-                        ),
-                      ),
+                      // Positioned(
+                      //   top: 80,
+                      //   child: Container(
+                      //     width: 200,
+                      //     height: 200,
+                      //     color: AppColor.midGray,
+                      //     child: NormalText(
+                      //       text: "999",
+                      //     ),
+                      //   ),
+                      // ),
                     ],
                   ),
                   Column(

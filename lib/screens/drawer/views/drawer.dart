@@ -1,0 +1,152 @@
+import 'package:dotted_decoration/dotted_decoration.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:user_app/screens/drawer/provider/drawer_provider.dart';
+import 'package:user_app/screens/home/app_bar/MyAppBar.dart';
+import 'package:user_app/screens/home/bottom_navigation/home_page/homepage_screen.dart';
+import 'package:user_app/screens/home/bottom_navigation/setting_page/provider/setting_provider.dart';
+import 'package:user_app/screens/home/home.dart';
+import '../../../../utils/app_colors.dart';
+import '../../../../utils/app_network_image.dart';
+import '../../../../widgets/custom_setting_text.dart';
+import '../../../../widgets/text_widget.dart';
+import '../../../widgets/circle_network_image_.dart';
+
+class DrawerPage extends StatelessWidget {
+  const DrawerPage({Key? key}) : super(key: key);
+
+  static const String routeName = '/drawerpage';
+
+  @override
+  Widget build(BuildContext context) {
+    double width = MediaQuery.sizeOf(context).width;
+    return Scaffold(
+      appBar: MyAppBar(
+        leading: InkWell(
+            onTap: (){
+              Navigator.of(context).pushReplacementNamed(HomeScreen.routeName);
+            },
+            child: Icon(Icons.arrow_back_outlined,)),
+        actions: [],
+      ),
+      body: Consumer<DrawerProvider>(
+          builder: (context, provider, child) {
+        return SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(height: 30),
+              CircleNetworkImageWidget(
+                imageUrl:   "https://picsum.photos/200/300?random=1",
+              ),
+              SizedBox(height: 10,),
+              BigText(
+                text: 'Rajendra Rao',
+                size: 18,
+                color: AppColor.textblack,
+                fontWeight: FontWeight.w700,
+              ),
+              SizedBox(height: 30),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Container(
+                    decoration: DottedDecoration(shape: Shape.box),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(18.0),
+                          child: Column(
+                            children: [
+                              NormalText(
+                                text: 'Wallet Balance',
+                                size: 16,
+                                color: AppColor.textblack,
+                                fontWeight: FontWeight.w700,
+                              ),
+                              SizedBox(height: 10,),
+                              NormalText(
+                                text: 'Rs .80',
+                                size: 18,
+                                color: AppColor.orangeColor,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(18.0),
+                          child: Column(
+                            children: [
+                              NormalText(
+                                text: 'Appoinments',
+                                size: 16,
+                                color: AppColor.textblack,
+                                fontWeight: FontWeight.w700,
+                              ),
+                              SizedBox(height: 10,),
+                              NormalText(
+                                text: '05',
+                                size: 18,
+                                color: AppColor.orangeColor,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ],
+                          ),
+                        ),
+                        ],
+                    )
+                ),
+              ),
+              SizedBox(height: 40),
+              ListTileText(
+                title: "Help",
+                onTap: () {},
+                leading: Icons.help_outline,
+              ),
+              ListTileText(
+                title: "Edit Profile",
+                onTap: () {},
+                leading: Icons.person_2_outlined,
+              ),
+              ListTileText(
+                title: "Wallet",
+                onTap: () {},
+                leading: Icons.wallet_outlined,
+              ),
+              ListTileText(
+                title: "Terms & Conditions",
+                onTap: () {},
+                leading: Icons.settings,
+              ),
+              ListTileText(
+                title: "Privacy & policy",
+                onTap: () {},
+                leading: Icons.privacy_tip_outlined,
+              ),
+              ListTileText(
+                title: "Cancellation & Refund",
+                onTap: () {},
+                leading: Icons.auto_mode_outlined,
+              ),
+              ListTileText(
+                title: "Logout",
+                onTap: () {},
+                leading: Icons.logout_outlined,
+              ),
+              SizedBox(height: 10,),
+              NormalText(text: "Follow Us",size: 12,),
+              SizedBox(height: 10,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.facebook),
+                ],
+              )
+            ],
+          ),
+        );
+      }),
+    );
+  }
+}

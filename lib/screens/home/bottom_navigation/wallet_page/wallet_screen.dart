@@ -2,10 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:user_app/screens/home/app_bar/MyAppBar.dart';
+import 'package:user_app/screens/home/bottom_navigation/home_page/homepage_screen.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../../widgets/custom_wallet_text.dart';
 import '../../../../widgets/default_button.dart';
 import '../../../../widgets/text_widget.dart';
+import '../../home.dart';
 import '../setting_page/provider/setting_provider.dart';
 
 class WalletPage extends StatelessWidget {
@@ -20,10 +22,12 @@ class WalletPage extends StatelessWidget {
       appBar: MyAppBar(
         title: 'Balance',
         actions: [],
-        backButton: IconButton(
+        leading: IconButton(
           icon: Icon(Icons.arrow_back),
           color: AppColor.appBlack,
-          onPressed: () => Navigator.of(context).pop(),
+          onPressed: () {
+            Navigator.pushNamed(context, HomeScreen.routeName);
+          },
         ),
       ),
       body: Consumer<SettingProvider>(builder: (context, provider, child) {
@@ -75,9 +79,9 @@ class WalletPage extends StatelessWidget {
                           SizedBox(
                             width: 5,
                           ),
-                          profileStatus("Withdraw", "₹ 700"),
+                          profileStatus("Deposite", "₹ 700"),
                           Spacer(),
-                          DefaultButton(text: "Withdraw", onPressed: () {}),
+                          DefaultButton(text: "Recharge", onPressed: () {}),
                         ],
                       ),
                     ),

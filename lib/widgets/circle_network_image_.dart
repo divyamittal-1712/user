@@ -12,7 +12,7 @@ class CircleNetworkImageWidget extends StatelessWidget {
 
   CircleNetworkImageWidget({
     required this.imageUrl,
-    this.size = 100,
+    this.size = 150,
     this.innerBorderColor,
     this.topBorderColor,
   });
