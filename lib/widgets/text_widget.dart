@@ -125,7 +125,7 @@ class SmallText extends StatelessWidget {
           color: color ?? Colors.grey,
           fontFamily: FontFamily.Manrope,
           fontWeight: fontWeight ?? FontWeight.w300,
-          fontSize: size ?? 14+5),
+          fontSize: size ?? 12),
     );
   }
 }

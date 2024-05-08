@@ -3,15 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:user_app/screens/drawer/provider/drawer_provider.dart';
+import 'package:user_app/screens/edit_profile/views/editProfileScreen.dart';
 import 'package:user_app/screens/home/app_bar/MyAppBar.dart';
-import 'package:user_app/screens/home/bottom_navigation/home_page/homepage_screen.dart';
-import 'package:user_app/screens/home/bottom_navigation/setting_page/provider/setting_provider.dart';
 import 'package:user_app/screens/home/home.dart';
 import '../../../../utils/app_colors.dart';
-import '../../../../utils/app_network_image.dart';
 import '../../../../widgets/custom_setting_text.dart';
 import '../../../../widgets/text_widget.dart';
 import '../../../widgets/circle_network_image_.dart';
+import '../../help/views/helpscreen.dart';
 
 class DrawerPage extends StatelessWidget {
   const DrawerPage({Key? key}) : super(key: key);
@@ -101,12 +100,16 @@ class DrawerPage extends StatelessWidget {
               SizedBox(height: 40),
               ListTileText(
                 title: "Help",
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushReplacementNamed(HelpPage.routeName);
+                },
                 leading: Icons.help_outline,
               ),
               ListTileText(
                 title: "Edit Profile",
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushReplacementNamed(EditProfilePage.routeName);
+                },
                 leading: Icons.person_2_outlined,
               ),
               ListTileText(

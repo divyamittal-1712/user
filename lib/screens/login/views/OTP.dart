@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
+import 'package:user_app/screens/home/provider/provider.dart';
 import '../../../constant/app_assets.dart';
 import '../../../utils/app_colors.dart';
 import '../../../widgets/default_button.dart';
@@ -27,113 +28,110 @@ class OTPScreen extends StatelessWidget {
       ),
     );
 
-    // final focusedPinTheme = defaultPinTheme.copyDecorationWith(
-    //   border: Border.all(color: Color.fromRGBO(114, 178, 238, 1)),
-    //   borderRadius: BorderRadius.circular(8),
-    // );
-
-    // final submittedPinTheme = defaultPinTheme.copyWith(
-    //   decoration: defaultPinTheme.decoration?.copyWith(
-    //     color: Color.fromRGBO(234, 239, 243, 1),
-    //   ),
-    // );
-
-    var width = MediaQuery
-        .of(context)
-        .size
-        .width;
-    var height = MediaQuery
-        .of(context)
-        .size
-        .height;
+    
     return Scaffold(
       backgroundColor: AppColor.whiteColor,
+      bottomNavigationBar:  Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30.0,vertical: 40.0),
+        child: Row(
+          children: [
+            Expanded(
+              child: DefaultButton(
+                key: UniqueKey(),
+                // loadingFlag: provider.isLoading,
+                onPressed: () {
+                  context.read<OTPProvider>().phoneTap(context);
+                },
+                text: "Back",
+                fontSize: 13.5,
+                textAlign: TextAlign.center,
+                fontWeight: FontWeight.w800,
+                fixedSizeWidth: 0.9,
+                fontColor: AppColor.blackColor,
+                color: AppColor.whiteColor,
+              ),
+            ),
+            SizedBox(width: 12,),
+            Expanded(
+              child: DefaultButton(
+                key: UniqueKey(),
+                // loadingFlag: provider.isLoading,
+                onPressed: () {
+                  context.read<OTPProvider>().homeTap(context);
+                },
+                text: "Verify",
+                fontSize: 13.5,
+                textAlign: TextAlign.center,
+                fontWeight: FontWeight.w900,
+                fixedSizeWidth: 0.9,
+                fontColor: AppColor.whiteColor,
+              ),
+            ),
+          ],
+        )
+      ),
       body: Consumer<OTPProvider>(
         builder: (context, provider, child) {
           return SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Image.asset(
-                  AppAssets.phoneBack,
-                  width: width,
-                  height: height * 0.7,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0),
-                  child: Align(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  SizedBox(height: 60,),
+                  Align(
                     alignment: Alignment.topLeft,
-                    child: NormalText(
-                      text: "Enter Valid OTP",
-                      size: 16,
-                      fontWeight: FontWeight.w500,
+                    child: BigText(
+                      text: "Verify Phone",
+                      size: 20,
+                      fontWeight: FontWeight.w800,
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-
-                Padding(padding: EdgeInsets.symmetric(horizontal: 15.0),
-                  child: Pinput(
-                    defaultPinTheme: defaultPinTheme,
-                    // focusedPinTheme: focusedPinTheme,
-                    // submittedPinTheme: submittedPinTheme,
-                    /*validator: (s) {
-                      return s == '2222' ? null : 'Pin is incorrect';
-                    },*/
-                    pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
-                    showCursor: true,
-                    onCompleted: (pin) => print(pin),
+                  SizedBox(height: 20,),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: NormalText(
+                      text: "OTP has been sent to +91-8541889529",
+                      size: 14,
+                      fontWeight: FontWeight.w500,
+                      color: AppColor.darkGreyColor,
+                    ),
                   ),
-                ),
-
-                const SizedBox(
-                  height: 25,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                  child: DefaultButton(
-                    key: UniqueKey(),
-                    // loadingFlag: provider.isLoading,
-                    onPressed: () {
-                      provider.homeTap(context);
-                    },
-                    text: "Continue",
-                    fontSize: 18,
-                    textAlign: TextAlign.center,
-                    fontWeight: FontWeight.w500,
-                    fixedSizeWidth: 0.9,
-                    fontColor: AppColor.whiteColor,
+                  const SizedBox(
+                    height: 15,
                   ),
-                ),
-                const SizedBox(height: 12,),
 
-                Padding(
-                    padding: const EdgeInsets.only(left: 15.0),
-                    child: Column(
-                      children: [
-                        Align(
-                          alignment: Alignment.center,
-                          child: NormalText(
-                            text: "By proceeding you are agreeing to",
-                            size: 12,
-                            color: AppColor.textGrey,
-                          ),
-                        ),
-                        const SizedBox(height: 5,),
-                        Align(
-                          alignment: Alignment.center,
-                          child: NormalText(
-                            text: "Terms & Conditions",
-                            size: 12,
-                            color: AppColor.skyBlueColor,
-                          ),
-                        ),
-                      ],
-                    )
-                ),
-              ],
+                  Padding(padding: EdgeInsets.symmetric(horizontal: 15.0),
+                    child: Pinput(
+                      defaultPinTheme: defaultPinTheme,
+                      // focusedPinTheme: focusedPinTheme,
+                      // submittedPinTheme: submittedPinTheme,
+                      /*validator: (s) {
+                        return s == '2222' ? null : 'Pin is incorrect';
+                      },*/
+                      pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
+                      showCursor: true,
+                      onCompleted: (pin) => print(pin),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: NormalText(
+                      text: "Didn’t receive code? Resend OTP",
+                      size: 14,
+                      fontWeight: FontWeight.w500,
+                      color: AppColor.darkGreyColor,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+
+                ],
+              ),
             ),
           );
         },

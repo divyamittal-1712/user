@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:user_app/screens/edit_profile/views/editProfileScreen.dart';
+import 'package:user_app/screens/help/views/faqscreen.dart';
 import 'package:user_app/screens/home/bottom_navigation/consultant/views/consultantscreen.dart';
+import 'package:user_app/screens/notification/views/notificationscreen.dart';
 
 import '../screens/drawer/views/drawer.dart';
+import '../screens/help/views/helpscreen.dart';
 import '../screens/home/bottom_navigation/appointment/views/appointmentscreen.dart';
 import '../screens/home/bottom_navigation/home_page/homepage_screen.dart';
 import '../screens/home/bottom_navigation/setting_page/setting_screen.dart';
@@ -67,6 +71,19 @@ Route<dynamic> generateRouteNew(RouteSettings settings) {
     case DrawerPage.routeName:
       routeView = const DrawerPage();
       break;
+    case HelpPage.routeName:
+      routeView = const HelpPage();
+      break;
+    case EditProfilePage.routeName:
+      routeView = EditProfilePage();
+      break;
+    case NotificationPage.routeName:
+      routeView = const NotificationPage();
+      break;
+    case FAQPage.routeName:
+      routeView = const FAQPage();
+      break;
+
 
     default:
       routeView = Scaffold(

@@ -6,6 +6,7 @@ class AppAssets {
   static String phoneBack= "${_imagePath}phone_back.jpg";
   static String image= "${_imagePath}image.jpg";
   static String girlIcon= "${_imagePath}girl_icon.jpeg";
+  static String cancelIcon= "${_imagePath}cancel_icon.png";
 
 
 }
@@ -21,6 +22,8 @@ class AppSvg{
   static const String chatIcon2 = '${_svg}chat_icon2.svg';
   static const String profileIcon = '${_svg}profile_icon.svg';
   static const String profileIcon2 = '${_svg}profile_icon2.svg';
+  static const String helpIcon = '${_svg}help_icon.svg';
+  static const String rightArrowIcon = '${_svg}right_arrow.svg';
 
 
 }

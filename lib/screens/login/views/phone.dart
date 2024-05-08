@@ -30,9 +30,9 @@ class PhoneScreen extends StatelessWidget {
             context.read<PhoneProvider>().otpTap(context);
           },
           text: "Continue",
-          fontSize: 16,
+          fontSize: 13.5,
           textAlign: TextAlign.center,
-          fontWeight: FontWeight.w500,
+          fontWeight: FontWeight.w900,
           fixedSizeWidth: 0.9,
           fontColor: AppColor.whiteColor,
         ),
@@ -50,9 +50,9 @@ class PhoneScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 16.0),
                   child: Align(
                     alignment: Alignment.topLeft,
-                    child: NormalText(
+                    child: BigText(
                       text: "Enter Your Phone Number",
-                      size: 22,
+                      size: 20,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -68,7 +68,7 @@ class PhoneScreen extends StatelessWidget {
                         text: "We’ll send you an OTP",
                         color: AppColor.darkGreyColor,
                         fontWeight: FontWeight.w500,
-                        size: 16,
+                        size: 14,
                     ),
                   ),
                 ),

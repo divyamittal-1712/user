@@ -1,13 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:user_app/constant/app_assets.dart';
 import 'package:user_app/screens/home/app_bar/MyAppBar.dart';
-import 'package:user_app/screens/home/bottom_navigation/setting_page/setting_screen.dart';
 import 'package:user_app/screens/home/bottom_navigation/wallet_page/wallet_screen.dart';
+import 'package:user_app/screens/notification/views/notificationscreen.dart';
 import 'package:user_app/utils/font_family.dart';
 import 'package:user_app/widgets/text_widget.dart';
 
+import '../../../../constant/app_assets.dart';
 import '../../../../utils/app_colors.dart';
 import '../../../drawer/views/drawer.dart';
 
@@ -43,7 +43,7 @@ class HomePage extends StatelessWidget {
             icon: Icon(Icons.notifications),
             color: AppColor.appBlack,
             onPressed: () {
-
+              Navigator.of(context).pushReplacementNamed(NotificationPage.routeName);
             }
           )
         ],
