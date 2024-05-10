@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:user_app/screens/home/bottom_navigation/consultant/views/consultant_detail_page.dart';
 import 'package:user_app/screens/home/bottom_navigation/consultant/views/consultantscreen.dart';
 import 'package:user_app/utils/app_colors.dart';
 import 'package:user_app/widgets/text_widget.dart';
@@ -108,55 +109,64 @@ class _TabBarPageState extends State<TabBarPage> {
         itemBuilder: (BuildContext context, int index) {
           return  Padding(
             padding: const EdgeInsets.only(left: 12.0,top: 8.0,right: 12.0),
-            child: Container(
-              child: Card(
-                color: AppColor.whiteColor,
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    children: [
-                      Image.asset(
-                        AppAssets.image,
-                        height: 80,
-                        width: 80,
-                      ),
-                      SizedBox(width: 10,),
-                      Column(
-                        crossAxisAlignment:  CrossAxisAlignment.start,
+            child: Column(
+              children: [
+                InkWell(
+                  onTap: (){
+                    Navigator.of(context).pushReplacementNamed(ConsultantDetailPage.routeName);
+                    // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ConsultantDetailPage()));
+                  },
+                  child:
+                   Card(
+                    color: AppColor.whiteColor,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Row(
                         children: [
-                          NormalText(text: "Pravendra Singh",size: 14,fontWeight: FontWeight.w600,),
-                          SmallText(text: "Destination Wedding Planner",size: 12,),
-                          SmallText(text: "Jaipur | Rajasthan ",size: 12,),
-                          Row(
+                          Image.asset(
+                            AppAssets.image,
+                            height: 80,
+                            width: 80,
+                          ),
+                          SizedBox(width: 10,),
+                          Column(
+                            crossAxisAlignment:  CrossAxisAlignment.start,
                             children: [
-                              Icon(
-                                Icons.star,
-                                size: 18,
-                                color: AppColor.appYellow,
-                              ),
-                              SizedBox(width: 5,),
-                              SmallText(text: "5.0",fontWeight: FontWeight.w600,size: 12,),
-                              SizedBox(width: 5,),
-                              Container(
-                                width: 6,
-                                height: 6,
-                                  decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                    color: AppColor.textGray,
+                              NormalText(text: "Pravendra Singh",size: 14,fontWeight: FontWeight.w600,),
+                              SmallText(text: "Destination Wedding Planner",size: 12,),
+                              SmallText(text: "Jaipur | Rajasthan ",size: 12,),
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.star,
+                                    size: 18,
+                                    color: AppColor.appYellow,
                                   ),
-                              ),
-                              SizedBox(width: 5,),
-                              SmallText(text: "82 Reviews",size: 12,),
-                              SizedBox(width: 30,),
-                              SmallText(text: "10+ Years Exp.",size: 12,fontWeight: FontWeight.w500,),
+                                  SizedBox(width: 5,),
+                                  SmallText(text: "5.0",fontWeight: FontWeight.w600,size: 12,),
+                                  SizedBox(width: 5,),
+                                  Container(
+                                    width: 6,
+                                    height: 6,
+                                      decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                        color: AppColor.textGray,
+                                      ),
+                                  ),
+                                  SizedBox(width: 5,),
+                                  SmallText(text: "82 Reviews",size: 12,),
+                                  SizedBox(width: 30,),
+                                  SmallText(text: "10+ Years Exp.",size: 12,fontWeight: FontWeight.w500,),
+                                ],
+                              )
                             ],
                           )
                         ],
-                      )
-                    ],
+                      ),
+                    ),
                   ),
                 ),
-              ),
+              ],
             ),
           );
         }

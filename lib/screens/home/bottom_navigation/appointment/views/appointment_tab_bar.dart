@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:user_app/constant/app_assets.dart';
+import 'package:user_app/screens/home/bottom_navigation/appointment/views/appointment_detail_page.dart';
 
 import '../../../../../utils/app_colors.dart';
 import '../../../../../utils/font_family.dart';
@@ -89,10 +90,13 @@ class _AppointmentTabBarState extends State<AppointmentTabBar> with SingleTicker
         itemBuilder: (BuildContext context, int index) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Container(
-              child: Column(
-                children: [
-                  Padding(
+            child: Column(
+              children: [
+                InkWell(
+                  onTap: (){
+                    Navigator.of(context).pushReplacementNamed(AppointmentDetailPage.routeName);
+                  },
+                  child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -159,14 +163,14 @@ class _AppointmentTabBarState extends State<AppointmentTabBar> with SingleTicker
                       ],
                     ),
                   ),
-                   Divider(
-                     indent: 10,
-                     endIndent: 10,
-                     thickness: 1.0,
-                     color: AppColor.borderLightGreyColor,
-                   ),
-                ],
-              ),
+                ),
+                 Divider(
+                   indent: 10,
+                   endIndent: 10,
+                   thickness: 1.0,
+                   color: AppColor.borderLightGreyColor,
+                 ),
+              ],
             ),
           );
         }

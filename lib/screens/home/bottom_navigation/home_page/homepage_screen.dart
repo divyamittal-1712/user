@@ -17,7 +17,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     List<String> items = ["All", "Best", "Wedding", "Visit Now"];
     int current = 0;
 
@@ -27,49 +26,55 @@ class HomePage extends StatelessWidget {
       backgroundColor: AppColor.lightGray,
       appBar: MyAppBar(
         leading: InkWell(
-            onTap: (){
+            onTap: () {
               Navigator.of(context).pushReplacementNamed(DrawerPage.routeName);
             },
-            child: Icon(Icons.menu,)),
+            child: Icon(
+              Icons.menu,
+            )),
         actions: [
           IconButton(
-            icon: Icon(Icons.wallet),
-            color: AppColor.appBlack,
-            onPressed: (){
-              Navigator.of(context).pushReplacementNamed(WalletPage.routeName);
-            }
-          ),
+              icon: Icon(Icons.wallet),
+              color: AppColor.appBlack,
+              onPressed: () {
+                Navigator.of(context)
+                    .pushReplacementNamed(WalletPage.routeName);
+              }),
           IconButton(
-            icon: Icon(Icons.notifications),
-            color: AppColor.appBlack,
-            onPressed: () {
-              Navigator.of(context).pushReplacementNamed(NotificationPage.routeName);
-            }
-          )
+              icon: Icon(Icons.notifications),
+              color: AppColor.appBlack,
+              onPressed: () {
+                Navigator.of(context)
+                    .pushReplacementNamed(NotificationPage.routeName);
+              })
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.0,vertical: 15.0),
+        padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 15.0),
         child: SingleChildScrollView(
           child: Column(
             children: [
               TextField(
                 decoration: InputDecoration(
-                    contentPadding:
-                        const EdgeInsets.symmetric(vertical: 15.0, horizontal: 12.0),
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 15.0, horizontal: 12.0),
                     hintText: "Search Consultant...",
-                    suffixIcon: Icon(Icons.search,color: AppColor.darkGreyColor,),
-                    hintStyle: TextStyle(
-                      fontFamily: FontFamily.Manrope,
-                      color: AppColor.darkGreyColor
+                    suffixIcon: Icon(
+                      Icons.search,
+                      color: AppColor.darkGreyColor,
                     ),
+                    hintStyle: TextStyle(
+                        fontFamily: FontFamily.Manrope,
+                        color: AppColor.darkGreyColor),
                     fillColor: AppColor.whiteColor,
                     filled: true,
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide.none)),
               ),
-              SizedBox(height: 15,),
+              SizedBox(
+                height: 15,
+              ),
               GridView.builder(
                   shrinkWrap: true,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -79,7 +84,7 @@ class HomePage extends StatelessWidget {
                     childAspectRatio: 1, // Aspect ratio of the items
                   ),
                   itemCount: 6,
-                  itemBuilder: (context,index){
+                  itemBuilder: (context, index) {
                     return Container(
                       decoration: BoxDecoration(
                         color: AppColor.midGray.withOpacity(0.5),
@@ -90,20 +95,22 @@ class HomePage extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Image.asset(
-                              AppAssets.girlIcon,
-                              height: 70,
+                              AppAssets.venuePhoto,
+                              height: 60,
+                              width: 30,
                             ),
                           ),
-                          NormalText(text: "Wed Planner",size: 12,fontWeight: FontWeight.w600),
+                          NormalText(
+                              text: "Wed Planner",
+                              size: 12,
+                              fontWeight: FontWeight.w600),
                         ],
                       ),
                     );
-                  }
-              ),
+                  }),
               CarouselSlider.builder(
                 itemCount: 4,
-                itemBuilder: (BuildContext context,
-                    int index, int d) {
+                itemBuilder: (BuildContext context, int index, int d) {
                   return sliderTile();
                 },
                 options: CarouselOptions(
@@ -112,18 +119,28 @@ class HomePage extends StatelessWidget {
                   enlargeCenterPage: true,
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  NormalText(text: "Appointments",size: 16,fontWeight: FontWeight.w600,),
-                  NormalText(text: "View All",size: 16,fontWeight: FontWeight.w600,color: AppColor.redLogin,),
+                  NormalText(
+                    text: "Appointments",
+                    size: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  NormalText(
+                    text: "View All",
+                    size: 16,
+                    fontWeight: FontWeight.w600,
+                    color: AppColor.redLogin,
+                  ),
                 ],
               ),
               CarouselSlider.builder(
                 itemCount: 4,
-                itemBuilder: (BuildContext context,
-                    int index, int d) {
+                itemBuilder: (BuildContext context, int index, int d) {
                   return sliderTile();
                 },
                 options: CarouselOptions(
@@ -132,12 +149,23 @@ class HomePage extends StatelessWidget {
                   enlargeCenterPage: true,
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  NormalText(text: "Top Consultant",size: 16,fontWeight: FontWeight.w600,),
-                  NormalText(text: "View All",size: 16,fontWeight: FontWeight.w600,color: AppColor.redLogin,),
+                  NormalText(
+                    text: "Top Consultant",
+                    size: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  NormalText(
+                    text: "View All",
+                    size: 16,
+                    fontWeight: FontWeight.w600,
+                    color: AppColor.redLogin,
+                  ),
                 ],
               ),
               SizedBox(
@@ -153,7 +181,7 @@ class HomePage extends StatelessWidget {
                         children: [
                           GestureDetector(
                             onTap: () {
-                                current = index;
+                              current = index;
                             },
                             child: AnimatedContainer(
                               duration: const Duration(microseconds: 300),
@@ -170,8 +198,8 @@ class HomePage extends StatelessWidget {
                                   border: current == index
                                       ? null
                                       : Border.all(
-                                      color: Colors.deepOrangeAccent,
-                                      width: 1)),
+                                          color: Colors.deepOrangeAccent,
+                                          width: 1)),
                               child: Center(
                                 child: Text(
                                   items[index],
@@ -204,7 +232,7 @@ class HomePage extends StatelessWidget {
   }
 
   Widget sliderTile() {
-    return  Center(
+    return Center(
       child: Card(
         elevation: 4.0,
         shape: RoundedRectangleBorder(
@@ -227,13 +255,14 @@ class HomePage extends StatelessWidget {
   }
 
   Widget buildAppointmnetCard(BuildContext context) {
-    return  SizedBox(
+    return SizedBox(
       height: 400,
       child: ListView.builder(
+          physics: NeverScrollableScrollPhysics(),
           itemCount: 10,
           padding: EdgeInsets.zero,
           itemBuilder: (BuildContext context, int index) {
-            return  Container(
+            return Container(
               child: Card(
                 color: AppColor.whiteColor,
                 child: Padding(
@@ -245,13 +274,25 @@ class HomePage extends StatelessWidget {
                         height: 80,
                         width: 80,
                       ),
-                      SizedBox(width: 10,),
+                      SizedBox(
+                        width: 10,
+                      ),
                       Column(
-                        crossAxisAlignment:  CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          NormalText(text: "Pravendra Singh",size: 14,fontWeight: FontWeight.w600,),
-                          SmallText(text: "Destination Wedding Planner",size: 12,),
-                          SmallText(text: "Jaipur | Rajasthan ",size: 12,),
+                          NormalText(
+                            text: "Pravendra Singh",
+                            size: 14,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          SmallText(
+                            text: "Destination Wedding Planner",
+                            size: 12,
+                          ),
+                          SmallText(
+                            text: "Jaipur | Rajasthan ",
+                            size: 12,
+                          ),
                           Row(
                             children: [
                               Icon(
@@ -259,9 +300,17 @@ class HomePage extends StatelessWidget {
                                 size: 18,
                                 color: AppColor.appYellow,
                               ),
-                              SizedBox(width: 5,),
-                              SmallText(text: "5.0",fontWeight: FontWeight.w600,size: 12,),
-                              SizedBox(width: 5,),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              SmallText(
+                                text: "5.0",
+                                fontWeight: FontWeight.w600,
+                                size: 12,
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
                               Container(
                                 width: 6,
                                 height: 6,
@@ -270,10 +319,21 @@ class HomePage extends StatelessWidget {
                                   color: AppColor.textGray,
                                 ),
                               ),
-                              SizedBox(width: 5,),
-                              SmallText(text: "82 Reviews",size: 12,),
-                              SizedBox(width: 30,),
-                              SmallText(text: "10+ Years Exp.",size: 12,fontWeight: FontWeight.w500,),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              SmallText(
+                                text: "82 Reviews",
+                                size: 12,
+                              ),
+                              SizedBox(
+                                width: 30,
+                              ),
+                              SmallText(
+                                text: "10+ Years Exp.",
+                                size: 12,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ],
                           )
                         ],
@@ -283,14 +343,7 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             );
-          }
-
-      ),
+          }),
     );
-
   }
-
-
-
 }
-

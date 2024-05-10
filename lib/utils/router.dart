@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:user_app/screens/edit_profile/views/editProfileScreen.dart';
 import 'package:user_app/screens/help/views/faqscreen.dart';
+import 'package:user_app/screens/home/bottom_navigation/appointment/views/appointment_detail_page.dart';
+import 'package:user_app/screens/home/bottom_navigation/consultant/views/consultant_detail_page.dart';
 import 'package:user_app/screens/home/bottom_navigation/consultant/views/consultantscreen.dart';
 import 'package:user_app/screens/notification/views/notificationscreen.dart';
 
@@ -83,7 +85,12 @@ Route<dynamic> generateRouteNew(RouteSettings settings) {
     case FAQPage.routeName:
       routeView = const FAQPage();
       break;
-
+    case ConsultantDetailPage.routeName:
+      routeView = const ConsultantDetailPage();
+      break;
+    case AppointmentDetailPage.routeName:
+      routeView = const AppointmentDetailPage();
+      break;
 
     default:
       routeView = Scaffold(

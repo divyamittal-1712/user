@@ -6,7 +6,9 @@ import 'package:user_app/screens/help/provider/faq_provider.dart';
 import 'package:user_app/screens/notification/provider/notification_provider.dart';
 import '../screens/drawer/provider/drawer_provider.dart';
 import '../screens/help/provider/help_provider.dart';
+import '../screens/home/bottom_navigation/appointment/provider/appointment__detail_provider.dart';
 import '../screens/home/bottom_navigation/appointment/provider/appointment_provider.dart';
+import '../screens/home/bottom_navigation/consultant/provider/consultant_detail_provider.dart';
 import '../screens/home/bottom_navigation/consultant/provider/consultant_provider.dart';
 import '../screens/home/bottom_navigation/home_page/provider/homepage_provider.dart';
 import '../screens/home/bottom_navigation/setting_page/provider/setting_provider.dart';
@@ -33,6 +35,8 @@ class ProviderHandler {
       ListenableProvider<EditProfileProvider>(create: (_) => EditProfileProvider()),
       ListenableProvider<NotificationProvider>(create: (_) => NotificationProvider()),
       ListenableProvider<FAQProvider>(create: (_) => FAQProvider()),
+      ListenableProvider<ConsultantDetailProvider>(create: (_) => ConsultantDetailProvider()),
+      ListenableProvider<AppointmentDetailProvider>(create: (_) => AppointmentDetailProvider()),
 
     ];
     return independentServices;

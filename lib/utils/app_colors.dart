@@ -43,4 +43,6 @@ class AppColor{
   static Color search= const Color(0xffE78DC1);
   static Color cardtext= const Color(0xff626262);
   static Color bookmarkBg= const Color(0xffF7F7F7);
+  static Color consultOrange= const Color(0xffED802D);
+  static Color normalTextColor= const Color(0xff60697B);
 }
