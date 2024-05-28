@@ -45,4 +45,8 @@ class AppColor{
   static Color bookmarkBg= const Color(0xffF7F7F7);
   static Color consultOrange= const Color(0xffED802D);
   static Color normalTextColor= const Color(0xff60697B);
+  static Color cadetBlueColor= const Color(0xffB2B7C0);
+  static Color platinumColor= const Color(0xffE5E5E5);
+  static Color sonicSilverColor= const Color(0xff767676);
+  static Color darkBlueGrayColor= const Color(0xff677294);
 }

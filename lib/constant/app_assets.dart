@@ -9,7 +9,9 @@ class AppAssets {
   static String cancelIcon= "${_imagePath}cancel_icon.png";
   static String consultantProfilePhoto= "${_imagePath}consultant_profile_photo.jpg";
   static String venuePhoto= "${_imagePath}venue.png";
-
+  static const String notificationIcon = '${_imagePath}notification_icon.png';
+  static const String walletIcon = '${_imagePath}wallet_icon.png';
+  static const String navigationIcon = '${_imagePath}navigation_icon.png';
 
 }
 
@@ -27,6 +29,9 @@ class AppSvg{
   static const String helpIcon = '${_svg}help_icon.svg';
   static const String rightArrowIcon = '${_svg}right_arrow.svg';
   static const String chatAppointmentIcon = '${_svg}chat_appointment_icon.svg';
+  static const String navigationIcon = '${_svg}navigation_icon.svg';
+  static const String walletIcon = '${_svg}wallet_icon.svg';
+
 
 
 }
