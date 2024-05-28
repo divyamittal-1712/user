@@ -10,13 +10,12 @@ class NormalText extends StatelessWidget {
   Color? color;
   TextAlign? textAlign;
   FontWeight? fontWeight;
+  String? fontFamily;
   String text;
   TextDecoration? textDecoration;
   NormalText({
     this.size,
     this.maxLine,
-
-
     this.lineHeight,
     this.textDecoration,
     this.textOverflow,
@@ -24,6 +23,7 @@ class NormalText extends StatelessWidget {
     this.textAlign,
     this.color,
     this.fontWeight,
+    this.fontFamily,
     required this.text,
   });
 
@@ -33,15 +33,14 @@ class NormalText extends StatelessWidget {
       text,
       textAlign: textAlign ?? TextAlign.start,
       maxLines: maxLine,
-
       softWrap: softWarp,
       overflow: textOverflow,
       style: TextStyle(
         height: lineHeight??1.3,
           decoration: textDecoration,
           color: color ?? Colors.black,
-          fontFamily: FontFamily.Manrope,
           fontWeight: fontWeight ?? FontWeight.w400,
+          fontFamily: fontFamily ?? FontFamily.Manrope,
           fontSize: size ?? 16+5),
     );
   }
@@ -96,6 +95,7 @@ class SmallText extends StatelessWidget {
   TextDecoration? textDecoration;
   TextAlign? textAlign;
   FontWeight? fontWeight;
+  String? fontFamily;
   String text;
 
   SmallText({
@@ -108,6 +108,7 @@ class SmallText extends StatelessWidget {
     this.textAlign,
     this.color,
     this.fontWeight,
+    this.fontFamily,
     required this.text,
   });
 
@@ -123,8 +124,8 @@ class SmallText extends StatelessWidget {
         height: lineHeight??1.3,
           decoration: textDecoration,
           color: color ?? Colors.grey,
-          fontFamily: FontFamily.Manrope,
-          fontWeight: fontWeight ?? FontWeight.w300,
+          fontFamily: fontFamily ?? FontFamily.Manrope,
+          fontWeight: fontWeight ?? FontWeight.w400,
           fontSize: size ?? 12),
     );
   }
