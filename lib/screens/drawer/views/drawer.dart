@@ -41,7 +41,7 @@ class DrawerPage extends StatelessWidget {
               SizedBox(height: 10,),
               BigText(
                 text: 'Rajendra Rao',
-                size: 18,
+                size: 16,
                 color: AppColor.textblack,
                 fontWeight: FontWeight.w700,
               ),

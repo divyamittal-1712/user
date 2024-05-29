@@ -23,10 +23,11 @@ class ListTileText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      visualDensity: VisualDensity(horizontal: 0, vertical: -4),
       leading: Icon(leading,color: AppColor.darkGreyColor,size: 20,),
       title: NormalText(
         text: title ?? '',
-        size: 18,
+        size: 14,
         fontWeight: FontWeight.w400,
         color: textColor ?? AppColor.appBlack,
       ),

@@ -36,6 +36,7 @@ class AppointmentDetailPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Card(
+                color: AppColor.whiteColor,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       vertical: 16.0, horizontal: 12),
@@ -191,6 +192,7 @@ class AppointmentDetailPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 12),
                 child: Card(
+                  color: AppColor.whiteColor,
                   child: Padding(
                     padding: const EdgeInsets.only(left:15.0,top: 15.0,bottom: 15),
                     child: Row(
@@ -290,7 +292,6 @@ class AppointmentDetailPage extends StatelessWidget {
                   key: UniqueKey(),
                   onPressed: () {},
                   text: "Message (Start at 6:00PM)",
-                  fontSize: 13.5,
                   textAlign: TextAlign.center,
                   fontWeight: FontWeight.w900,
                   fixedSizeWidth: 0.9,

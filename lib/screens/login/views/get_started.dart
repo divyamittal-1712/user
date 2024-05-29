@@ -51,6 +51,7 @@ class GetStartedScreen extends StatelessWidget {
                   child: BigText(
                     text: "Find the best consultants",
                     fontWeight: FontWeight.w700,
+                    size: 24,
                   ),
                 ),
                 const SizedBox(
@@ -75,7 +76,6 @@ class GetStartedScreen extends StatelessWidget {
                       Navigator.of(context).pushNamedAndRemoveUntil(PhoneScreen.routeName, (route) => false);
                     },
                     text: "Get Started",
-                    fontSize: 16,
                     textAlign: TextAlign.center,
                     fontWeight: FontWeight.w600,
                     fixedSizeWidth: 0.9,

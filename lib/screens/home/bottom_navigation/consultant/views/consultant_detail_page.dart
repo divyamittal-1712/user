@@ -322,10 +322,131 @@ class ConsultantDetailPage extends StatelessWidget {
                   NormalText(text: "View All",size: 13,fontWeight: FontWeight.w600,color: AppColor.consultOrange,),
                 ],
               ),
+              SizedBox(height: 18,),
+              SizedBox(
+                height: 130,
+                width: double.infinity,
+                child: ListView.builder(
+                    physics: ScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 4,
+                    padding: EdgeInsets.zero,
+                    itemBuilder: (BuildContext context, int index) {
+                      return  featureconsult(context);
+                    }),
+              ),
             ],
           ),
         ),
       ),
     );
   }
+
+  Widget featureconsult(BuildContext context){
+    return  Card(
+      color: AppColor.whiteColor,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+            vertical: 16.0, horizontal: 12),
+        child: Row(
+          children: [
+            Image.asset(
+              AppAssets.consultantProfilePhoto,
+              height: 70,
+              width: 70,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                  vertical: 8.0, horizontal: 12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  NormalText(
+                    text: "Rajendra Rao",
+                    size: 14,
+                    fontWeight: FontWeight.w700,
+                    textOverflow: TextOverflow.ellipsis,
+                    softWarp: true,
+                    maxLine: 1,
+                  ),
+                  SizedBox(height: 3,),
+                  NormalText(
+                    text: "Destination Wedding Planner",
+                    size: 10,
+                    fontWeight: FontWeight.w700,
+                    color: AppColor.darkGreyColor,
+                    textOverflow: TextOverflow.ellipsis,
+                    softWarp: true,
+                    maxLine: 1,
+                  ),
+                  SizedBox(height: 3,),
+                  NormalText(
+                    text: "Jaipur | Rajasthan",
+                    size: 10,
+                    fontWeight: FontWeight.w700,
+                    color: AppColor.darkGreyColor,
+                    textOverflow: TextOverflow.ellipsis,
+                    softWarp: true,
+                    maxLine: 1,
+                  ),
+                  SizedBox(height: 5,),
+                  Row(
+                    children: [
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.star,
+                            size: 18,
+                            color: AppColor.appYellow,
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          SmallText(
+                            text: "5.0",
+                            fontWeight: FontWeight.w900,
+                            color: AppColor.normalTextColor,
+                            size: 11,
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          Container(
+                            width: 6,
+                            height: 6,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: AppColor.textGray,
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          SmallText(
+                            text: "82 Reviews",
+                            size: 12,
+                            color: AppColor.normalTextColor,
+                          ),
+                        ],
+                      ),
+                      SizedBox(width: 14,),
+                      NormalText(
+                        text: "10+ Year Exp.",
+                        size: 11,
+                        fontWeight: FontWeight.w700,
+                        textOverflow: TextOverflow.ellipsis,
+                        softWarp: true,
+                        maxLine: 1,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+
 }

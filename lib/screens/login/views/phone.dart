@@ -30,7 +30,6 @@ class PhoneScreen extends StatelessWidget {
             context.read<PhoneProvider>().otpTap(context);
           },
           text: "Continue",
-          fontSize: 13.5,
           textAlign: TextAlign.center,
           fontWeight: FontWeight.w900,
           fixedSizeWidth: 0.9,

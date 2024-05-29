@@ -148,7 +148,10 @@ class SettingPage extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-              )     ,
+              ),
+              SizedBox(
+                height:14,
+              ),
               ListTileText(
                 title: "Favourite",
                 onTap: () {},
@@ -183,6 +186,9 @@ class SettingPage extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(
+                height:14,
+              ),
               ListTile(
                 leading: Icon(
                   Icons.notifications_active_outlined,
@@ -191,7 +197,7 @@ class SettingPage extends StatelessWidget {
                 ),
                 title: NormalText(
                   text: "Alert Notifications",
-                  size: 18,
+                  size: 14,
                   fontWeight: FontWeight.w400,
                   color: AppColor.appBlack,
                 ),
@@ -211,7 +217,7 @@ class SettingPage extends StatelessWidget {
                 ),
                 title: NormalText(
                   text: "Appoinments",
-                  size: 18,
+                  size: 14,
                   fontWeight: FontWeight.w400,
                   color: AppColor.appBlack,
                 ),
@@ -231,7 +237,7 @@ class SettingPage extends StatelessWidget {
                 ),
                 title: NormalText(
                   text: "Direct Message",
-                  size: 18,
+                  size: 14,
                   fontWeight: FontWeight.w400,
                   color: AppColor.appBlack,
                 ),
@@ -261,6 +267,9 @@ class SettingPage extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
+              ),
+              SizedBox(
+                height:14,
               ),
               ListTileText(
                 title: "Privacy",

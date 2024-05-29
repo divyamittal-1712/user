@@ -64,11 +64,11 @@ class HelpPage extends StatelessWidget {
                         mainAxisSpacing: 10, // Vertical space between items
                         childAspectRatio: 1, // Aspect ratio of the items
                       ),
-                      itemCount: 6,
+                      itemCount: 5,
                       itemBuilder: (context, index) {
                         return Container(
                           decoration: BoxDecoration(
-                            color: AppColor.midGray.withOpacity(0.5),
+                            color: AppColor.whiteColor.withOpacity(0.8),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Column(

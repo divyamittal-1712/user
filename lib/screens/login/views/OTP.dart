@@ -43,7 +43,6 @@ class OTPScreen extends StatelessWidget {
                   context.read<OTPProvider>().phoneTap(context);
                 },
                 text: "Back",
-                fontSize: 13.5,
                 textAlign: TextAlign.center,
                 fontWeight: FontWeight.w800,
                 fixedSizeWidth: 0.9,
@@ -60,7 +59,6 @@ class OTPScreen extends StatelessWidget {
                   context.read<OTPProvider>().homeTap(context);
                 },
                 text: "Verify",
-                fontSize: 13.5,
                 textAlign: TextAlign.center,
                 fontWeight: FontWeight.w900,
                 fixedSizeWidth: 0.9,

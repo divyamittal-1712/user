@@ -96,7 +96,7 @@ class DefaultButton extends StatelessWidget {
               Text(
                 text,
                 style: TextStyle(
-                  fontSize: fontSize,
+                  fontSize: fontSize ?? 14,
                   fontWeight: fontWeight,
                   fontFamily: FontFamily.Manrope,
                   color: fontColor ?? AppColor.whiteColor,
