@@ -29,8 +29,6 @@ class AppSvg{
   static const String helpIcon = '${_svg}help_icon.svg';
   static const String rightArrowIcon = '${_svg}right_arrow.svg';
   static const String chatAppointmentIcon = '${_svg}chat_appointment_icon.svg';
-  static const String navigationIcon = '${_svg}navigation_icon.svg';
-
 
 
 }
