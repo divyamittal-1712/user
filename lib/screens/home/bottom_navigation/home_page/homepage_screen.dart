@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:user_app/screens/home/app_bar/MyAppBar.dart';
 import 'package:user_app/screens/home/bottom_navigation/wallet_page/wallet_screen.dart';
 import 'package:user_app/screens/notification/views/notificationscreen.dart';
@@ -29,24 +30,27 @@ class HomePage extends StatelessWidget {
             onTap: () {
               Navigator.of(context).pushReplacementNamed(DrawerPage.routeName);
             },
-            child: Icon(
-              Icons.menu,
-            )),
+            child: Image.asset(AppAssets.navigationIcon)
+        ),
         actions: [
-          IconButton(
-              icon: Icon(Icons.wallet),
-              color: AppColor.appBlack,
-              onPressed: () {
-                Navigator.of(context)
-                    .pushReplacementNamed(WalletPage.routeName);
-              }),
-          IconButton(
-              icon: Icon(Icons.notifications),
-              color: AppColor.appBlack,
-              onPressed: () {
-                Navigator.of(context)
-                    .pushReplacementNamed(NotificationPage.routeName);
-              })
+          Flexible(
+            child: IconButton(
+                icon: Image.asset(AppAssets.walletIcon),
+                color: AppColor.appBlack,
+                onPressed: () {
+                  Navigator.of(context)
+                      .pushReplacementNamed(WalletPage.routeName);
+                }),
+          ),
+          Flexible(
+            child: IconButton(
+                icon: Image.asset(AppAssets.notificationIcon),
+                color: AppColor.appBlack,
+                onPressed: () {
+                  Navigator.of(context)
+                      .pushReplacementNamed(NotificationPage.routeName);
+                }),
+          )
         ],
       ),
       body: Padding(
@@ -64,30 +68,32 @@ class HomePage extends StatelessWidget {
                       color: AppColor.darkGreyColor,
                     ),
                     hintStyle: TextStyle(
-                        fontFamily: FontFamily.Manrope,
-                        color: AppColor.darkGreyColor),
+                        fontSize: 16,
+                        fontFamily: FontFamily.Rubik,
+                        color: AppColor.cadetBlueColor),
                     fillColor: AppColor.whiteColor,
                     filled: true,
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: BorderSide.none)),
               ),
-              SizedBox(
-                height: 40,
+              const SizedBox(
+                height: 15,
               ),
               GridView.builder(
                   shrinkWrap: true,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3, // Number of columns
-                    crossAxisSpacing: 10, // Horizontal space between items
-                    mainAxisSpacing: 10, // Vertical space between items
-                    childAspectRatio: 1, // Aspect ratio of the items
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 90.0, // Maximum width of each item
+                    crossAxisSpacing: 10.0, // Horizontal space between items
+                    mainAxisSpacing: 10.0, // Vertical space between items
+                    childAspectRatio: 1.0,
+                    // Aspect ratio of the items
                   ),
                   itemCount: 6,
                   itemBuilder: (context, index) {
                     return Container(
                       decoration: BoxDecoration(
-                        color: AppColor.borderLightGreyColor.withOpacity(0.8),
+                        color: AppColor.platinumColor,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Column(
@@ -96,14 +102,16 @@ class HomePage extends StatelessWidget {
                             padding: const EdgeInsets.only(top: 8.0,left: 8,right: 8),
                             child: Image.asset(
                               AppAssets.venuePhoto,
-                              height: 60,
+                              height: 28,
                               width: 30,
                             ),
                           ),
                           NormalText(
                               text: "Wed Planner",
-                              size: 10,
-                              fontWeight: FontWeight.w600),
+                              size: 9,
+                              fontWeight: FontWeight.w600,
+
+                          ),
                         ],
                       ),
                     );
@@ -119,7 +127,7 @@ class HomePage extends StatelessWidget {
                   enlargeCenterPage: true,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -127,14 +135,17 @@ class HomePage extends StatelessWidget {
                 children: [
                   NormalText(
                     text: "Appointments",
-                    size: 16,
+                    size: 15,
                     fontWeight: FontWeight.w600,
+                    fontFamily: FontFamily.Rubik,
+                    color: AppColor.textblack,
                   ),
                   NormalText(
                     text: "View All",
-                    size: 16,
-                    fontWeight: FontWeight.w600,
-                    color: AppColor.redLogin,
+                    size: 13,
+                    fontWeight: FontWeight.w500,
+                    color: AppColor.consultOrange,
+                    fontFamily: FontFamily.Rubik,
                   ),
                 ],
               ),
@@ -150,7 +161,7 @@ class HomePage extends StatelessWidget {
                   enlargeCenterPage: true,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -192,19 +203,22 @@ class HomePage extends StatelessWidget {
                 children: [
                   NormalText(
                     text: "Top Consultant",
-                    size: 16,
+                    size: 15,
                     fontWeight: FontWeight.w600,
+                    fontFamily: FontFamily.Rubik,
+                    color: AppColor.textblack,
                   ),
                   NormalText(
                     text: "View All",
-                    size: 16,
-                    fontWeight: FontWeight.w600,
-                    color: AppColor.redLogin,
+                    size: 13,
+                    fontWeight: FontWeight.w500,
+                    color: AppColor.consultOrange,
+                    fontFamily: FontFamily.Rubik,
                   ),
                 ],
               ),
               SizedBox(
-                height: 100,
+                height: 80,
                 width: double.infinity,
                 child: ListView.builder(
                     physics: const BouncingScrollPhysics(),
@@ -222,26 +236,29 @@ class HomePage extends StatelessWidget {
                               duration: const Duration(microseconds: 300),
                               margin: EdgeInsets.all(5),
                               width: 80,
-                              height: 40,
+                              height: 35,
                               decoration: BoxDecoration(
                                   color: current == index
-                                      ? Colors.deepOrangeAccent
+                                      ? AppColor.consultOrange
                                       : Colors.white,
                                   borderRadius: current == index
-                                      ? BorderRadius.circular(8)
-                                      : BorderRadius.circular(8),
+                                      ? BorderRadius.circular(5)
+                                      : BorderRadius.circular(5),
                                   border: current == index
                                       ? null
                                       : Border.all(
-                                          color: Colors.deepOrangeAccent,
+                                          color: AppColor.consultOrange,
                                           width: 1)),
                               child: Center(
                                 child: Text(
                                   items[index],
                                   style: TextStyle(
+                                    fontFamily: FontFamily.Rubik,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 13,
                                       color: current == index
                                           ? Colors.white
-                                          : Colors.deepOrangeAccent),
+                                          : AppColor.consultOrange),
                                 ),
                               ),
                             ),
@@ -291,9 +308,9 @@ class HomePage extends StatelessWidget {
 
   Widget buildAppointmnetCard(BuildContext context) {
     return SizedBox(
-      height: 400,
       child: ListView.builder(
           physics: NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
           itemCount: 10,
           padding: EdgeInsets.zero,
           itemBuilder: (BuildContext context, int index) {
@@ -304,12 +321,20 @@ class HomePage extends StatelessWidget {
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
                     children: [
-                      Image.asset(
-                        AppAssets.image,
-                        height: 80,
-                        width: 80,
+                      Container(
+                        width: 70,
+                        height: 70,
+                        decoration: BoxDecoration(
+                          // border: Border.all(color: Colors.black, width: 1),
+                          borderRadius: BorderRadius.circular(4),
+                          image: DecorationImage(
+                            image: AssetImage(AppAssets.image),
+                            fit: BoxFit.cover, // You can change this to other fit options as needed
+                          ),
+                        ),
                       ),
-                      SizedBox(
+
+                      const SizedBox(
                         width: 10,
                       ),
                       Column(
@@ -318,15 +343,29 @@ class HomePage extends StatelessWidget {
                           NormalText(
                             text: "Pravendra Singh",
                             size: 14,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w500,
+                            color: AppColor.textblack,
                           ),
                           SmallText(
                             text: "Destination Wedding Planner",
-                            size: 12,
+                            size: 10,
+                            fontFamily: FontFamily.Rubik,
+                            color: AppColor.sonicSilverColor,
                           ),
-                          SmallText(
-                            text: "Jaipur | Rajasthan ",
-                            size: 12,
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.location_on_outlined,
+                                size: 10,
+                                color: AppColor.davysGreyColor,
+                              ),
+                              SmallText(
+                                text: "Jaipur | Rajasthan ",
+                                size: 10,
+                                fontFamily: FontFamily.Rubik,
+                                color: AppColor.sonicSilverColor,
+                              ),
+                            ],
                           ),
                           Row(
                             children: [
@@ -335,15 +374,16 @@ class HomePage extends StatelessWidget {
                                 size: 18,
                                 color: AppColor.appYellow,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 5,
                               ),
                               SmallText(
                                 text: "5.0",
-                                fontWeight: FontWeight.w600,
-                                size: 12,
+                                fontWeight: FontWeight.w500,
+                                size: 11,
+                                color: AppColor.sonicSilverColor,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 5,
                               ),
                               Container(
@@ -351,23 +391,26 @@ class HomePage extends StatelessWidget {
                                 height: 6,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
-                                  color: AppColor.textGray,
+                                  color: AppColor.sonicSilverColor,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 5,
                               ),
                               SmallText(
                                 text: "82 Reviews",
-                                size: 12,
+                                size: 11,
+                                color: AppColor.sonicSilverColor,
+                                fontWeight: FontWeight.w500,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 30,
                               ),
                               SmallText(
                                 text: "10+ Years Exp.",
-                                size: 12,
-                                fontWeight: FontWeight.w500,
+                                size: 11,
+                                fontFamily: FontFamily.Rubik,
+                                color: AppColor.darkBlueGrayColor,
                               ),
                             ],
                           )

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -15,6 +17,7 @@ Future<void> main() async {
   final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   Future.delayed(Duration(seconds: 3));
+  HttpOverrides.global = MyHttpOverrides();
   runApp(const MyApp());
   FlutterNativeSplash.remove();
   SharedPre().init();
@@ -49,6 +52,15 @@ class MyApp extends StatelessWidget {
         ),
       ),
     );
+  }
+
+}
+
+class MyHttpOverrides extends HttpOverrides{
+  @override
+  HttpClient createHttpClient(SecurityContext? context){
+    return super.createHttpClient(context)
+      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
   }
 }
 
