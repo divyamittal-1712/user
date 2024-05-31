@@ -139,7 +139,7 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                                   width: 2,
                                 ),
                                 NormalText(
-                                  text: "time",
+                                  text: "10:56PM",
                                   size: 11,
                                   color: AppColor.sonicSilverColor,
                                 )
@@ -188,7 +188,7 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                           ],
                         ),
                         const SizedBox(
-                          width: 20,
+                          width: 30,
                         ),
                         Column(
                           children: [
@@ -208,7 +208,7 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                           ],
                         ),
                         const SizedBox(
-                          width: 20,
+                          width: 30,
                         ),
                         const Icon(
                           Icons.more_vert,

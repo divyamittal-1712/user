@@ -208,7 +208,7 @@ class _TabBarPageState extends State<TabBarPage> {
                                     fontWeight: FontWeight.w500,
                                   ),
                                   const SizedBox(
-                                    width: 30,
+                                    width: 40,
                                   ),
                                   SmallText(
                                     text: "10+ Years Exp.",

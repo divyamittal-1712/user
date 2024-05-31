@@ -22,6 +22,7 @@ class HomePage extends StatelessWidget {
     int current = 0;
 
     double width = MediaQuery.sizeOf(context).width;
+    double height = MediaQuery.sizeOf(context).height;
 
     return Scaffold(
       backgroundColor: AppColor.lightGray,
@@ -82,8 +83,8 @@ class HomePage extends StatelessWidget {
               ),
               GridView.builder(
                   shrinkWrap: true,
-                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                    maxCrossAxisExtent: 90.0, // Maximum width of each item
+                  gridDelegate:  SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: width / 4, // Maximum width of each item
                     crossAxisSpacing: 10.0, // Horizontal space between items
                     mainAxisSpacing: 10.0, // Vertical space between items
                     childAspectRatio: 1.0,
@@ -99,16 +100,20 @@ class HomePage extends StatelessWidget {
                       child: Column(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(top: 8.0,left: 8,right: 8),
+                            padding: const EdgeInsets.only(top: 16.0,left: 8,right: 8),
                             child: Image.asset(
                               AppAssets.venuePhoto,
                               height: 28,
                               width: 30,
                             ),
                           ),
+                          SizedBox(
+                            height: 2,
+                          ),
                           NormalText(
-                              text: "Wed Planner",
+                              text: "Venue",
                               size: 9,
+                              textAlign: TextAlign.center,
                               fontWeight: FontWeight.w600,
 
                           ),
@@ -168,15 +173,16 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   NormalText(
-                    text: "Featured Consultantx",
+                    text: "Featured Consultant",
                     size: 16,
                     fontWeight: FontWeight.w600,
                   ),
                   NormalText(
                     text: "View All",
-                    size: 16,
-                    fontWeight: FontWeight.w600,
-                    color: AppColor.redLogin,
+                    size: 13,
+                    fontWeight: FontWeight.w500,
+                    color: AppColor.consultOrange,
+                    fontFamily: FontFamily.Rubik,
                   ),
                 ],
               ),
@@ -404,11 +410,12 @@ class HomePage extends StatelessWidget {
                                 fontWeight: FontWeight.w500,
                               ),
                               const SizedBox(
-                                width: 30,
+                                width: 40,
                               ),
                               SmallText(
                                 text: "10+ Years Exp.",
                                 size: 11,
+                                textAlign: TextAlign.end,
                                 fontFamily: FontFamily.Rubik,
                                 color: AppColor.darkBlueGrayColor,
                               ),
