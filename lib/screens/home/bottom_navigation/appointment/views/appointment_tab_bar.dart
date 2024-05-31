@@ -114,10 +114,10 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                           width: 59,
                           height: 55,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(4),
-                            image: DecorationImage(image: AssetImage(AppAssets.image),
-                            fit: BoxFit.cover)
-                          ),
+                              borderRadius: BorderRadius.circular(4),
+                              image: DecorationImage(
+                                  image: AssetImage(AppAssets.image),
+                                  fit: BoxFit.cover)),
                         ),
                         const SizedBox(
                           width: 20,
@@ -135,7 +135,6 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                                 const SizedBox(
                                   width: 4,
                                 ),
-
                                 const SizedBox(
                                   width: 2,
                                 ),
@@ -147,7 +146,7 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(top: 3,bottom: 5),
+                              padding: const EdgeInsets.only(top: 3, bottom: 5),
                               child: NormalText(
                                 text: "Lokendra Shekhawat",
                                 size: 14,
@@ -155,12 +154,10 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                                 color: AppColor.normalTextColor,
                               ),
                             ),
-
                             Row(
                               children: [
-                                const Icon(
-                                  Icons.call,
-                                  size: 12.0,
+                                Image.asset(
+                                  AppAssets.grayCallIcon,
                                 ),
                                 const SizedBox(
                                   width: 4,
@@ -173,8 +170,9 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                                 const SizedBox(
                                   width: 4,
                                 ),
-                                const Icon(
+                                Icon(
                                   Icons.access_time,
+                                  color: AppColor.sonicSilverColor,
                                   size: 12.0,
                                 ),
                                 const SizedBox(
@@ -204,10 +202,8 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                                 color: AppColor.darkBlueGrayColor,
                               ),
                             ),
-                            const Icon(
-                              Icons.call,
-                              color: Colors.green,
-                              size: 26.0,
+                            Image.asset(
+                              AppAssets.greenCallIcon,
                             ),
                           ],
                         ),

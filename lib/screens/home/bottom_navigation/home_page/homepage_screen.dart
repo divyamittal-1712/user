@@ -184,7 +184,7 @@ class HomePage extends StatelessWidget {
                 height: 10,
               ),
               SizedBox(
-                height: 130,
+                height: 136,
                 width: double.infinity,
                 child: ListView.builder(
                     physics: ScrollPhysics(),
@@ -430,102 +430,123 @@ class HomePage extends StatelessWidget {
       color: AppColor.whiteColor,
       child: Padding(
         padding: const EdgeInsets.symmetric(
-            vertical: 16.0, horizontal: 12),
-        child: Row(
+            vertical: 10.0, horizontal: 12),
+        child: Column(
           children: [
-            Image.asset(
-              AppAssets.consultantProfilePhoto,
-              height: 70,
-              width: 70,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                  vertical: 8.0, horizontal: 12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  NormalText(
-                    text: "Rajendra Rao",
-                    size: 14,
-                    fontWeight: FontWeight.w700,
-                    textOverflow: TextOverflow.ellipsis,
-                    softWarp: true,
-                    maxLine: 1,
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: 60,
+                  width: 60,
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage(AppAssets.consultantProfilePhoto),
+                    backgroundColor: AppColor.whiteColor,
+                    maxRadius: 35,
+                    minRadius: 35,
                   ),
-                  SizedBox(height: 3,),
-                  NormalText(
-                    text: "Destination Wedding Planner",
-                    size: 10,
-                    fontWeight: FontWeight.w700,
-                    color: AppColor.darkGreyColor,
-                    textOverflow: TextOverflow.ellipsis,
-                    softWarp: true,
-                    maxLine: 1,
-                  ),
-                  SizedBox(height: 3,),
-                  NormalText(
-                    text: "Jaipur | Rajasthan",
-                    size: 10,
-                    fontWeight: FontWeight.w700,
-                    color: AppColor.darkGreyColor,
-                    textOverflow: TextOverflow.ellipsis,
-                    softWarp: true,
-                    maxLine: 1,
-                  ),
-                  SizedBox(height: 5,),
-                  Row(
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 8.0, horizontal: 12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        children: [
-                          Icon(
-                            Icons.star,
-                            size: 18,
-                            color: AppColor.appYellow,
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          SmallText(
-                            text: "5.0",
-                            fontWeight: FontWeight.w900,
-                            color: AppColor.normalTextColor,
-                            size: 11,
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          Container(
-                            width: 6,
-                            height: 6,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: AppColor.textGray,
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          SmallText(
-                            text: "82 Reviews",
-                            size: 12,
-                            color: AppColor.normalTextColor,
-                          ),
-                        ],
-                      ),
-                      SizedBox(width: 14,),
                       NormalText(
-                        text: "10+ Year Exp.",
-                        size: 11,
-                        fontWeight: FontWeight.w700,
+                        text: "Rajendra Rao",
+                        size: 12,
+                        fontWeight: FontWeight.w500,
                         textOverflow: TextOverflow.ellipsis,
                         softWarp: true,
                         maxLine: 1,
+                        color: AppColor.textblack
                       ),
+                      SizedBox(height: 3,),
+                      NormalText(
+                        text: "Destination Wedding Planner",
+                        size: 10,
+                        color: AppColor.spanishGrayColor,
+                        textOverflow: TextOverflow.ellipsis,
+                        softWarp: true,
+                        maxLine: 1,
+                        fontFamily: FontFamily.Rubik,
+                      ),
+                      /*SizedBox(height: 3,),
+                      NormalText(
+                        text: "Jaipur | Rajasthan",
+                        size: 10,
+                        fontWeight: FontWeight.w700,
+                        color: AppColor.darkGreyColor,
+                        textOverflow: TextOverflow.ellipsis,
+                        softWarp: true,
+                        maxLine: 1,
+                      ),*/
+                      SizedBox(height: 5,),
+
                     ],
                   ),
-                ],
-              ),
-            )
+                )
+              ],
+            ),
+            SizedBox(height: 8,),
+            Row(
+              children: [
+                SizedBox(height: 30,),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.star,
+                      size: 18,
+                      color: AppColor.appYellow,
+                    ),
+
+                    SmallText(
+                      text: "5.0",
+                      fontWeight: FontWeight.w500,
+                      color: AppColor.sonicSilverColor,
+                      size: 11,
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Container(
+                      width: 6,
+                      height: 6,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: AppColor.textGray,
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    SmallText(
+                      text: "82 Reviews",
+                      size: 11,
+                      color: AppColor.sonicSilverColor,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ],
+                ),
+                SizedBox(width: 14,),
+                Container(
+                  decoration: BoxDecoration(
+                    color: AppColor.consultOrange,
+                    borderRadius: BorderRadius.circular(12)
+                  ),
+                  padding: EdgeInsets.only(left: 15,right: 15,top: 6,bottom: 6),
+                  child: NormalText(
+                    text: "10+ Year Exp.",
+                    size: 8,
+                    fontFamily: FontFamily.Rubik,
+                    textOverflow: TextOverflow.ellipsis,
+                    softWarp: true,
+                    color: AppColor.whiteColor,
+                    maxLine: 1,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

@@ -50,4 +50,5 @@ class AppColor{
   static Color sonicSilverColor= const Color(0xff767676);
   static Color darkBlueGrayColor= const Color(0xff677294);
   static Color davysGreyColor= const Color(0xff677294);
+  static Color spanishGrayColor= const Color(0xff969696);
 }

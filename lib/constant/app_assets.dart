@@ -12,6 +12,8 @@ class AppAssets {
   static const String notificationIcon = '${_imagePath}notification_icon.png';
   static const String walletIcon = '${_imagePath}wallet_icon.png';
   static const String navigationIcon = '${_imagePath}navigation_icon.png';
+  static const String grayCallIcon = '${_imagePath}small_gray_call_icon.png';
+  static const String greenCallIcon = '${_imagePath}call_green_icon.png';
 
 }
 
