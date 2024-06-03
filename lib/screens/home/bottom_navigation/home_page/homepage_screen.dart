@@ -24,6 +24,14 @@ class HomePage extends StatelessWidget {
     double width = MediaQuery.sizeOf(context).width;
     double height = MediaQuery.sizeOf(context).height;
 
+    int _currentIndex = 0;
+    final List<String> _imageUrls = [
+      'https://picsum.photos/200/300?random=1',
+      'https://picsum.photos/200/300?random=1',
+      'https://picsum.photos/200/300?random=1',
+      'https://picsum.photos/200/300?random=1',
+    ];
+
     return Scaffold(
       backgroundColor: AppColor.lightGray,
       appBar: MyAppBar(
@@ -166,6 +174,23 @@ class HomePage extends StatelessWidget {
                   enlargeCenterPage: true,
                 ),
               ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: _imageUrls.map((url) {
+              //     int index = _imageUrls.indexOf(url);
+              //     return Container(
+              //       width: 8.0,
+              //       height: 8.0,
+              //       margin: EdgeInsets.only(top: 0.0, left: 2.0,right:2.0 ),
+              //       decoration: BoxDecoration(
+              //         shape: BoxShape.circle,
+              //         color: _currentIndex == index
+              //             ? AppColor.appBlack
+              //             : AppColor.redLogin
+              //       ),
+              //     );
+              //   }).toList(),
+              // ),
               const SizedBox(
                 height: 10,
               ),
@@ -174,8 +199,10 @@ class HomePage extends StatelessWidget {
                 children: [
                   NormalText(
                     text: "Featured Consultant",
-                    size: 16,
+                    size: 15,
                     fontWeight: FontWeight.w600,
+                    fontFamily: FontFamily.Rubik,
+                    color: AppColor.textblack,
                   ),
                   NormalText(
                     text: "View All",
@@ -187,10 +214,10 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 10,
+                height: 18,
               ),
               SizedBox(
-                height: 136,
+                height: 126,
                 width: double.infinity,
                 child: ListView.builder(
                     physics: ScrollPhysics(),
@@ -298,7 +325,7 @@ class HomePage extends StatelessWidget {
         ),
         child: Container(
           width: double.infinity,
-          height: 140,
+          height: 120,
           // width: MediaQuery.of(context).size.width,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(12.0),
@@ -317,19 +344,21 @@ class HomePage extends StatelessWidget {
       child: ListView.builder(
           physics: NeverScrollableScrollPhysics(),
           shrinkWrap: true,
-          itemCount: 10,
+          itemCount: 5,
           padding: EdgeInsets.zero,
           itemBuilder: (BuildContext context, int index) {
             return Container(
               child: Card(
                 color: AppColor.whiteColor,
                 child: Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.only(top: 10.0,bottom: 10.0),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Container(
                         width: 70,
                         height: 70,
+                        padding: EdgeInsets.zero,
                         decoration: BoxDecoration(
                           // border: Border.all(color: Colors.black, width: 1),
                           borderRadius: BorderRadius.circular(4),
@@ -338,10 +367,6 @@ class HomePage extends StatelessWidget {
                             fit: BoxFit.cover, // You can change this to other fit options as needed
                           ),
                         ),
-                      ),
-
-                      const SizedBox(
-                        width: 10,
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -353,7 +378,7 @@ class HomePage extends StatelessWidget {
                             color: AppColor.textblack,
                           ),
                           SmallText(
-                            text: "Destination Wedding Planner",
+                            text: "Destination Wedding Planner ",
                             size: 10,
                             fontFamily: FontFamily.Rubik,
                             color: AppColor.sonicSilverColor,
@@ -506,7 +531,9 @@ class HomePage extends StatelessWidget {
                       size: 18,
                       color: AppColor.appYellow,
                     ),
-
+                    SizedBox(
+                      width: 4,
+                    ),
                     SmallText(
                       text: "5.0",
                       fontWeight: FontWeight.w500,

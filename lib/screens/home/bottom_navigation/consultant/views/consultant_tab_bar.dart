@@ -95,9 +95,6 @@ class _TabBarPageState extends State<TabBarPage> {
                   );
                 }),
           ),
-          const SizedBox(
-            height: 10,
-          ),
           Expanded(
             child: buildAppointmnetCard(context),
           )
@@ -126,6 +123,7 @@ class _TabBarPageState extends State<TabBarPage> {
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Container(
                             width: 70,
