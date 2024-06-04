@@ -22,7 +22,7 @@ class SettingPage extends StatelessWidget {
             children: [
               const SizedBox(height: 50),
               topLayout(context),
-              const SizedBox(height: 40),
+              const SizedBox(height: 25),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Align(
@@ -271,7 +271,7 @@ Widget topLayout(BuildContext context) {
         ),
         Container(
           color: AppColor.lightSilverColor,
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(20.0),
           width: double.infinity,
           child: Row(
             children: [
