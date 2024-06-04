@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:user_app/constant/app_assets.dart';
 import 'package:user_app/screens/home/bottom_navigation/appointment/views/appointment_detail_page.dart';
 
@@ -202,9 +203,7 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                                 color: AppColor.darkBlueGrayColor,
                               ),
                             ),
-                            Image.asset(
-                              AppAssets.greenCallIcon,
-                            ),
+                            SvgPicture.asset(AppSvg.callGreenIcon),
                           ],
                         ),
                         const SizedBox(

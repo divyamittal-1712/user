@@ -14,6 +14,7 @@ class AppAssets {
   static const String navigationIcon = '${_imagePath}navigation_icon.png';
   static const String grayCallIcon = '${_imagePath}small_gray_call_icon.png';
   static const String greenCallIcon = '${_imagePath}call_green_icon.png';
+  static const String callProfileIcon = '${_imagePath}call_profile_icon.png';
 
 }
 
@@ -31,6 +32,19 @@ class AppSvg{
   static const String helpIcon = '${_svg}help_icon.svg';
   static const String rightArrowIcon = '${_svg}right_arrow.svg';
   static const String chatAppointmentIcon = '${_svg}chat_appointment_icon.svg';
+  static const String accountDetailIcon = '${_svg}account_detail_icon.svg';
+  static const String favoriteIcon = '${_svg}favorite_icon.svg';
+  static const String transactionHistoryIcon = '${_svg}transaction_history_icon.svg';
+  static const String notificationIcon_2 = '${_svg}notification_icon_2.svg';
+  static const String privacyIcon = '${_svg}privacy_icon.svg';
+  static const String securityIcon = '${_svg}security_icon.svg';
+  static const String serviceFeedbackIcon = '${_svg}service_feedback_icon.svg';
+  static const String helpCenterIcon = '${_svg}help_center_icon.svg';
+  static const String appointmentIcon = '${_svg}appointment_icon.svg';
+  static const String messageIcon = '${_svg}message_icon.svg';
+  static const String editProfileIcon = '${_svg}edit_profile_icon.svg';
+  static const String walletIcon = '${_svg}wallet_icon.svg';
+  static const String callGreenIcon = '${_svg}call_green_icon.svg';
 
 
 }

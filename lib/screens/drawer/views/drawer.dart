@@ -2,6 +2,7 @@ import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:user_app/constant/app_assets.dart';
 import 'package:user_app/screens/drawer/provider/drawer_provider.dart';
 import 'package:user_app/screens/edit_profile/views/editProfileScreen.dart';
 import 'package:user_app/screens/home/app_bar/MyAppBar.dart';
@@ -103,44 +104,44 @@ class DrawerPage extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).pushReplacementNamed(HelpPage.routeName);
                 },
-                leading: Icons.help_outline,
+                leading: AppSvg.helpCenterIcon,
               ),
               ListTileText(
                 title: "Edit Profile",
                 onTap: () {
                   Navigator.of(context).pushReplacementNamed(EditProfilePage.routeName);
                 },
-                leading: Icons.person_2_outlined,
+                leading: AppSvg.accountDetailIcon,
               ),
               ListTileText(
                 title: "Wallet",
                 onTap: () {},
-                leading: Icons.wallet_outlined,
+                leading: AppSvg.walletIcon,
               ),
               ListTileText(
                 title: "Terms & Conditions",
                 onTap: () {},
-                leading: Icons.settings,
+                leading: AppSvg.serviceFeedbackIcon,
               ),
               ListTileText(
                 title: "Privacy & policy",
                 onTap: () {},
-                leading: Icons.privacy_tip_outlined,
+                leading: AppSvg.privacyIcon,
               ),
               ListTileText(
                 title: "Cancellation & Refund",
                 onTap: () {},
-                leading: Icons.auto_mode_outlined,
+                leading: AppSvg.serviceFeedbackIcon,
               ),
               ListTileText(
                 title: "Logout",
                 onTap: () {},
-                leading: Icons.logout_outlined,
+                leading: AppSvg.appointmentIcon,
               ),
-              SizedBox(height: 10,),
+              const SizedBox(height: 10,),
               NormalText(text: "Follow Us",size: 12,),
-              SizedBox(height: 10,),
-              Row(
+              const SizedBox(height: 10,),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Icon(Icons.facebook),
