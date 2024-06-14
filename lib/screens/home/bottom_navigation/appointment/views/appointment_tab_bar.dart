@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:user_app/constant/app_assets.dart';
 import 'package:user_app/screens/home/bottom_navigation/appointment/views/appointment_detail_page.dart';
+import 'package:user_app/screens/home/bottom_navigation/appointment/views/reschedule_appointment_page.dart';
 
 import '../../../../../utils/app_colors.dart';
 import '../../../../../utils/font_family.dart';
+import '../../../../../widgets/default_button.dart';
 import '../../../../../widgets/text_widget.dart';
 import '../../../app_bar/MyAppBar.dart';
 import 'appointement_list_view.dart';
@@ -209,10 +211,27 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                         const SizedBox(
                           width: 30,
                         ),
-                        const Icon(
-                          Icons.more_vert,
-                          size: 20.0,
-                        ),
+                        PopupMenuButton(onSelected: (String value) {
+                          if (value == 'Cancel Event') {
+                            _showCancelAppointmentBottomSheet(context);
+                          } else if (value == 'Reschedule Event') {
+                            Navigator.of(context).pushReplacementNamed(
+                                RescheduleAppointmentPage.routeName);
+                          }
+                        }, itemBuilder: (BuildContext context) {
+                          return {'Cancel Event', 'Reschedule Event'}
+                              .map((String choice) {
+                            return PopupMenuItem<String>(
+                              value: choice,
+                              child: NormalText(
+                                text: choice,
+                                size: 12,
+                                color: AppColor.slateGrayColor,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            );
+                          }).toList();
+                        })
                       ],
                     ),
                   ),
@@ -227,5 +246,78 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
             ),
           );
         });
+  }
+
+  void _showCancelAppointmentBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(25.0),
+        ),
+      ),
+      builder: (BuildContext context) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 40),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              NormalText(
+                text: "Cancel Appointment",
+                size: 15,
+                color: AppColor.textblack,
+                fontWeight: FontWeight.w700,
+              ),
+              const SizedBox(height: 15.0),
+              NormalText(
+                text: "Are you sure you want to cancel your appointment?",
+                size: 12,
+                color: AppColor.blackColor,
+                fontWeight: FontWeight.w400,
+              ),
+              const SizedBox(height: 20.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Expanded(
+                    child: DefaultButton(
+                      key: UniqueKey(),
+                      // loadingFlag: provider.isLoading,
+                      onPressed: () {},
+                      text: "Back",
+                      fontSize: 15,
+                      textAlign: TextAlign.center,
+                      fontWeight: FontWeight.w600,
+                      fixedSizeWidth: 0.9,
+                      fontColor: AppColor.blackColor,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4),
+                          side: BorderSide(color: AppColor.graniteGrayColor)),
+                      color: AppColor.whiteColor,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  Expanded(
+                    child: DefaultButton(
+                      key: UniqueKey(),
+                      // loadingFlag: provider.isLoading,
+                      onPressed: () {},
+                      text: "Yes Cancel",
+                      fontSize: 15,
+                      textAlign: TextAlign.center,
+                      fontWeight: FontWeight.w600,
+                      fixedSizeWidth: 0.9,
+                      fontColor: AppColor.whiteColor,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 }

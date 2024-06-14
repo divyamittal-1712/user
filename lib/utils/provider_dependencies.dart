@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:user_app/screens/edit_profile/provider/edit_profile_provider.dart';
 import 'package:user_app/screens/help/provider/faq_provider.dart';
+import 'package:user_app/screens/home/bottom_navigation/appointment/provider/reshedule_appointment_provider.dart';
+import 'package:user_app/screens/home/bottom_navigation/appointment/provider/reshedule_appointment_detail_provider.dart';
 import 'package:user_app/screens/notification/provider/notification_provider.dart';
 import '../screens/drawer/provider/drawer_provider.dart';
 import '../screens/help/provider/help_provider.dart';
@@ -37,6 +39,8 @@ class ProviderHandler {
       ListenableProvider<FAQProvider>(create: (_) => FAQProvider()),
       ListenableProvider<ConsultantDetailProvider>(create: (_) => ConsultantDetailProvider()),
       ListenableProvider<AppointmentDetailProvider>(create: (_) => AppointmentDetailProvider()),
+      ListenableProvider<RescheduleAppointmentProvider>(create: (_) => RescheduleAppointmentProvider()),
+      ListenableProvider<RescheduleAppointmentDetailProvider>(create: (_) => RescheduleAppointmentDetailProvider()),
 
     ];
     return independentServices;

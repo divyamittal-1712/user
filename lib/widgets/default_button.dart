@@ -55,6 +55,7 @@ class DefaultButton extends StatelessWidget {
   String? svgasset;
   bool? loadingFlag;
   Key? key;
+  OutlinedBorder? shape;
 
     DefaultButton(
       {
@@ -71,7 +72,9 @@ class DefaultButton extends StatelessWidget {
         this.width,
         this.radius,
         this.color,
-        this.loadingFlag = false});
+        this.loadingFlag = false,
+        this.shape
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -83,8 +86,10 @@ class DefaultButton extends StatelessWidget {
             fixedSize: Size(width ?? fixwidth, height ?? 50),
             // fixedSize: Size(MediaQuery.of(context).size.width * fixedSizeWidth!, height ?? 48),
             backgroundColor: color ?? AppColor.appBlack,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(radius ?? 4))),
+            shape: shape ?? RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(radius ?? 4),
+            )
+        ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
