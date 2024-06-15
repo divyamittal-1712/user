@@ -23,6 +23,8 @@ class HomeProvider extends ChangeNotifier{
       case 2:
         return AppointmentPage();
       case 3:
+        return AppointmentPage();
+      case 4:
         return SettingPage();
       default:
         return HomePage();

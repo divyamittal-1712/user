@@ -9,7 +9,7 @@ import '../../../../../utils/font_family.dart';
 import '../../../app_bar/MyAppBar.dart';
 import 'consultant_list.dart';
 
-class TabBarPage extends StatefulWidget {
+class   TabBarPage extends StatefulWidget {
   @override
   State<TabBarPage> createState() => _TabBarPageState();
 }
@@ -119,42 +119,50 @@ class _TabBarPageState extends State<TabBarPage> {
                     // Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ConsultantDetailPage()));
                   },
                   child: Card(
+                    elevation: 0.0,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4.0),
+                    ),
                     color: AppColor.whiteColor,
                     child: Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding:
+                      const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 10.0),
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Container(
                             width: 70,
                             height: 70,
+                            padding: EdgeInsets.zero,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(4),
-                              image: DecorationImage(image: AssetImage(AppAssets.image),fit: BoxFit.cover)
+                              image: DecorationImage(
+                                image: AssetImage(AppAssets.image),
+                                fit: BoxFit
+                                    .cover, // You can change this to other fit options as needed
+                              ),
                             ),
                           ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              NormalText(
-                                text: "Pravendra Singh",
-                                size: 14,
-                                fontWeight: FontWeight.w500,
-                                color: AppColor.textblack,
-                              ),
-                              const SizedBox(height: 2,),
-                              SmallText(
-                                text: "Destination Wedding Planner",
-                                size: 10,
-                                color: AppColor.sonicSilverColor,
-                                fontFamily: FontFamily.Rubik,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 3.0,bottom: 4),
-                                child: Row(
+                          Padding(
+                            padding: const EdgeInsets.only(left: 13.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                NormalText(
+                                  text: "Pravendra Singh",
+                                  size: 14,
+                                  fontWeight: FontWeight.w500,
+                                  color: AppColor.textblack,
+                                ),
+                                SizedBox(height: 1,),
+                                SmallText(
+                                  text: "Destination Wedding Planner ",
+                                  size: 10,
+                                  fontFamily: FontFamily.Rubik,
+                                  color: AppColor.sonicSilverColor,
+                                ),
+                                SizedBox(height: 1,),
+                                Row(
                                   children: [
                                     Icon(
                                       Icons.location_on_outlined,
@@ -164,60 +172,64 @@ class _TabBarPageState extends State<TabBarPage> {
                                     SmallText(
                                       text: "Jaipur | Rajasthan ",
                                       size: 10,
-                                      color: AppColor.sonicSilverColor,
                                       fontFamily: FontFamily.Rubik,
+                                      color: AppColor.sonicSilverColor,
                                     ),
                                   ],
                                 ),
-                              ),
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.star,
-                                    size: 18,
-                                    color: AppColor.appYellow,
-                                  ),
-                                  const SizedBox(
-                                    width: 5,
-                                  ),
-                                  SmallText(
-                                    text: "5.0",
-                                    fontWeight: FontWeight.w500,
-                                    size: 11,
-                                    color: AppColor.sonicSilverColor,
-                                  ),
-                                  const SizedBox(
-                                    width: 5,
-                                  ),
-                                  Container(
-                                    width: 6,
-                                    height: 6,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
+                                SizedBox(height: 1,),
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.star,
+                                      size: 18,
+                                      color: AppColor.appYellow,
+                                    ),
+                                    const SizedBox(
+                                      width: 5,
+                                    ),
+                                    SmallText(
+                                      text: "5.0",
+                                      fontWeight: FontWeight.w500,
+                                      size: 11,
                                       color: AppColor.sonicSilverColor,
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    width: 5,
-                                  ),
-                                  SmallText(
-                                    text: "82 Reviews",
-                                    size: 11,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                  const SizedBox(
-                                    width: 40,
-                                  ),
-                                  SmallText(
-                                    text: "10+ Years Exp.",
-                                    size: 11,
-                                    fontWeight: FontWeight.w400,
-                                    fontFamily: FontFamily.Rubik,
-                                    color: AppColor.darkBlueGrayColor,
-                                  ),
-                                ],
-                              )
-                            ],
+                                    const SizedBox(
+                                      width: 5,
+                                    ),
+                                    Container(
+                                      width: 4,
+                                      height: 4,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: AppColor.sonicSilverColor,
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 5,
+                                    ),
+                                    SmallText(
+                                      text: "82 Reviews",
+                                      size: 11,
+                                      color: AppColor.sonicSilverColor,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                    const SizedBox(
+                                      width: 38,
+                                    ),
+                                    Image.asset(AppAssets.top_experience),
+                                    SizedBox(width: 4,),
+                                    SmallText(
+                                      text: "10+ Years Exp.",
+                                      size: 11,
+                                      textAlign: TextAlign.end,
+                                      fontFamily: FontFamily.Rubik,
+                                      color: AppColor.darkBlueGrayColor,
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
                           )
                         ],
                       ),

@@ -98,7 +98,7 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
         padding: EdgeInsets.zero,
         itemBuilder: (BuildContext context, int index) {
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Column(
               children: [
                 InkWell(
@@ -194,8 +194,7 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                         Column(
                           children: [
                             Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 6.0),
+                              padding: const EdgeInsets.symmetric(vertical: 6.0),
                               child: NormalText(
                                 text: "₹ 150",
                                 size: 13,
@@ -209,17 +208,18 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                         const SizedBox(
                           width: 30,
                         ),
-                        const Icon(
+                         Icon(
                           Icons.more_vert,
                           size: 20.0,
+                          color: AppColor.darkGreyColor,
                         ),
                       ],
                     ),
                   ),
                 ),
                 Divider(
-                  indent: 10,
-                  endIndent: 10,
+                  indent: 40,
+                  endIndent: 50,
                   thickness: 1.0,
                   color: AppColor.borderLightGreyColor,
                 ),

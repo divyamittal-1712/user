@@ -26,10 +26,25 @@ class HomePage extends StatelessWidget {
 
     int _currentIndex = 0;
     final List<String> _imageUrls = [
-      'https://picsum.photos/200/300?random=1',
-      'https://picsum.photos/200/300?random=1',
-      'https://picsum.photos/200/300?random=1',
-      'https://picsum.photos/200/300?random=1',
+      'assets/images/venue.png',
+      'assets/images/decor.png',
+      'assets/images/wedding_planner.png',
+      'assets/images/catering.png',
+      'assets/images/gifts.png',
+      'assets/images/honeymoon.png',
+      'assets/images/wed_entrainment.png',
+      'assets/images/invites.png',
+    ];
+
+    final List<String> textUrls = [
+      'Venue',
+      'Decor',
+      'Wed Planner',
+      'Catering',
+      'Gifts',
+      'Honeymoon',
+      'Entertainemnt',
+      'DJ',
     ];
 
     return Scaffold(
@@ -39,8 +54,7 @@ class HomePage extends StatelessWidget {
             onTap: () {
               Navigator.of(context).pushReplacementNamed(DrawerPage.routeName);
             },
-            child: Image.asset(AppAssets.navigationIcon)
-        ),
+            child: Image.asset(AppAssets.navigationIcon)),
         actions: [
           Flexible(
             child: IconButton(
@@ -63,67 +77,68 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 15.0),
+        padding: const EdgeInsets.symmetric(horizontal: 12.0),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              TextField(
-                decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.symmetric(
-                        vertical: 15.0, horizontal: 12.0),
-                    hintText: "Search Consultant...",
-                    suffixIcon: Icon(
-                      Icons.search,
-                      color: AppColor.darkGreyColor,
-                    ),
-                    hintStyle: TextStyle(
-                        fontSize: 16,
-                        fontFamily: FontFamily.Rubik,
-                        color: AppColor.cadetBlueColor),
-                    fillColor: AppColor.whiteColor,
-                    filled: true,
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide.none)),
+              Padding(
+                padding: const EdgeInsets.only(top: 24.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 15.0, horizontal: 12.0),
+                      hintText: "Search Consultant...",
+                      suffixIcon: Icon(
+                        Icons.search,
+                        color: AppColor.darkGreyColor,
+                      ),
+                      hintStyle: TextStyle(
+                          fontSize: 16,
+                          fontFamily: FontFamily.Rubik,
+                          color: AppColor.cadetBlueColor),
+                      fillColor: AppColor.whiteColor,
+                      filled: true,
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide.none)),
+                ),
               ),
               const SizedBox(
-                height: 15,
+                height: 30,
               ),
               GridView.builder(
                   shrinkWrap: true,
-                  gridDelegate:  SliverGridDelegateWithMaxCrossAxisExtent(
+                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: width / 4, // Maximum width of each item
                     crossAxisSpacing: 10.0, // Horizontal space between items
                     mainAxisSpacing: 10.0, // Vertical space between items
-                    childAspectRatio: 1.0,
+                    childAspectRatio: 1.2,
                     // Aspect ratio of the items
                   ),
-                  itemCount: 6,
+                  itemCount: _imageUrls.length,
                   itemBuilder: (context, index) {
                     return Container(
+                      height: 10,
                       decoration: BoxDecoration(
                         color: AppColor.platinumColor,
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(4),
                       ),
                       child: Column(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(top: 16.0,left: 8,right: 8),
-                            child: Image.asset(
-                              AppAssets.venuePhoto,
-                              height: 28,
-                              width: 30,
-                            ),
+                            padding: const EdgeInsets.only(
+                                top: 10.0, left: 23, right: 23),
+                            child: Image.asset(_imageUrls[index],
+                                height: 30, width: 30, fit: BoxFit.fitHeight),
                           ),
                           SizedBox(
                             height: 2,
                           ),
                           NormalText(
-                              text: "Venue",
-                              size: 9,
-                              textAlign: TextAlign.center,
-                              fontWeight: FontWeight.w600,
-
+                            text: textUrls[index],
+                            size: 9,
+                            textAlign: TextAlign.center,
+                            fontWeight: FontWeight.w600,
                           ),
                         ],
                       ),
@@ -139,9 +154,6 @@ class HomePage extends StatelessWidget {
                   aspectRatio: 2.0,
                   enlargeCenterPage: true,
                 ),
-              ),
-              const SizedBox(
-                height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -162,34 +174,32 @@ class HomePage extends StatelessWidget {
                   ),
                 ],
               ),
-              CarouselSlider.builder(
-                itemCount: 4,
-                itemBuilder: (BuildContext context, int index, int d) {
-                  return sliderTile();
-                },
-                options: CarouselOptions(
-                  autoPlay: true,
-                  aspectRatio: 2.0,
-                  viewportFraction: 1.0,
-                  enlargeCenterPage: true,
-                ),
+              SizedBox(
+                height: 15,
               ),
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: _imageUrls.map((url) {
-              //     int index = _imageUrls.indexOf(url);
-              //     return Container(
-              //       width: 8.0,
-              //       height: 8.0,
-              //       margin: EdgeInsets.only(top: 0.0, left: 2.0,right:2.0 ),
-              //       decoration: BoxDecoration(
-              //         shape: BoxShape.circle,
-              //         color: _currentIndex == index
-              //             ? AppColor.appBlack
-              //             : AppColor.redLogin
-              //       ),
-              //     );
-              //   }).toList(),
+              SizedBox(
+                height: 100,
+                width: double.infinity,
+                child: ListView.builder(
+                    physics: ScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 4,
+                    padding: EdgeInsets.zero,
+                    itemBuilder: (BuildContext context, int index) {
+                      return appointentCard(context);
+                    }),
+              ),
+              // CarouselSlider.builder(
+              //   itemCount: 4,
+              //   itemBuilder: (BuildContext context, int index, int d) {
+              //     return sliderTile();
+              //   },
+              //   options: CarouselOptions(
+              //     autoPlay: true,
+              //     aspectRatio: 2.0,
+              //     viewportFraction: 1.0,
+              //     enlargeCenterPage: true,
+              //   ),
               // ),
               const SizedBox(
                 height: 10,
@@ -217,7 +227,7 @@ class HomePage extends StatelessWidget {
                 height: 18,
               ),
               SizedBox(
-                height: 126,
+                height: 95,
                 width: double.infinity,
                 child: ListView.builder(
                     physics: ScrollPhysics(),
@@ -225,11 +235,11 @@ class HomePage extends StatelessWidget {
                     itemCount: 4,
                     padding: EdgeInsets.zero,
                     itemBuilder: (BuildContext context, int index) {
-                      return  featureconsult(context);
+                      return featureconsult(context);
                     }),
               ),
               const SizedBox(
-                height: 18,
+                height: 25,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -286,7 +296,7 @@ class HomePage extends StatelessWidget {
                                 child: Text(
                                   items[index],
                                   style: TextStyle(
-                                    fontFamily: FontFamily.Rubik,
+                                      fontFamily: FontFamily.Rubik,
                                       fontWeight: FontWeight.w500,
                                       fontSize: 13,
                                       color: current == index
@@ -325,10 +335,10 @@ class HomePage extends StatelessWidget {
         ),
         child: Container(
           width: double.infinity,
-          height: 120,
+          height: 100,
           // width: MediaQuery.of(context).size.width,
           child: ClipRRect(
-            borderRadius: BorderRadius.circular(12.0),
+            borderRadius: BorderRadius.circular(4.0),
             child: Image.network(
               "https://picsum.photos/200/300?random=1",
               fit: BoxFit.fill,
@@ -340,35 +350,42 @@ class HomePage extends StatelessWidget {
   }
 
   Widget buildAppointmnetCard(BuildContext context) {
-    return SizedBox(
-      child: ListView.builder(
-          physics: NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-          itemCount: 5,
-          padding: EdgeInsets.zero,
-          itemBuilder: (BuildContext context, int index) {
-            return Container(
-              child: Card(
-                color: AppColor.whiteColor,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 10.0,bottom: 10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        width: 70,
-                        height: 70,
-                        padding: EdgeInsets.zero,
-                        decoration: BoxDecoration(
-                          // border: Border.all(color: Colors.black, width: 1),
-                          borderRadius: BorderRadius.circular(4),
-                          image: DecorationImage(
-                            image: AssetImage(AppAssets.image),
-                            fit: BoxFit.cover, // You can change this to other fit options as needed
-                          ),
+    return ListView.builder(
+        physics: NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        itemCount: 5,
+        padding: EdgeInsets.zero,
+        itemBuilder: (BuildContext context, int index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4.0),
+            child: Card(
+              elevation: 0.0,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(4.0),
+              ),
+              color: AppColor.whiteColor,
+              child: Padding(
+                padding:
+                    const EdgeInsets.only(top: 10.0, bottom: 10.0, left: 10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 70,
+                      height: 70,
+                      padding: EdgeInsets.zero,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4),
+                        image: DecorationImage(
+                          image: AssetImage(AppAssets.image),
+                          fit: BoxFit
+                              .cover, // You can change this to other fit options as needed
                         ),
                       ),
-                      Column(
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 13.0),
+                      child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           NormalText(
@@ -377,12 +394,14 @@ class HomePage extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                             color: AppColor.textblack,
                           ),
+                          SizedBox(height: 1,),
                           SmallText(
                             text: "Destination Wedding Planner ",
                             size: 10,
                             fontFamily: FontFamily.Rubik,
                             color: AppColor.sonicSilverColor,
                           ),
+                          SizedBox(height: 1,),
                           Row(
                             children: [
                               Icon(
@@ -398,6 +417,7 @@ class HomePage extends StatelessWidget {
                               ),
                             ],
                           ),
+                          SizedBox(height: 1,),
                           Row(
                             children: [
                               Icon(
@@ -418,8 +438,8 @@ class HomePage extends StatelessWidget {
                                 width: 5,
                               ),
                               Container(
-                                width: 6,
-                                height: 6,
+                                width: 4,
+                                height: 4,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: AppColor.sonicSilverColor,
@@ -435,8 +455,10 @@ class HomePage extends StatelessWidget {
                                 fontWeight: FontWeight.w500,
                               ),
                               const SizedBox(
-                                width: 40,
+                                width: 38,
                               ),
+                              Image.asset(AppAssets.top_experience),
+                              SizedBox(width: 4,),
                               SmallText(
                                 text: "10+ Years Exp.",
                                 size: 11,
@@ -447,55 +469,62 @@ class HomePage extends StatelessWidget {
                             ],
                           )
                         ],
-                      )
-                    ],
-                  ),
+                      ),
+                    )
+                  ],
                 ),
               ),
-            );
-          }),
-    );
+            ),
+          );
+        });
   }
 
-  Widget featureconsult(BuildContext context){
-    return  Card(
+  Widget featureconsult(BuildContext context) {
+    return Card(
       color: AppColor.whiteColor,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-            vertical: 10.0, horizontal: 12),
-        child: Column(
-          children: [
-            Row(
+      elevation: 0.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(4.0),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 10.0, left: 12, right: 12),
+            child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  height: 60,
-                  width: 60,
+                  height: 42,
+                  width: 42,
                   child: CircleAvatar(
-                    backgroundImage: AssetImage(AppAssets.consultantProfilePhoto),
+                    backgroundImage:
+                        AssetImage(AppAssets.consultantProfilePhoto),
                     backgroundColor: AppColor.whiteColor,
                     maxRadius: 35,
                     minRadius: 35,
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 8.0, horizontal: 12),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 4.0, horizontal: 12),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       NormalText(
-                        text: "Rajendra Rao",
-                        size: 12,
-                        fontWeight: FontWeight.w500,
-                        textOverflow: TextOverflow.ellipsis,
-                        softWarp: true,
-                        maxLine: 1,
-                        color: AppColor.textblack
+                          text: "Rajendra Rao",
+                          size: 12,
+                          fontWeight: FontWeight.w500,
+                          textOverflow: TextOverflow.ellipsis,
+                          softWarp: true,
+                          maxLine: 1,
+                          color: AppColor.textblack),
+                      SizedBox(
+                        height: 2,
                       ),
-                      SizedBox(height: 3,),
                       NormalText(
-                        text: "Destination Wedding Planner",
+                        text: "Wed Planner | Venue | Gifts | Honeymoon",
                         size: 10,
                         color: AppColor.spanishGrayColor,
                         textOverflow: TextOverflow.ellipsis,
@@ -503,89 +532,191 @@ class HomePage extends StatelessWidget {
                         maxLine: 1,
                         fontFamily: FontFamily.Rubik,
                       ),
-                      /*SizedBox(height: 3,),
-                      NormalText(
-                        text: "Jaipur | Rajasthan",
-                        size: 10,
-                        fontWeight: FontWeight.w700,
-                        color: AppColor.darkGreyColor,
-                        textOverflow: TextOverflow.ellipsis,
-                        softWarp: true,
-                        maxLine: 1,
-                      ),*/
-                      SizedBox(height: 5,),
-
                     ],
                   ),
                 )
               ],
             ),
-            SizedBox(height: 8,),
-            Row(
-              children: [
-                SizedBox(height: 30,),
-                Row(
+          ),
+          Row(
+            children: [
+              SizedBox(
+                width: 12,
+              ),
+              Icon(
+                Icons.star,
+                size: 18,
+                color: AppColor.appYellow,
+              ),
+              SizedBox(
+                width: 4,
+              ),
+              SmallText(
+                text: "5.0",
+                fontWeight: FontWeight.w500,
+                color: AppColor.sonicSilverColor,
+                size: 11,
+              ),
+              const SizedBox(
+                width: 5,
+              ),
+              Container(
+                width: 6,
+                height: 6,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: AppColor.textGray,
+                ),
+              ),
+              const SizedBox(
+                width: 5,
+              ),
+              SmallText(
+                text: "82 Reviews",
+                size: 11,
+                color: AppColor.sonicSilverColor,
+                fontWeight: FontWeight.w500,
+              ),
+              SizedBox(
+                width: 50,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                    color: AppColor.consultOrange,
+                    borderRadius: BorderRadius.circular(12)),
+                padding:
+                    EdgeInsets.only(left: 15, right: 15, top: 6, bottom: 6),
+                child: Row(
                   children: [
-                    Icon(
-                      Icons.star,
-                      size: 18,
-                      color: AppColor.appYellow,
-                    ),
-                    SizedBox(
-                      width: 4,
-                    ),
-                    SmallText(
-                      text: "5.0",
-                      fontWeight: FontWeight.w500,
-                      color: AppColor.sonicSilverColor,
-                      size: 11,
-                    ),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    Container(
-                      width: 6,
-                      height: 6,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: AppColor.textGray,
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    SmallText(
-                      text: "82 Reviews",
-                      size: 11,
-                      color: AppColor.sonicSilverColor,
-                      fontWeight: FontWeight.w500,
+                    Image.asset(AppAssets.experience),
+                    SizedBox(width: 4,),
+                    NormalText(
+                      text: "10+ Year Exp.",
+                      size: 8,
+                      fontFamily: FontFamily.Rubik,
+                      textOverflow: TextOverflow.ellipsis,
+                      softWarp: true,
+                      color: AppColor.whiteColor,
+                      maxLine: 1,
                     ),
                   ],
                 ),
-                SizedBox(width: 14,),
-                Container(
-                  decoration: BoxDecoration(
-                    color: AppColor.consultOrange,
-                    borderRadius: BorderRadius.circular(12)
-                  ),
-                  padding: EdgeInsets.only(left: 15,right: 15,top: 6,bottom: 6),
-                  child: NormalText(
-                    text: "10+ Year Exp.",
-                    size: 8,
-                    fontFamily: FontFamily.Rubik,
-                    textOverflow: TextOverflow.ellipsis,
-                    softWarp: true,
-                    color: AppColor.whiteColor,
-                    maxLine: 1,
-                  ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget appointentCard(BuildContext context) {
+    return Card(
+      elevation: 0.0,
+      color: AppColor.appblue.withOpacity(0.3),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(4.0),
+      ),
+      child: Padding(
+        padding:
+            const EdgeInsets.only(top: 4.0, bottom: 4.0, left: 14.0, right: 2),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8.0),
+                      child: Container(
+                        color: AppColor.whiteColor,
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.calendar_month,
+                              size: 12,
+                              color: AppColor.appBlack,
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+                            SmallText(
+                              text: "22 Jan 2024",
+                              fontWeight: FontWeight.w500,
+                              size: 12,
+                              color: AppColor.sonicSilverColor,
+                            ),
+                            const SizedBox(
+                              width: 5,
+                            ),
+
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 13,),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 4.0),
+                      child: Image.asset(AppAssets.videocall,height: 21,),
+                    ),
+                    // Icon(
+                    //   Icons.video_call,
+                    //   size: 21,
+                    //   color: AppColor.greenColor,
+                    // ),
+                  ],
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.timelapse,
+                      size: 12,
+                      color: AppColor.appBlack,
+                    ),
+                    SmallText(
+                      text: " 03:00 PM ",
+                      size: 12,
+                      fontFamily: FontFamily.Rubik,
+                      color: AppColor.appBlack,
+                    ),
+                  ],
+                ),
+                NormalText(
+                  text: "Vishavjeet Singh Choudhary",
+                  size: 14,
+                  fontWeight: FontWeight.w500,
+                  color: AppColor.textblack,
+                ),
+                SmallText(
+                  text: "Wedding planner | Decore Specialist",
+                  size: 10,
+                  fontFamily: FontFamily.Rubik,
+                  color: AppColor.sonicSilverColor,
                 ),
               ],
+            ),
+            SizedBox(
+              width: 50,
+            ),
+            Container(
+              width: 90,
+              padding: EdgeInsets.zero,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(4),
+                image: DecorationImage(
+                  image: AssetImage(AppAssets.image),
+                  fit: BoxFit
+                      .cover, // You can change this to other fit options as needed
+                ),
+              ),
             ),
           ],
         ),
       ),
     );
   }
-
-
 }

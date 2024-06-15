@@ -88,6 +88,7 @@ class SettingPage extends StatelessWidget {
                 ),
                 trailing: Transform.scale(
                   scale: 0.6,
+                  alignment: Alignment.centerRight,
                   child: CupertinoSwitch(
                       value: provider.isPrivatAccount,
                       activeColor: AppColor.blueLogin,
@@ -109,6 +110,7 @@ class SettingPage extends StatelessWidget {
                 ),
                 trailing: Transform.scale(
                   scale: 0.6,
+                  alignment: Alignment.centerRight,
                   child: CupertinoSwitch(
                       value: provider.isPrivatAccount,
                       activeColor: AppColor.blueLogin,
@@ -130,6 +132,7 @@ class SettingPage extends StatelessWidget {
                 ),
                 trailing: Transform.scale(
                   scale: 0.6,
+                  alignment: Alignment.centerRight,
                   child: CupertinoSwitch(
                       value: provider.isPrivatAccount,
                       activeColor: AppColor.blueLogin,
@@ -199,8 +202,8 @@ Widget topLayout(BuildContext context) {
         Row(
           children: [
             Container(
-              width: 140,
-              height: 140,
+              width: 100,
+              height: 116,
               padding: const EdgeInsets.symmetric(vertical: 12.0),
               decoration: BoxDecoration(
                 // border: Border.all(color: Colors.black, width: 1),
@@ -270,7 +273,7 @@ Widget topLayout(BuildContext context) {
           ],
         ),
         Container(
-          color: AppColor.lightSilverColor,
+          color: AppColor.lightSilverColor.withOpacity(0.6),
           padding: const EdgeInsets.all(20.0),
           width: double.infinity,
           child: Row(
@@ -290,3 +293,5 @@ Widget topLayout(BuildContext context) {
     ),
   );
 }
+
+

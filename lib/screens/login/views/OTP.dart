@@ -16,77 +16,97 @@ class OTPScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final defaultPinTheme = PinTheme(
-      width: 56,
-      height: 56,
-      textStyle: const TextStyle(fontSize: 20,
-          color: Color.fromRGBO(30, 60, 87, 1),
+      width: 44,
+      height: 44,
+      textStyle:  TextStyle(
+          fontSize: 20,
+          color: AppColor.appBlack  ,
           fontWeight: FontWeight.w600),
       decoration: BoxDecoration(
         border: Border.all(color: AppColor.borderLightGreyColor),
-        borderRadius: BorderRadius.circular(10),
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(6),
       ),
     );
 
-    
     return Scaffold(
-      backgroundColor: AppColor.whiteColor,
-      bottomNavigationBar:  Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30.0,vertical: 40.0),
-        child: Row(
-          children: [
-            Expanded(
-              child: DefaultButton(
-                key: UniqueKey(),
-                // loadingFlag: provider.isLoading,
-                onPressed: () {
-                  context.read<OTPProvider>().phoneTap(context);
-                },
-                text: "Back",
-                textAlign: TextAlign.center,
-                fontWeight: FontWeight.w800,
-                fixedSizeWidth: 0.9,
-                fontColor: AppColor.blackColor,
-                color: AppColor.whiteColor,
-              ),
-            ),
-            SizedBox(width: 12,),
-            Expanded(
-              child: DefaultButton(
-                key: UniqueKey(),
-                // loadingFlag: provider.isLoading,
-                onPressed: () {
-                  context.read<OTPProvider>().homeTap(context);
-                },
-                text: "Verify",
-                textAlign: TextAlign.center,
-                fontWeight: FontWeight.w900,
-                fixedSizeWidth: 0.9,
-                fontColor: AppColor.whiteColor,
-              ),
-            ),
-          ],
-        )
+      backgroundColor: AppColor.pagebg,
+      bottomNavigationBar: Container(
+        height: 275,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(40.0),
+            topLeft: Radius.circular(40.0),
+          ),
+        ),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 28.0,vertical: 0.0),
+            child:     Row(
+              children: [
+                Expanded(
+                  child: DefaultButton(
+                    key: UniqueKey(),
+                    // loadingFlag: provider.isLoading,
+                    onPressed: () {
+                      context.read<OTPProvider>().phoneTap(context);
+                    },
+                    text: "Back",
+                    textAlign: TextAlign.center,
+                    fontWeight: FontWeight.w600,
+                    fixedSizeWidth: 0.9,
+                    fontColor: AppColor.blackColor,
+                    color: AppColor.whiteColor,
+                  ),
+                ),
+                SizedBox(width: 30,),
+                Expanded(
+                  child: DefaultButton(
+                    key: UniqueKey(),
+                    // loadingFlag: provider.isLoading,
+                    onPressed: () {
+                      context.read<OTPProvider>().homeTap(context);
+                    },
+                    text: "Verify",
+                    textAlign: TextAlign.center,
+                    fontWeight: FontWeight.w600,
+                    fixedSizeWidth: 0.9,
+                    fontColor: AppColor.whiteColor,
+                  ),
+                ),
+              ],
+            )
+          ),
+        ),
       ),
+
       body: Consumer<OTPProvider>(
         builder: (context, provider, child) {
           return SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  SizedBox(height: 60,),
-                  Align(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                SizedBox(height: 60,),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: Align(
                     alignment: Alignment.topLeft,
                     child: BigText(
                       text: "Verify Phone",
                       size: 20,
-                      fontWeight: FontWeight.w800,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
-                  SizedBox(height: 20,),
-                  Align(
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: Align(
                     alignment: Alignment.topLeft,
                     child: NormalText(
                       text: "OTP has been sent to +91-8541889529",
@@ -95,41 +115,60 @@ class OTPScreen extends StatelessWidget {
                       color: AppColor.darkGreyColor,
                     ),
                   ),
-                  const SizedBox(
-                    height: 15,
+                ),
+                const SizedBox(
+                  height: 14,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 15.0),
+                  child: Pinput(
+                    defaultPinTheme: defaultPinTheme,
+                    length: 6,
+                    // focusedPinTheme: focusedPinTheme,
+                    // submittedPinTheme: submittedPinTheme,
+                    /*validator: (s) {
+                      return s == '2222' ? null : 'Pin is incorrect';
+                    },*/
+                    pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
+                    showCursor: true,
+                    onCompleted: (pin) => print(pin),
                   ),
-
-                  Padding(padding: EdgeInsets.symmetric(horizontal: 15.0),
-                    child: Pinput(
-                      defaultPinTheme: defaultPinTheme,
-                      // focusedPinTheme: focusedPinTheme,
-                      // submittedPinTheme: submittedPinTheme,
-                      /*validator: (s) {
-                        return s == '2222' ? null : 'Pin is incorrect';
-                      },*/
-                      pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
-                      showCursor: true,
-                      onCompleted: (pin) => print(pin),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  Align(
+                ),
+                const SizedBox(
+                  height: 12,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: Align(
                     alignment: Alignment.topLeft,
-                    child: NormalText(
-                      text: "Didn’t receive code? Resend OTP",
-                      size: 14,
-                      fontWeight: FontWeight.w500,
-                      color: AppColor.darkGreyColor,
+                    child: Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(text: 'Didn’t receive code? ',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w400,
+                            color: AppColor.darkGreyColor,
+                          )
+                          ),
+                          TextSpan(
+                            text: 'Resend OTP',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                              color: AppColor.blueLogin,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 25,
-                  ),
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
 
-                ],
-              ),
+              ],
             ),
           );
         },
