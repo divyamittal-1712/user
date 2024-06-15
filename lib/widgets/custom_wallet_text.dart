@@ -12,6 +12,8 @@ class WalletTileText extends StatelessWidget {
   final String? subTitle;
   List<Widget>? actions;
   final IconData leading;
+  FontWeight? fontWeight;
+  double? fontSize;
 
   WalletTileText({super.key,
     this.color,
@@ -20,6 +22,8 @@ class WalletTileText extends StatelessWidget {
     this.subTitle,
     required this.onTap,
     this.textColor,
+    this.fontWeight,
+    this.fontSize
   });
 
   @override
@@ -31,19 +35,19 @@ class WalletTileText extends StatelessWidget {
         children: [
           NormalText(
             text: title ?? '',
-            size: 18,
-            fontWeight: FontWeight.w600,
-            color: textColor ?? AppColor.appBlack,
+            size: fontSize ?? 13,
+            fontWeight: fontWeight ?? FontWeight.w500,
+            color: textColor ?? AppColor.blackColor,
           ),
           SmallText(
             text: subTitle ?? '',
-            size: 14,
-            fontWeight: FontWeight.w400,
-            color: textColor ?? AppColor.midGray,
+            size: fontSize ?? 12,
+            fontWeight: fontWeight ?? FontWeight.w400,
+            color: textColor ?? AppColor.blackColor,
           ),
         ],
       ),
-      trailing: Icon(Icons.arrow_forward_ios_rounded,color: AppColor.darkGreyColor,size: 14,),
+      trailing: Icon(Icons.arrow_forward_ios_rounded,color: AppColor.quickSliverColor,size: 16,),
       onTap: onTap,
 
     );

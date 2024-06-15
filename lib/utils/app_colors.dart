@@ -58,4 +58,10 @@ class AppColor{
   static Color blackOliveColor= const Color(0xff3F3F3F);
   static Color lightSilverColor= const Color(0xffD9D9D9);
   static Color auroMetalSaurusColor= const Color(0xff687081);
+  static Color slateGrayColor= const Color(0xff8B8373);
+  static Color graniteGrayColor= const Color(0xff636363);
+  static Color brightGrayColor= const Color(0xffEDEDED);
+  static Color raisinBlackColor= const Color(0xff262626);
+  static Color quickSliverColor= const Color(0xffA6A6A6);
+  static Color davyFrayColor= const Color(0xff525252);
 }
