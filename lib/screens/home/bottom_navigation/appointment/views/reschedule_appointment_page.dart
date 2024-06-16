@@ -4,6 +4,7 @@ import 'package:user_app/screens/home/bottom_navigation/appointment/provider/res
 import 'package:user_app/screens/home/bottom_navigation/appointment/views/reschedule_appointment_detail_page.dart';
 
 import '../../../../../utils/app_colors.dart';
+import '../../../../../widgets/custom_text_filed.dart';
 import '../../../../../widgets/default_button.dart';
 import '../../../../../widgets/text_widget.dart';
 import '../../../app_bar/MyAppBar.dart';
@@ -41,187 +42,186 @@ class _RescheduleAppointmentPageState extends State<RescheduleAppointmentPage> {
           },
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(30.0),
-        child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                NormalText(
+      body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 22.0,top: 24,bottom: 24),
+                child: NormalText(
                   text: "Reason For Rescheduled",
                   size: 14,
                   color: AppColor.blackColor,
                   fontWeight: FontWeight.w500,
                 ),
-                const SizedBox(height: 12),
+              ),
+              RadioListTile<String>(
+                visualDensity: const VisualDensity(
+                    horizontal: -4, vertical: -4),
+                title: NormalText(
+                  text: "I\'m having a schedule clash",
+                  size: 13,
+                  color: AppColor.normalTextColor,
+                  fontWeight: FontWeight.w500,
+                ),
+                value: 'I\'m having a schedule clash',
+                groupValue: _selectedOption,
+                onChanged: (String? value) {
+                  setState(() {
+                    _selectedOption = value!;
+                  });
+                },
+              ),
+              RadioListTile<String>(
+                visualDensity: const VisualDensity(
+                    horizontal: -4, vertical: -4),
+                title: NormalText(
+                  text: "I\'m not available on schedule",
+                  size: 13,
+                  color: AppColor.normalTextColor,
+                  fontWeight: FontWeight.w500,
+                ),
+                value: 'I\'m not available on schedule',
+                groupValue: _selectedOption,
+                onChanged: (String? value) {
+                  setState(() {
+                    _selectedOption = value!;
+                  });
+                },
+              ),
+              RadioListTile<String>(
+                visualDensity: const VisualDensity(
+                    horizontal: -4, vertical: -4),
+                title: NormalText(
+                  text: "I have an activity that can\'t be left behind",
+                  size: 13,
+                  color: AppColor.normalTextColor,
+                  fontWeight: FontWeight.w500,
+                ),
+                value: 'I have an activity that can\'t be left behind',
+                groupValue: _selectedOption,
+                onChanged: (String? value) {
+                  setState(() {
+                    _selectedOption = value!;
+                  });
+                },
+              ),
+              RadioListTile<String>(
+                visualDensity: const VisualDensity(
+                    horizontal: -4, vertical: -4),
+                title: NormalText(
+                  text: "I don\'t want to tell",
+                  size: 13,
+                  color: AppColor.normalTextColor,
+                  fontWeight: FontWeight.w500,
+                ),
+                value: 'I don\'t want to tell',
+                groupValue: _selectedOption,
+                onChanged: (String? value) {
+                  setState(() {
+                    _selectedOption = value!;
+                  });
+                },
+              ),
+              RadioListTile<String>(
+                visualDensity: const VisualDensity(
+                    horizontal: -4, vertical: -4),
+                title: NormalText(
+                  text: "Changes of plans",
+                  size: 13,
+                  color: AppColor.normalTextColor,
+                  fontWeight: FontWeight.w500,
+                ),
+                value: 'Changes of plans',
+                groupValue: _selectedOption,
+                onChanged: (String? value) {
+                  setState(() {
+                    _selectedOption = value!;
+                  });
+                },
+              ),
+              RadioListTile<String>(
+                visualDensity: const VisualDensity(
+                    horizontal: -4, vertical: -4),
+                title: NormalText(
+                  text: "Others",
+                  size: 13,
+                  color: AppColor.normalTextColor,
+                  fontWeight: FontWeight.w500,
+                ),
+                value: 'Others',
+                groupValue: _selectedOption,
+                onChanged: (String? value) {
+                  setState(() {
+                    _selectedOption = value!;
+                  });
+                },
+              ),
 
-                RadioListTile<String>(
-                  visualDensity: const VisualDensity(
-                      horizontal: -4, vertical: -4),
-                  title: NormalText(
-                    text: "I\'m having a schedule clash",
-                    size: 13,
-                    color: AppColor.normalTextColor,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  value: 'I\'m having a schedule clash',
-                  groupValue: _selectedOption,
-                  onChanged: (String? value) {
-                    setState(() {
-                      _selectedOption = value!;
-                    });
-                  },
-                ),
-                RadioListTile<String>(
-                  visualDensity: const VisualDensity(
-                      horizontal: -4, vertical: -4),
-                  title: NormalText(
-                    text: "I\'m not available on schedule",
-                    size: 13,
-                    color: AppColor.normalTextColor,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  value: 'I\'m not available on schedule',
-                  groupValue: _selectedOption,
-                  onChanged: (String? value) {
-                    setState(() {
-                      _selectedOption = value!;
-                    });
-                  },
-                ),
-                RadioListTile<String>(
-                  visualDensity: const VisualDensity(
-                      horizontal: -4, vertical: -4),
-                  title: NormalText(
-                    text: "I have an activity that can\'t be left behind",
-                    size: 13,
-                    color: AppColor.normalTextColor,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  value: 'I have an activity that can\'t be left behind',
-                  groupValue: _selectedOption,
-                  onChanged: (String? value) {
-                    setState(() {
-                      _selectedOption = value!;
-                    });
-                  },
-                ),
-                RadioListTile<String>(
-                  visualDensity: const VisualDensity(
-                      horizontal: -4, vertical: -4),
-                  title: NormalText(
-                    text: "I don\'t want to tell",
-                    size: 13,
-                    color: AppColor.normalTextColor,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  value: 'I don\'t want to tell',
-                  groupValue: _selectedOption,
-                  onChanged: (String? value) {
-                    setState(() {
-                      _selectedOption = value!;
-                    });
-                  },
-                ),
-                RadioListTile<String>(
-                  visualDensity: const VisualDensity(
-                      horizontal: -4, vertical: -4),
-                  title: NormalText(
-                    text: "Changes of plans",
-                    size: 13,
-                    color: AppColor.normalTextColor,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  value: 'Changes of plans',
-                  groupValue: _selectedOption,
-                  onChanged: (String? value) {
-                    setState(() {
-                      _selectedOption = value!;
-                    });
-                  },
-                ),
-                RadioListTile<String>(
-                  visualDensity: const VisualDensity(
-                      horizontal: -4, vertical: -4),
-                  title: NormalText(
-                    text: "Others",
-                    size: 13,
-                    color: AppColor.normalTextColor,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  value: 'Others',
-                  groupValue: _selectedOption,
-                  onChanged: (String? value) {
-                    setState(() {
-                      _selectedOption = value!;
-                    });
-                  },
-                ),
-
-                /*_buildRadioButton('I\'m having a schedule clash'),
-            _buildRadioButton('I\'m not available on schedule'),
-            _buildRadioButton('I have an activity that can\'t be left behind'),
-            _buildRadioButton('I don\'t want to tell'),
-            _buildRadioButton('Changes of plans'),
-            _buildRadioButton('Others'),*/
-                const SizedBox(height: 16),
-                NormalText(
+              /*_buildRadioButton('I\'m having a schedule clash'),
+          _buildRadioButton('I\'m not available on schedule'),
+          _buildRadioButton('I have an activity that can\'t be left behind'),
+          _buildRadioButton('I don\'t want to tell'),
+          _buildRadioButton('Changes of plans'),
+          _buildRadioButton('Others'),*/
+              const SizedBox(height: 16),
+              Padding(
+                padding: const EdgeInsets.only(left: 22.0,top: 24),
+                child: NormalText(
                   text: "Reason",
                   size: 14,
                   color: AppColor.blackColor,
                   fontWeight: FontWeight.w500,
                 ),
-                const SizedBox(height: 10),
-                TextField(
-                  controller: _reasonController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: AppColor.appBlack, // Set the border color here
-                        width: 0.1,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 10),
+                child: Container(
+                  height: 140,
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                          width: 1, color: AppColor.borderLightGreyColor),
+                      color: AppColor.whiteColor,
+                      borderRadius: BorderRadius.circular(4)),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 6.0),
+                    child: CustomTextField(
+                      controller: _reasonController,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "Reason For Rescheduled",
+                        counterText: "",
+                        hintStyle: TextStyle(color: AppColor.borderLightGreyColor,fontWeight: FontWeight.w400),
+                        labelStyle: TextStyle(color: AppColor.appBlack),
                       ),
+                      // validator: validateMobileNumber,
                     ),
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: AppColor.blackOliveColor,
-                        // Set the enabled border color
-                        width: 0.5,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: AppColor.blackOliveColor,
-                        // Set the focused border color
-                        width: 1.0,
-                      ),
-                    ),
-                    labelText: 'Reason For Rescheduled',
-                    filled: true,
-                    fillColor: AppColor.whiteColor,
                   ),
-                  maxLines: 4,
-                  textAlignVertical: TextAlignVertical.top,
                 ),
-                const SizedBox(height: 16),
-
-                DefaultButton(
-                  key: UniqueKey(),
-                  // loadingFlag: provider.isLoading,
-                  onPressed: () {
-                    Navigator.of(context)
-                        .pushReplacementNamed(
-                        RescheduleAppointmentDetailPage.routeName);
-                  },
-                  text: "Next",
-                  fontSize: 16,
-                  textAlign: TextAlign.center,
-                  fontWeight: FontWeight.w500,
-                  fixedSizeWidth: 0.9,
-                  fontColor: AppColor.whiteColor,
+              ),
+              const SizedBox(height: 16),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 56.0),
+                  child: DefaultButton(
+                    key: UniqueKey(),
+                    // loadingFlag: provider.isLoading,
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushReplacementNamed(
+                          RescheduleAppointmentDetailPage.routeName);
+                    },
+                    text: "Next",
+                    fontSize: 16,
+                    textAlign: TextAlign.center,
+                    fontWeight: FontWeight.w500,
+                    fixedSizeWidth: 0.9,
+                    fontColor: AppColor.whiteColor,
+                  ),
                 ),
-              ],
-            )),
-      ),
+              ),
+            ],
+          )),
     );
   }
 

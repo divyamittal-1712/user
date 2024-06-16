@@ -209,9 +209,11 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                           ],
                         ),
                         const SizedBox(
-                          width: 30,
+                          width: 16,
                         ),
-                        PopupMenuButton(onSelected: (String value) {
+                        PopupMenuButton(
+                            iconColor: AppColor.darkGreyColor,
+                            onSelected: (String value) {
                           if (value == 'Cancel Event') {
                             _showCancelAppointmentBottomSheet(context);
                           } else if (value == 'Reschedule Event') {
