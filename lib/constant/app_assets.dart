@@ -20,6 +20,7 @@ class AppAssets {
   static const String experience = '${_imagePath}experience.png';
   static const String top_experience = '${_imagePath}top_experience.png';
   static const String videocall = '${_imagePath}videocallbutton.png';
+  static const String rescheduleSuccessImage = '${_imagePath}reschedule_success_image.png';
 
 }
 

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:user_app/constant/app_assets.dart';
 import 'package:user_app/screens/home/bottom_navigation/appointment/views/book_appointment_page.dart';
+import 'package:user_app/utils/font_family.dart';
 
 import '../../../../../utils/app_colors.dart';
 import '../../../../../widgets/default_button.dart';
@@ -31,7 +32,7 @@ class AppointmentDetailPage extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 12),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -57,36 +58,40 @@ class AppointmentDetailPage extends StatelessWidget {
                             NormalText(
                               text: "Rajendra Rao",
                               size: 14,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w500,
                               textOverflow: TextOverflow.ellipsis,
                               softWarp: true,
                               maxLine: 1,
+                              color: AppColor.textblack,
+                              fontFamily: FontFamily.Rubik,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 3,
                             ),
                             NormalText(
                               text: "Destination Wedding Planner",
                               size: 10,
-                              fontWeight: FontWeight.w700,
-                              color: AppColor.darkGreyColor,
+                              fontWeight: FontWeight.w400,
+                              color: AppColor.sonicSilverColor,
                               textOverflow: TextOverflow.ellipsis,
                               softWarp: true,
                               maxLine: 1,
+                              fontFamily: FontFamily.Rubik,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 3,
                             ),
                             NormalText(
                               text: "Jaipur | Rajasthan",
                               size: 10,
-                              fontWeight: FontWeight.w700,
-                              color: AppColor.darkGreyColor,
+                              fontWeight: FontWeight.w400,
+                              color: AppColor.sonicSilverColor,
                               textOverflow: TextOverflow.ellipsis,
                               softWarp: true,
                               maxLine: 1,
+                              fontFamily: FontFamily.Rubik,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 5,
                             ),
                             Row(
@@ -103,8 +108,8 @@ class AppointmentDetailPage extends StatelessWidget {
                                     ),
                                     SmallText(
                                       text: "5.0",
-                                      fontWeight: FontWeight.w900,
-                                      color: AppColor.normalTextColor,
+                                      fontWeight: FontWeight.w500,
+                                      color: AppColor.sonicSilverColor,
                                       size: 11,
                                     ),
                                     const SizedBox(
@@ -123,18 +128,21 @@ class AppointmentDetailPage extends StatelessWidget {
                                     ),
                                     SmallText(
                                       text: "82 Reviews",
-                                      size: 12,
-                                      color: AppColor.normalTextColor,
+                                      size: 11,
+                                      color: AppColor.sonicSilverColor,
+                                      fontWeight: FontWeight.w500,
                                     ),
                                   ],
                                 ),
                                 NormalText(
                                   text: "10+ Year Exp.",
                                   size: 11,
-                                  fontWeight: FontWeight.w700,
+                                  fontWeight: FontWeight.w400,
                                   textOverflow: TextOverflow.ellipsis,
                                   softWarp: true,
                                   maxLine: 1,
+                                  fontFamily: FontFamily.Rubik,
+                                  color: AppColor.darkBlueGrayColor,
                                 ),
                               ],
                             ),
@@ -163,7 +171,7 @@ class AppointmentDetailPage extends StatelessWidget {
                           text: 'Scheduled Appointment',
                           size: 16,
                           color: AppColor.textblack,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w600,
                         ),
                         const SizedBox(
                           height: 8,
@@ -171,7 +179,7 @@ class AppointmentDetailPage extends StatelessWidget {
                         NormalText(
                           text: "Today | 22 Dec 2023",
                           size: 13,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w600,
                           color: AppColor.consultOrange,
                         ),
                         const SizedBox(
@@ -180,7 +188,7 @@ class AppointmentDetailPage extends StatelessWidget {
                         NormalText(
                           text: "09:00AM-08:00PM (30 Min)",
                           size: 13,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w600,
                           color: AppColor.consultOrange,
                         ),
                       ],
@@ -225,7 +233,7 @@ class AppointmentDetailPage extends StatelessWidget {
                                   text: 'Messaging',
                                   size: 16,
                                   color: AppColor.textblack,
-                                  fontWeight: FontWeight.w900,
+                                  fontWeight: FontWeight.w600,
                                 ),
                                 const SizedBox(
                                   height: 5,
@@ -233,8 +241,8 @@ class AppointmentDetailPage extends StatelessWidget {
                                 NormalText(
                                   text: "Chat with Consultant",
                                   size: 11,
-                                  fontWeight: FontWeight.w700,
-                                  color: AppColor.darkGreyColor,
+                                  fontWeight: FontWeight.w500,
+                                  color: AppColor.textblack,
                                   textOverflow: TextOverflow.ellipsis,
                                   softWarp: true,
                                   maxLine: 1,
@@ -254,7 +262,7 @@ class AppointmentDetailPage extends StatelessWidget {
                                   text: '₹20',
                                   size: 16,
                                   color: AppColor.textblack,
-                                  fontWeight: FontWeight.w900,
+                                  fontWeight: FontWeight.w500,
                                 ),
                                 const SizedBox(
                                   height: 5,
@@ -262,7 +270,7 @@ class AppointmentDetailPage extends StatelessWidget {
                                 NormalText(
                                   text: "per 30 min",
                                   size: 11,
-                                  fontWeight: FontWeight.w700,
+                                  fontWeight: FontWeight.w500,
                                   color: AppColor.darkGreyColor,
                                   textOverflow: TextOverflow.ellipsis,
                                   softWarp: true,
@@ -285,7 +293,7 @@ class AppointmentDetailPage extends StatelessWidget {
                     text: 'About Events',
                     size: 16,
                     color: AppColor.textblack,
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w700,
                     textOverflow: TextOverflow.ellipsis,
                     softWarp: true,
                     maxLine: 1,
@@ -296,9 +304,10 @@ class AppointmentDetailPage extends StatelessWidget {
                 text:
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto? Voluptates obcaecati nesciunt consequuntur. Exercitationem laudantium magni eaque expedita atque velit, temporibus omnis eveniet! Debitis, ipsa. Iste consequatur earum, rerum fuga aspernatur veniam perspiciatis hic eum quaerat adipisci officia pariatur veritatis quibusdam! Molestiae, sunt atque facilis tenetur amet nihil repudiandae! ",
                 size: 12,
-                fontWeight: FontWeight.w700,
-                color: AppColor.darkGreyColor,
+                fontWeight: FontWeight.w400,
+                color: AppColor.quickSliverColor,
               ),
+              const SizedBox(height: 20,),
               Padding(
                 padding:
                     const EdgeInsets.symmetric(vertical: 18.0, horizontal: 12),
@@ -310,9 +319,10 @@ class AppointmentDetailPage extends StatelessWidget {
                   },
                   text: "Message (Start at 6:00PM)",
                   textAlign: TextAlign.center,
-                  fontWeight: FontWeight.w900,
-                  fixedSizeWidth: 0.9,
+                  fontWeight: FontWeight.w600,
+                  fixedSizeWidth: 0.8,
                   fontColor: AppColor.whiteColor,
+                  fontSize: 15,
                 ),
               ),
             ],

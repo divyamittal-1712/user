@@ -225,20 +225,6 @@ class _RescheduleAppointmentPageState extends State<RescheduleAppointmentPage> {
     );
   }
 
-  Widget _buildRadioButton(String value) {
-    return ListTile(
-      title: Text(value),
-      leading: Radio<String>(
-        value: value,
-        groupValue: _selectedReason,
-        onChanged: (String? newValue) {
-          setState() {
-            _selectedReason = newValue;
-          }
-        },
-      ),
-    );
-  }
 
 
 }

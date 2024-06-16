@@ -2,6 +2,7 @@ import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter/material.dart';
 import 'package:user_app/constant/app_assets.dart';
 import 'package:user_app/screens/home/bottom_navigation/consultant/views/consultant_review_all_page.dart';
+import 'package:user_app/utils/font_family.dart';
 import 'package:user_app/widgets/text_widget.dart';
 
 import '../../../../../utils/app_colors.dart';
@@ -49,7 +50,7 @@ class ConsultantDetailPage extends StatelessWidget {
                             text: 'Mr. Shailendra Shekhawat',
                             size: 15,
                             color: AppColor.textblack,
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w500,
                             textOverflow: TextOverflow.ellipsis,
                             softWarp: true,
                             maxLine: 1,
@@ -60,10 +61,11 @@ class ConsultantDetailPage extends StatelessWidget {
                           NormalText(
                             text: "Destination Wedding Planner",
                             size: 12,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w600,
                             textOverflow: TextOverflow.ellipsis,
                             softWarp: true,
                             maxLine: 1,
+                            color: AppColor.normalTextColor,
                           ),
                           const SizedBox(
                             height: 5,
@@ -71,8 +73,8 @@ class ConsultantDetailPage extends StatelessWidget {
                           NormalText(
                             text: "Jaipur | Rajasthan",
                             size: 11,
-                            fontWeight: FontWeight.w700,
-                            color: AppColor.darkGreyColor,
+                            fontWeight: FontWeight.w400,
+                            color: AppColor.normalTextColor,
                             textOverflow: TextOverflow.ellipsis,
                             softWarp: true,
                             maxLine: 1,
@@ -84,7 +86,7 @@ class ConsultantDetailPage extends StatelessWidget {
                           NormalText(
                             text: "Wedding planner | Decore Planner",
                             size: 11,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w400,
                             color: AppColor.darkGreyColor,
                             textOverflow: TextOverflow.ellipsis,
                             softWarp: true,
@@ -106,8 +108,9 @@ class ConsultantDetailPage extends StatelessWidget {
                               ),
                               SmallText(
                                 text: "5.0",
-                                fontWeight: FontWeight.w600,
-                                size: 12,
+                                fontWeight: FontWeight.w400,
+                                size: 11,
+                                color: AppColor.blackColor,
                               ),
                               const SizedBox(
                                 width: 5,
@@ -125,7 +128,8 @@ class ConsultantDetailPage extends StatelessWidget {
                               ),
                               SmallText(
                                 text: "82 Reviews",
-                                size: 12,
+                                size: 11,
+                                color: AppColor.normalTextColor,
                               ),
                             ],
                           ),
@@ -134,16 +138,17 @@ class ConsultantDetailPage extends StatelessWidget {
                           ),
                           Center(
                             child: DefaultButton(
-                              height: 40,
+                              height: 30,
                               width: 110,
                               key: UniqueKey(),
                               onPressed: () {},
                               text: "Let's Talk",
-                              fontSize: 13.5,
+                              fontSize: 13,
                               textAlign: TextAlign.center,
-                              fontWeight: FontWeight.w900,
+                              fontWeight: FontWeight.w600,
                               fixedSizeWidth: 0.9,
                               fontColor: AppColor.whiteColor,
+                              color: AppColor.raisinBlackColor,
                             ),
                           )
                         ],
@@ -164,10 +169,11 @@ class ConsultantDetailPage extends StatelessWidget {
                           NormalText(
                             text: "Experience",
                             size: 13,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w600,
                             textOverflow: TextOverflow.ellipsis,
                             softWarp: true,
                             maxLine: 1,
+                            color: AppColor.raisinBlackColor,
                           ),
                           const SizedBox(
                             height: 15,
@@ -175,7 +181,7 @@ class ConsultantDetailPage extends StatelessWidget {
                           NormalText(
                             text: "10+ Years",
                             size: 11,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w600,
                             color: AppColor.consultOrange,
                             textOverflow: TextOverflow.ellipsis,
                             softWarp: true,
@@ -196,10 +202,11 @@ class ConsultantDetailPage extends StatelessWidget {
                             NormalText(
                               text: "Clients",
                               size: 13,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w600,
                               textOverflow: TextOverflow.ellipsis,
                               softWarp: true,
                               maxLine: 1,
+                              color: AppColor.raisinBlackColor,
                             ),
                             const SizedBox(
                               height: 15,
@@ -207,7 +214,7 @@ class ConsultantDetailPage extends StatelessWidget {
                             NormalText(
                               text: "5000+",
                               size: 11,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w600,
                               color: AppColor.consultOrange,
                               textOverflow: TextOverflow.ellipsis,
                               softWarp: true,
@@ -229,10 +236,11 @@ class ConsultantDetailPage extends StatelessWidget {
                           NormalText(
                             text: "Ratings",
                             size: 13,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w600,
                             textOverflow: TextOverflow.ellipsis,
                             softWarp: true,
                             maxLine: 1,
+                            color: AppColor.raisinBlackColor,
                           ),
                           const SizedBox(
                             height: 15,
@@ -240,7 +248,7 @@ class ConsultantDetailPage extends StatelessWidget {
                           NormalText(
                             text: "4.8",
                             size: 11,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w600,
                             color: AppColor.consultOrange,
                             textOverflow: TextOverflow.ellipsis,
                             softWarp: true,
@@ -260,7 +268,7 @@ class ConsultantDetailPage extends StatelessWidget {
                     text: 'About',
                     size: 16,
                     color: AppColor.textblack,
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w700,
                     textOverflow: TextOverflow.ellipsis,
                     softWarp: true,
                     maxLine: 1,
@@ -270,9 +278,9 @@ class ConsultantDetailPage extends StatelessWidget {
               NormalText(
                 text:
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto? Voluptates obcaecati nesciunt consequuntur. Exercitationem laudantium magni eaque expedita atque velit, temporibus omnis eveniet! Debitis, ipsa. Iste consequatur earum, rerum fuga aspernatur veniam perspiciatis hic eum quaerat adipisci officia pariatur veritatis quibusdam! Molestiae, sunt atque facilis tenetur amet nihil repudiandae! ",
-                size: 12,
+                size: 11,
                 fontWeight: FontWeight.w700,
-                color: AppColor.darkGreyColor,
+                color: AppColor.auroMetalSaurusColor,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -299,7 +307,7 @@ class ConsultantDetailPage extends StatelessWidget {
                           text: 'Working Time',
                           size: 16,
                           color: AppColor.textblack,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w700,
                         ),
                         const SizedBox(
                           height: 5,
@@ -307,7 +315,7 @@ class ConsultantDetailPage extends StatelessWidget {
                         NormalText(
                           text: "Monday-Friday, 09:00AM-08:00PM",
                           size: 13,
-                          fontWeight: FontWeight.w900,
+                          fontWeight: FontWeight.w600,
                           color: AppColor.consultOrange,
                         ),
                       ],
@@ -324,7 +332,8 @@ class ConsultantDetailPage extends StatelessWidget {
                   NormalText(
                     text: "Reviews",
                     size: 15,
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w600,
+                    color: AppColor.textblack,
                   ),
                   InkWell(
                     onTap: (){
@@ -334,8 +343,9 @@ class ConsultantDetailPage extends StatelessWidget {
                     child: NormalText(
                       text: "View All",
                       size: 13,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                       color: AppColor.consultOrange,
+                      fontFamily: FontFamily.Rubik,
                     ),
                   ),
                 ],
@@ -363,114 +373,63 @@ class ConsultantDetailPage extends StatelessWidget {
   }
 
   Widget featureconsult(BuildContext context) {
-    return Card(
-      color: AppColor.whiteColor,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 12),
-        child: Row(
-          children: [
-            Image.asset(
-              AppAssets.consultantProfilePhoto,
-              height: 70,
-              width: 70,
-            ),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  NormalText(
-                    text: "Rajendra Rao",
-                    size: 14,
-                    fontWeight: FontWeight.w700,
-                    textOverflow: TextOverflow.ellipsis,
-                    softWarp: true,
-                    maxLine: 1,
-                  ),
-                  SizedBox(
-                    height: 3,
-                  ),
-                  NormalText(
-                    text: "Destination Wedding Planner",
-                    size: 10,
-                    fontWeight: FontWeight.w700,
-                    color: AppColor.darkGreyColor,
-                    textOverflow: TextOverflow.ellipsis,
-                    softWarp: true,
-                    maxLine: 1,
-                  ),
-                  SizedBox(
-                    height: 3,
-                  ),
-                  NormalText(
-                    text: "Jaipur | Rajasthan",
-                    size: 10,
-                    fontWeight: FontWeight.w700,
-                    color: AppColor.darkGreyColor,
-                    textOverflow: TextOverflow.ellipsis,
-                    softWarp: true,
-                    maxLine: 1,
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Row(
-                    children: [
-                      Row(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 12),
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 12.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 35,
+                      width: 35,
+                      child: CircleAvatar(
+                        backgroundImage: AssetImage(AppAssets.consultantProfilePhoto),
+                        backgroundColor: AppColor.whiteColor,
+                        maxRadius: 35,
+                        minRadius: 35,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Icon(
-                            Icons.star,
-                            size: 18,
-                            color: AppColor.appYellow,
+                          NormalText(
+                              text: "Satyam Kumar",
+                              size: 12,
+                              textOverflow: TextOverflow.ellipsis,
+                              // softWarp: true,
+                              maxLine: 1,
+                              fontWeight: FontWeight.w600,
+                              color: AppColor.textblack
                           ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          SmallText(
-                            text: "5.0",
-                            fontWeight: FontWeight.w900,
-                            color: AppColor.normalTextColor,
-                            size: 11,
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          Container(
-                            width: 6,
-                            height: 6,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: AppColor.textGray,
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          SmallText(
-                            text: "82 Reviews",
-                            size: 12,
-                            color: AppColor.normalTextColor,
+                          const SizedBox(height: 3,),
+                          NormalText(
+                              text: "23 Jan 2024",
+                              size: 9,
+                              fontWeight: FontWeight.w500,
+                              color: AppColor.normalTextColor
                           ),
                         ],
                       ),
-                      SizedBox(
-                        width: 14,
-                      ),
-                      NormalText(
-                        text: "10+ Year Exp.",
-                        size: 11,
-                        fontWeight: FontWeight.w700,
-                        textOverflow: TextOverflow.ellipsis,
-                        softWarp: true,
-                        maxLine: 1,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            )
-          ],
+                    )
+                  ],
+                ),
+                const SizedBox(height: 8,),
+                NormalText(
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. \n Iusto eligendi magnam laboriosam \n debitis incidunt aperiam non alias id magni vitae?",
+                    size: 10,
+                    fontWeight: FontWeight.w500,
+                    color: AppColor.normalTextColor
+                ),
+              ],
+            ),
+
         ),
       ),
     );
