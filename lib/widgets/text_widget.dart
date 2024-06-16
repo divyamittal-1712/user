@@ -38,7 +38,7 @@ class NormalText extends StatelessWidget {
       style: TextStyle(
         height: lineHeight??1.3,
           decoration: textDecoration,
-          color: color ?? Colors.black,
+          color: color ??  AppColor.appBlack,
           fontWeight: fontWeight ?? FontWeight.w400,
           fontFamily: fontFamily ?? FontFamily.Manrope,
           fontSize: size ?? 16+5),
@@ -78,7 +78,7 @@ class BigText extends StatelessWidget {
       overflow: textOverflow,
       style: TextStyle(
         height: lineHeight??1.3,
-          color: color ?? Colors.black,
+          color: color ?? AppColor.appBlack,
           fontFamily: FontFamily.Manrope,
           fontWeight: fontWeight ?? FontWeight.w600,
           fontSize: size ?? 22+5),

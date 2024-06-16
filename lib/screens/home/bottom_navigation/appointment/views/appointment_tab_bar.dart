@@ -100,7 +100,7 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
         padding: EdgeInsets.zero,
         itemBuilder: (BuildContext context, int index) {
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Column(
               children: [
                 InkWell(
@@ -237,8 +237,8 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                   ),
                 ),
                 Divider(
-                  indent: 10,
-                  endIndent: 10,
+                  indent: 40,
+                  endIndent: 50,
                   thickness: 1.0,
                   color: AppColor.borderLightGreyColor,
                 ),

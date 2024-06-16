@@ -18,6 +18,13 @@ class GetStartedScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final List<String> _imageUrls = [
+      'assets/images/slider_one.png',
+      'assets/images/slider_two.png',
+      'assets/images/slider_three.png',
+    ];
+
     SizeConfig.init(context);
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
@@ -30,10 +37,10 @@ class GetStartedScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 CarouselSlider.builder(
-                  itemCount: 3,
+                  itemCount: _imageUrls.length,
                   itemBuilder: (BuildContext context,
                       int index, int d) {
-                    return sliderTile(context,AppAssets.phoneBack);
+                    return sliderTile(context,_imageUrls[index]);
                   },
                   options: CarouselOptions(
                     autoPlay: true,
@@ -51,22 +58,22 @@ class GetStartedScreen extends StatelessWidget {
                   child: BigText(
                     text: "Find the best consultants",
                     fontWeight: FontWeight.w700,
-                    size: 24,
+                    size: 19,
                   ),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 4,
                 ),
                 Align(
                   alignment: Alignment.center,
                   child: NormalText(
                     text: "Choose the best cunsultant you want, for your event",
-                    color: AppColor.darkGreyColor,
+                    color: AppColor.textGrey,
                     fontWeight: FontWeight.w500,
-                    size: 14
+                    size: 11,
                   ),
                 ),
-                const SizedBox(height: 30,),
+                const SizedBox(height: 16,),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 40.0),
                   child: DefaultButton(

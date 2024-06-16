@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:user_app/utils/font_family.dart';
 import '../../../constant/app_assets.dart';
 import '../../../utils/app_colors.dart';
 import '../../../utils/size_config.dart';
@@ -20,22 +21,34 @@ class PhoneScreen extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: AppColor.whiteColor,
-      bottomNavigationBar:  Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30.0,vertical: 40.0),
-        child: DefaultButton(
-          key: UniqueKey(),
-          // loadingFlag: provider.isLoading,
-          onPressed: () {
-            context.read<PhoneProvider>().otpTap(context);
-          },
-          text: "Continue",
-          textAlign: TextAlign.center,
-          fontWeight: FontWeight.w900,
-          fixedSizeWidth: 0.9,
-          fontColor: AppColor.whiteColor,
+      backgroundColor: AppColor.pagebg,
+      bottomNavigationBar: Container(
+          height: 275,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(40.0),
+                topLeft: Radius.circular(40.0),
+            ),
+          ),
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 28.0,vertical: 0.0),
+              child: DefaultButton(
+              key: UniqueKey(),
+              // loadingFlag: provider.isLoading,
+              onPressed: () {
+                context.read<PhoneProvider>().otpTap(context);
+              },
+              text: "Continue",
+              textAlign: TextAlign.center,
+              fontWeight: FontWeight.w600,
+              fixedSizeWidth: 0.9,
+              fontColor: AppColor.whiteColor,
+                        ),
+            ),
+          ),
         ),
-      ),
       body: Consumer<PhoneProvider>(
         builder: (context, provider, child) {
           return SingleChildScrollView(
@@ -46,21 +59,21 @@ class PhoneScreen extends StatelessWidget {
                   height: 60,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 16.0),
+                  padding: const EdgeInsets.only(left: 20.0),
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: BigText(
                       text: "Enter Your Phone Number",
                       size: 20,
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 5,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 16.0),
+                  padding: const EdgeInsets.only(left: 20.0),
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: NormalText(
@@ -72,10 +85,10 @@ class PhoneScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 12,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Container(
                     height: 55,
                     decoration: BoxDecoration(
@@ -97,7 +110,7 @@ class PhoneScreen extends StatelessWidget {
                             decoration: InputDecoration(
                               border: InputBorder.none,
                               hintText: "+91",
-                              labelStyle: TextStyle(color: AppColor.textGrey),
+                              labelStyle: TextStyle(color: AppColor.textGrey,),
                             ),
                             style: TextStyle(
                               color: AppColor.appBlack,
@@ -132,7 +145,7 @@ class PhoneScreen extends StatelessWidget {
                             style: TextStyle(
                               color: AppColor.appBlack,
                               fontWeight: FontWeight.w400,
-                              fontFamily: "assets/font/Inter_Regular.ttf",
+                              fontFamily: FontFamily.Manrope,
                             ),
                             validator: validateMobileNumber,
                           ),
@@ -141,11 +154,6 @@ class PhoneScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 25,
-                ),
-
-
               ],
             ),
           );

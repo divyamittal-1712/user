@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
         bottomNavigationBar:
         Consumer<HomeProvider>(builder: (context, provider, child) {
           return SizedBox(
-            height: width*0.18,
+            height: width*0.16,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                   elevation: 2,
                   currentIndex: provider.navIndex,
                   selectedItemColor: AppColor.orangeColor,
-                  backgroundColor: Color(0xFFFFF8F8)  ,
+                  backgroundColor: Colors.white  ,
                   unselectedItemColor: AppColor.textGrey,
                   onTap: (value) {
                     provider.navIndextChange(value);
@@ -56,6 +56,11 @@ class HomeScreen extends StatelessWidget {
                       icon:  Icon(Icons.groups)
                     ),
                     BottomNavigationBarItem(
+                        activeIcon:  Image.asset(AppAssets.liveIcon,color: AppColor.orangeColor,height: 26,width: 45),
+                        label: 'Live',
+                        icon:Image.asset(AppAssets.liveIcon,height: 26,width: 45,)
+                    ),
+                    BottomNavigationBarItem(
                       activeIcon:Icon(Icons.calendar_month,color: AppColor.orangeColor,),
                       label: 'Appointments',
                       icon:  Icon(Icons.calendar_month)
@@ -65,7 +70,6 @@ class HomeScreen extends StatelessWidget {
                       label: 'Setting',
                       icon: Icon(Icons.settings)
                     ),
-
                   ],
                 )
               ],
