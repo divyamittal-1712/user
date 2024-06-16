@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:user_app/screens/edit_profile/views/editProfileScreen.dart';
 import 'package:user_app/screens/help/views/faqscreen.dart';
+import 'package:user_app/screens/home/bottom_navigation/appointment/views/book_appointment_page.dart';
 import 'package:user_app/screens/home/bottom_navigation/appointment/views/appointment_detail_page.dart';
+import 'package:user_app/screens/home/bottom_navigation/appointment/views/book_appointment_detail_page.dart';
 import 'package:user_app/screens/home/bottom_navigation/appointment/views/reschedule_appointment_detail_page.dart';
 import 'package:user_app/screens/home/bottom_navigation/appointment/views/reschedule_appointment_page.dart';
 import 'package:user_app/screens/home/bottom_navigation/consultant/views/consultant_detail_page.dart';
+import 'package:user_app/screens/home/bottom_navigation/consultant/views/consultant_review_all_page.dart';
 import 'package:user_app/screens/home/bottom_navigation/consultant/views/consultantscreen.dart';
+import 'package:user_app/screens/home/bottom_navigation/setting_page/view/write_review_page.dart';
 import 'package:user_app/screens/notification/views/notificationscreen.dart';
 
 import '../screens/drawer/views/drawer.dart';
 import '../screens/help/views/helpscreen.dart';
 import '../screens/home/bottom_navigation/appointment/views/appointmentscreen.dart';
 import '../screens/home/bottom_navigation/home_page/homepage_screen.dart';
-import '../screens/home/bottom_navigation/setting_page/setting_screen.dart';
+import '../screens/home/bottom_navigation/setting_page/view/setting_screen.dart';
 import '../screens/home/bottom_navigation/wallet_page/wallet_screen.dart';
 import '../screens/home/home.dart';
 import '../screens/login/views/OTP.dart';
@@ -98,6 +102,18 @@ Route<dynamic> generateRouteNew(RouteSettings settings) {
       break;
     case RescheduleAppointmentDetailPage.routeName:
       routeView = RescheduleAppointmentDetailPage();
+      break;
+    case ReviewAllScreen.routeName:
+      routeView = ReviewAllScreen();
+      break;
+    case BookAppointmentPage.routeName:
+      routeView = BookAppointmentPage();
+      break;
+    case BookAppointmentDetailPage.routeName:
+      routeView = BookAppointmentDetailPage();
+      break;
+    case WriteReviewScreen.routeName:
+      routeView = WriteReviewScreen();
       break;
 
     default:

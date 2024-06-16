@@ -2,6 +2,7 @@ import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:user_app/constant/app_assets.dart';
+import 'package:user_app/screens/home/bottom_navigation/appointment/views/book_appointment_page.dart';
 
 import '../../../../../utils/app_colors.dart';
 import '../../../../../widgets/default_button.dart';
@@ -61,7 +62,9 @@ class AppointmentDetailPage extends StatelessWidget {
                               softWarp: true,
                               maxLine: 1,
                             ),
-                            SizedBox(height: 3,),
+                            SizedBox(
+                              height: 3,
+                            ),
                             NormalText(
                               text: "Destination Wedding Planner",
                               size: 10,
@@ -71,7 +74,9 @@ class AppointmentDetailPage extends StatelessWidget {
                               softWarp: true,
                               maxLine: 1,
                             ),
-                            SizedBox(height: 3,),
+                            SizedBox(
+                              height: 3,
+                            ),
                             NormalText(
                               text: "Jaipur | Rajasthan",
                               size: 10,
@@ -81,7 +86,9 @@ class AppointmentDetailPage extends StatelessWidget {
                               softWarp: true,
                               maxLine: 1,
                             ),
-                            SizedBox(height: 5,),
+                            SizedBox(
+                              height: 5,
+                            ),
                             Row(
                               children: [
                                 Row(
@@ -116,7 +123,7 @@ class AppointmentDetailPage extends StatelessWidget {
                                     ),
                                     SmallText(
                                       text: "82 Reviews",
-                                        size: 12,
+                                      size: 12,
                                       color: AppColor.normalTextColor,
                                     ),
                                   ],
@@ -139,8 +146,7 @@ class AppointmentDetailPage extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding:
-                const EdgeInsets.symmetric(vertical: 16.0),
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
                 child: Container(
                   width: double.infinity,
                   decoration: DottedDecoration(
@@ -151,8 +157,7 @@ class AppointmentDetailPage extends StatelessWidget {
                     padding: const EdgeInsets.symmetric(
                         vertical: 12.0, horizontal: 13),
                     child: Column(
-                      crossAxisAlignment:
-                      CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         BigText(
                           text: 'Scheduled Appointment',
@@ -194,13 +199,15 @@ class AppointmentDetailPage extends StatelessWidget {
                 child: Card(
                   color: AppColor.whiteColor,
                   child: Padding(
-                    padding: const EdgeInsets.only(left:15.0,top: 15.0,bottom: 15),
+                    padding: const EdgeInsets.only(
+                        left: 15.0, top: 15.0, bottom: 15),
                     child: Row(
                       children: [
                         Expanded(
                           child: Align(
                             alignment: Alignment.centerLeft,
-                            child: SvgPicture.asset(AppSvg.chatAppointmentIcon,
+                            child: SvgPicture.asset(
+                              AppSvg.chatAppointmentIcon,
                               height: 30,
                               width: 30,
                             ),
@@ -209,7 +216,8 @@ class AppointmentDetailPage extends StatelessWidget {
                         Expanded(
                           flex: 2,
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -219,7 +227,9 @@ class AppointmentDetailPage extends StatelessWidget {
                                   color: AppColor.textblack,
                                   fontWeight: FontWeight.w900,
                                 ),
-                                const SizedBox(height: 5,),
+                                const SizedBox(
+                                  height: 5,
+                                ),
                                 NormalText(
                                   text: "Chat with Consultant",
                                   size: 11,
@@ -235,7 +245,8 @@ class AppointmentDetailPage extends StatelessWidget {
                         ),
                         Expanded(
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 8.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -245,7 +256,9 @@ class AppointmentDetailPage extends StatelessWidget {
                                   color: AppColor.textblack,
                                   fontWeight: FontWeight.w900,
                                 ),
-                                const SizedBox(height: 5,),
+                                const SizedBox(
+                                  height: 5,
+                                ),
                                 NormalText(
                                   text: "per 30 min",
                                   size: 11,
@@ -281,16 +294,20 @@ class AppointmentDetailPage extends StatelessWidget {
               ),
               NormalText(
                 text:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto? Voluptates obcaecati nesciunt consequuntur. Exercitationem laudantium magni eaque expedita atque velit, temporibus omnis eveniet! Debitis, ipsa. Iste consequatur earum, rerum fuga aspernatur veniam perspiciatis hic eum quaerat adipisci officia pariatur veritatis quibusdam! Molestiae, sunt atque facilis tenetur amet nihil repudiandae! ",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto? Voluptates obcaecati nesciunt consequuntur. Exercitationem laudantium magni eaque expedita atque velit, temporibus omnis eveniet! Debitis, ipsa. Iste consequatur earum, rerum fuga aspernatur veniam perspiciatis hic eum quaerat adipisci officia pariatur veritatis quibusdam! Molestiae, sunt atque facilis tenetur amet nihil repudiandae! ",
                 size: 12,
                 fontWeight: FontWeight.w700,
                 color: AppColor.darkGreyColor,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 18.0,horizontal: 12),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 18.0, horizontal: 12),
                 child: DefaultButton(
                   key: UniqueKey(),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context)
+                        .pushReplacementNamed(BookAppointmentPage.routeName);
+                  },
                   text: "Message (Start at 6:00PM)",
                   textAlign: TextAlign.center,
                   fontWeight: FontWeight.w900,

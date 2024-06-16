@@ -1,6 +1,7 @@
 import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter/material.dart';
 import 'package:user_app/constant/app_assets.dart';
+import 'package:user_app/screens/home/bottom_navigation/consultant/views/consultant_review_all_page.dart';
 import 'package:user_app/widgets/text_widget.dart';
 
 import '../../../../../utils/app_colors.dart';
@@ -314,15 +315,34 @@ class ConsultantDetailPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 15,),
+              const SizedBox(
+                height: 15,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  NormalText(text: "Reviews",size: 15,fontWeight: FontWeight.w900,),
-                  NormalText(text: "View All",size: 13,fontWeight: FontWeight.w600,color: AppColor.consultOrange,),
+                  NormalText(
+                    text: "Reviews",
+                    size: 15,
+                    fontWeight: FontWeight.w900,
+                  ),
+                  InkWell(
+                    onTap: (){
+                      Navigator.of(context)
+                          .pushReplacementNamed(ReviewAllScreen.routeName);
+                    },
+                    child: NormalText(
+                      text: "View All",
+                      size: 13,
+                      fontWeight: FontWeight.w600,
+                      color: AppColor.consultOrange,
+                    ),
+                  ),
                 ],
               ),
-              SizedBox(height: 18,),
+              const SizedBox(
+                height: 18,
+              ),
               SizedBox(
                 height: 130,
                 width: double.infinity,
@@ -332,7 +352,7 @@ class ConsultantDetailPage extends StatelessWidget {
                     itemCount: 4,
                     padding: EdgeInsets.zero,
                     itemBuilder: (BuildContext context, int index) {
-                      return  featureconsult(context);
+                      return featureconsult(context);
                     }),
               ),
             ],
@@ -342,12 +362,11 @@ class ConsultantDetailPage extends StatelessWidget {
     );
   }
 
-  Widget featureconsult(BuildContext context){
-    return  Card(
+  Widget featureconsult(BuildContext context) {
+    return Card(
       color: AppColor.whiteColor,
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-            vertical: 16.0, horizontal: 12),
+        padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 12),
         child: Row(
           children: [
             Image.asset(
@@ -356,8 +375,8 @@ class ConsultantDetailPage extends StatelessWidget {
               width: 70,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(
-                  vertical: 8.0, horizontal: 12),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -369,7 +388,9 @@ class ConsultantDetailPage extends StatelessWidget {
                     softWarp: true,
                     maxLine: 1,
                   ),
-                  SizedBox(height: 3,),
+                  SizedBox(
+                    height: 3,
+                  ),
                   NormalText(
                     text: "Destination Wedding Planner",
                     size: 10,
@@ -379,7 +400,9 @@ class ConsultantDetailPage extends StatelessWidget {
                     softWarp: true,
                     maxLine: 1,
                   ),
-                  SizedBox(height: 3,),
+                  SizedBox(
+                    height: 3,
+                  ),
                   NormalText(
                     text: "Jaipur | Rajasthan",
                     size: 10,
@@ -389,7 +412,9 @@ class ConsultantDetailPage extends StatelessWidget {
                     softWarp: true,
                     maxLine: 1,
                   ),
-                  SizedBox(height: 5,),
+                  SizedBox(
+                    height: 5,
+                  ),
                   Row(
                     children: [
                       Row(
@@ -429,7 +454,9 @@ class ConsultantDetailPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(width: 14,),
+                      SizedBox(
+                        width: 14,
+                      ),
                       NormalText(
                         text: "10+ Year Exp.",
                         size: 11,
@@ -448,5 +475,4 @@ class ConsultantDetailPage extends StatelessWidget {
       ),
     );
   }
-
 }

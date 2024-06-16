@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:user_app/screens/home/bottom_navigation/setting_page/provider/setting_provider.dart';
+import 'package:user_app/screens/home/bottom_navigation/setting_page/view/write_review_page.dart';
 import 'package:user_app/utils/font_family.dart';
-import '../../../../constant/app_assets.dart';
-import '../../../../utils/app_colors.dart';
-import '../../../../widgets/custom_setting_text.dart';
-import '../../../../widgets/text_widget.dart';
+import '../../../../../constant/app_assets.dart';
+import '../../../../../utils/app_colors.dart';
+import '../../../../../widgets/custom_setting_text.dart';
+import '../../../../../widgets/text_widget.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({Key? key}) : super(key: key);
@@ -174,7 +175,9 @@ class SettingPage extends StatelessWidget {
               ),
               ListTileText(
                 title: "Service & Feedback",
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushReplacementNamed(WriteReviewScreen.routeName);
+                },
                 leading: AppSvg.serviceFeedbackIcon,
               ),
               ListTileText(

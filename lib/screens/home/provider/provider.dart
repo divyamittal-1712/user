@@ -3,7 +3,7 @@ import 'package:user_app/screens/home/bottom_navigation/consultant/views/consult
 
 import '../bottom_navigation/appointment/views/appointmentscreen.dart';
 import '../bottom_navigation/home_page/homepage_screen.dart';
-import '../bottom_navigation/setting_page/setting_screen.dart';
+import '../bottom_navigation/setting_page/view/setting_screen.dart';
 import '../bottom_navigation/wallet_page/wallet_screen.dart';
 
 class HomeProvider extends ChangeNotifier{
