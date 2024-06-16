@@ -205,6 +205,8 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
   }
 
   void _showRescheduleSuccessBottomSheet(BuildContext context) {
+    double width = MediaQuery.sizeOf(context).width;
+
     showModalBottomSheet(
       context: context,
       shape: const RoundedRectangleBorder(
@@ -238,9 +240,11 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
               ),
               const SizedBox(height: 20.0),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Expanded(
+                  SizedBox(
+                    width: width/2.6,
                     child: DefaultButton(
                       key: UniqueKey(),
                       // loadingFlag: provider.isLoading,
@@ -258,9 +262,10 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
                     ),
                   ),
                   const SizedBox(
-                    width: 15,
+                    width: 12,
                   ),
-                  Expanded(
+                  SizedBox(
+                    width: width/2.2,
                     child: DefaultButton(
                       key: UniqueKey(),
                       // loadingFlag: provider.isLoading,
