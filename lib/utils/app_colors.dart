@@ -64,4 +64,5 @@ class AppColor{
   static Color raisinBlackColor= const Color(0xff262626);
   static Color quickSliverColor= const Color(0xffA6A6A6);
   static Color davyFrayColor= const Color(0xff525252);
+  static Color gainsBoroColor= const Color(0xffE0DEDE);
 }

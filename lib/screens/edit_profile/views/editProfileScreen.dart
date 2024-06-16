@@ -44,7 +44,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 15),
-        child: SingleChildScrollView(
+          child: SingleChildScrollView(
           child: Column(
             children: [
               Align(

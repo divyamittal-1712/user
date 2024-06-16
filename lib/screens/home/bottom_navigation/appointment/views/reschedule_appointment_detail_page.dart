@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:user_app/utils/font_family.dart';
 
 import '../../../../../constant/app_assets.dart';
 import '../../../../../utils/app_colors.dart';
@@ -184,7 +185,9 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
                   width: double.infinity,
                   child: DefaultButton(
                     key: UniqueKey(),
-                    onPressed: () {},
+                    onPressed: () {
+                      _showRescheduleSuccessBottomSheet(context);
+                    },
                     text: "Confirm Reschedule",
                     textAlign: TextAlign.center,
                     fontWeight: FontWeight.w600,
@@ -198,8 +201,86 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
         ),
       ),
     );
+
   }
 
+  void _showRescheduleSuccessBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          top: Radius.circular(25.0),
+        ),
+      ),
+      builder: (BuildContext context) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 30),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Image.asset(AppAssets.rescheduleSuccessImage),
+              const SizedBox(height: 20,),
+              NormalText(
+                text: "ReScheduling Success!",
+                size: 24,
+                color: AppColor.textblack,
+                fontWeight: FontWeight.w700,
+                fontFamily: FontFamily.Rubik,
+              ),
+              const SizedBox(height: 15.0),
+              NormalText(
+                text: "Appointment successfully changed You will \n receved a notification and the consultant will contact you.",
+                size: 10,
+                color: AppColor.davysGreyColor,
+                fontWeight: FontWeight.w400,
+                textAlign: TextAlign.center,
+                fontFamily: FontFamily.Rubik,
+              ),
+              const SizedBox(height: 20.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Expanded(
+                    child: DefaultButton(
+                      key: UniqueKey(),
+                      // loadingFlag: provider.isLoading,
+                      onPressed: () {},
+                      text: "Cancel",
+                      fontSize: 14,
+                      textAlign: TextAlign.center,
+                      fontWeight: FontWeight.w600,
+                      // fixedSizeWidth: 0.9,
+                      fontColor: AppColor.blackColor,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(4),
+                          side: BorderSide(color: AppColor.graniteGrayColor)),
+                      color: AppColor.whiteColor,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  Expanded(
+                    child: DefaultButton(
+                      key: UniqueKey(),
+                      // loadingFlag: provider.isLoading,
+                      onPressed: () {},
+                      text: "View Appointment",
+                      fontSize: 14,
+                      textAlign: TextAlign.center,
+                      fontWeight: FontWeight.w600,
+                      // fixedSizeWidth: 0.9,
+                      fontColor: AppColor.whiteColor,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 
 
   Widget _gridView(BuildContext context) {

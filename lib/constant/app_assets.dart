@@ -15,10 +15,12 @@ class AppAssets {
   static const String grayCallIcon = '${_imagePath}small_gray_call_icon.png';
   static const String greenCallIcon = '${_imagePath}call_green_icon.png';
   static const String callProfileIcon = '${_imagePath}call_profile_icon.png';
+  static const String bookAppointmentImage = '${_imagePath}book_appointment_image.png';
   static const String liveIcon = '${_imagePath}live.png';
   static const String experience = '${_imagePath}experience.png';
   static const String top_experience = '${_imagePath}top_experience.png';
   static const String videocall = '${_imagePath}videocallbutton.png';
+  static const String rescheduleSuccessImage = '${_imagePath}reschedule_success_image.png';
 
 }
 
@@ -49,6 +51,7 @@ class AppSvg{
   static const String editProfileIcon = '${_svg}edit_profile_icon.svg';
   static const String walletIcon = '${_svg}wallet_icon.svg';
   static const String callGreenIcon = '${_svg}call_green_icon.svg';
+  static const String callWhiteIcon = '${_svg}call_white_icon.svg';
 
 
 }

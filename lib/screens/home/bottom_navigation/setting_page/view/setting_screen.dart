@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:user_app/screens/home/bottom_navigation/setting_page/provider/setting_provider.dart';
+import 'package:user_app/screens/home/bottom_navigation/setting_page/view/write_review_page.dart';
 import 'package:user_app/utils/font_family.dart';
-import '../../../../constant/app_assets.dart';
-import '../../../../utils/app_colors.dart';
-import '../../../../widgets/custom_setting_text.dart';
-import '../../../../widgets/text_widget.dart';
+import '../../../../../constant/app_assets.dart';
+import '../../../../../utils/app_colors.dart';
+import '../../../../../widgets/custom_setting_text.dart';
+import '../../../../../widgets/default_button.dart';
+import '../../../../../widgets/text_widget.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({Key? key}) : super(key: key);
@@ -177,12 +179,21 @@ class SettingPage extends StatelessWidget {
               ),
               ListTileText(
                 title: "Service & Feedback",
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pushReplacementNamed(WriteReviewScreen.routeName);
+                },
                 leading: AppSvg.serviceFeedbackIcon,
               ),
               ListTileText(
                 title: "Help Center",
                 onTap: () {},
+                leading: AppSvg.helpCenterIcon,
+              ),
+              ListTileText(
+                title: "Logout",
+                onTap: () {
+                  _showLogoutBottomSheet(context);
+                },
                 leading: AppSvg.helpCenterIcon,
               ),
             ],
@@ -291,6 +302,87 @@ Widget topLayout(BuildContext context) {
         ),
       ],
     ),
+  );
+}
+
+void _showLogoutBottomSheet(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(
+        top: Radius.circular(25.0),
+      ),
+    ),
+    builder: (BuildContext context) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 40),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            NormalText(
+              text: "Logout",
+              size: 28,
+              color: AppColor.darkBlueGrayColor,
+              fontWeight: FontWeight.w500,
+              fontFamily: FontFamily.Rubik,
+            ),
+            const SizedBox(height: 15.0),
+            Container(
+              height: 1, // Thickness of the line
+              width: double.infinity, // Make the line take full width
+              color: AppColor.gainsBoroColor, // Line color
+            ),
+            const SizedBox(height: 25.0),
+            NormalText(
+              text: "Are you sure you want to log out?",
+              size: 12,
+              color: AppColor.blackColor,
+              fontWeight: FontWeight.w500,
+              fontFamily: FontFamily.Rubik,
+            ),
+            const SizedBox(height: 20.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Expanded(
+                  child: DefaultButton(
+                    key: UniqueKey(),
+                    // loadingFlag: provider.isLoading,
+                    onPressed: () {},
+                    text: "Cancel",
+                    fontSize: 15,
+                    textAlign: TextAlign.center,
+                    fontWeight: FontWeight.w600,
+                    fixedSizeWidth: 0.9,
+                    fontColor: AppColor.blackColor,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4),
+                        side: BorderSide(color: AppColor.graniteGrayColor)),
+                    color: AppColor.whiteColor,
+                  ),
+                ),
+                const SizedBox(
+                  width: 20,
+                ),
+                Expanded(
+                  child: DefaultButton(
+                    key: UniqueKey(),
+                    // loadingFlag: provider.isLoading,
+                    onPressed: () {},
+                    text: "Yes Logout",
+                    fontSize: 15,
+                    textAlign: TextAlign.center,
+                    fontWeight: FontWeight.w600,
+                    fixedSizeWidth: 0.9,
+                    fontColor: AppColor.whiteColor,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      );
+    },
   );
 }
 
