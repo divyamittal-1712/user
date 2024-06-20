@@ -39,7 +39,7 @@ class ConsultantDetailPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.asset(AppAssets.consultantProfilePhoto,
-                      width: 150, height: 180, fit: BoxFit.fill),
+                      width: 120, height: 140, fit: BoxFit.fill),
                   Flexible(
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -138,7 +138,7 @@ class ConsultantDetailPage extends StatelessWidget {
                           ),
                           Center(
                             child: DefaultButton(
-                              height: 30,
+                              height: 18,
                               width: 110,
                               key: UniqueKey(),
                               onPressed: () {},
@@ -146,7 +146,7 @@ class ConsultantDetailPage extends StatelessWidget {
                               fontSize: 13,
                               textAlign: TextAlign.center,
                               fontWeight: FontWeight.w600,
-                              fixedSizeWidth: 0.9,
+                              // fixedSizeWidth: 0.5,
                               fontColor: AppColor.whiteColor,
                               color: AppColor.raisinBlackColor,
                             ),
@@ -158,6 +158,7 @@ class ConsultantDetailPage extends StatelessWidget {
                 ],
               ),
               Card(
+                color: AppColor.whiteColor,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 12.0, vertical: 15),
@@ -374,8 +375,9 @@ class ConsultantDetailPage extends StatelessWidget {
 
   Widget featureconsult(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 12),
+      padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 5),
       child: Card(
+        color: AppColor.whiteColor,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 12.0),
             child: Column(

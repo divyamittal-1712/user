@@ -484,7 +484,7 @@ class HomePage extends StatelessWidget {
       color: AppColor.whiteColor,
       elevation: 0.0,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(4.0),
+        borderRadius: BorderRadius.circular(6.0),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -614,7 +614,7 @@ class HomePage extends StatelessWidget {
       elevation: 0.0,
       color: AppColor.appblue.withOpacity(0.3),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(4.0),
+        borderRadius: BorderRadius.circular(10.0),
       ),
       child: Padding(
         padding:
@@ -631,31 +631,35 @@ class HomePage extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 8.0),
                       child: Container(
                         color: AppColor.whiteColor,
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.calendar_month,
-                              size: 12,
-                              color: AppColor.appBlack,
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            SmallText(
-                              text: "22 Jan 2024",
-                              fontWeight: FontWeight.w500,
-                              size: 12,
-                              color: AppColor.sonicSilverColor,
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 2),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.calendar_month,
+                                size: 12,
+                                color: AppColor.appBlack,
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              SmallText(
+                                text: "22 Jan 2024",
+                                fontWeight: FontWeight.w300,
+                                size: 11,
+                                color: AppColor.blackColor,
+                                fontFamily: FontFamily.Rubik,
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
 
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                    SizedBox(width: 13,),
+                    const SizedBox(width: 15,),
                     Padding(
                       padding: const EdgeInsets.only(top: 4.0),
                       child: Image.asset(AppAssets.videocall,height: 21,),
@@ -667,7 +671,7 @@ class HomePage extends StatelessWidget {
                     // ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 5,
                 ),
                 Row(
@@ -682,31 +686,34 @@ class HomePage extends StatelessWidget {
                       size: 12,
                       fontFamily: FontFamily.Rubik,
                       color: AppColor.appBlack,
+                      fontWeight: FontWeight.w300,
                     ),
                   ],
                 ),
+                const SizedBox(height: 5,),
                 NormalText(
                   text: "Vishavjeet Singh Choudhary",
-                  size: 14,
+                  size: 12,
                   fontWeight: FontWeight.w500,
                   color: AppColor.textblack,
+                  fontFamily: FontFamily.Rubik,
                 ),
                 SmallText(
                   text: "Wedding planner | Decore Specialist",
                   size: 10,
                   fontFamily: FontFamily.Rubik,
-                  color: AppColor.sonicSilverColor,
+                  color: AppColor.spanishGrayColor,
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               width: 50,
             ),
             Container(
               width: 90,
               padding: EdgeInsets.zero,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4),
+                borderRadius: BorderRadius.circular(7),
                 image: DecorationImage(
                   image: AssetImage(AppAssets.image),
                   fit: BoxFit

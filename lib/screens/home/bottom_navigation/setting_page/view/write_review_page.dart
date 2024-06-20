@@ -225,6 +225,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
   Future<dynamic> myReviewDialogBox(BuildContext context) {
     return showDialog(
       context: context,
+      barrierColor: AppColor.whiteColor,
       builder: (context) {
         return Dialog(
           shape: RoundedRectangleBorder(

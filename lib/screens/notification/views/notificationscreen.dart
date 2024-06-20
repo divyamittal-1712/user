@@ -35,9 +35,11 @@ class NotificationPage extends StatelessWidget {
             return Padding(
               padding: EdgeInsets.only(left: 12.0, top: 8.0, right: 12.0),
                 child: Card(
+                  color: AppColor.whiteColor,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12.0,vertical: 16),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: [
@@ -45,26 +47,24 @@ class NotificationPage extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(left: 8.0),
                               child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   NormalText(
                                     text: "Appointment Cancelled!",
                                     size: 13,
                                     fontWeight: FontWeight.w600,
                                   ),
-                                  Align(
-                                    alignment: Alignment.topLeft,
-                                    child: NormalText(
-                                      text: "Today | 15:36 PM",
-                                      size: 12,
-                                      fontWeight: FontWeight.w400,
-                                    ),
+                                  NormalText(
+                                    text: "Today | 15:36 PM",
+                                    size: 12,
+                                    fontWeight: FontWeight.w400,
                                   ),
                                 ],
                               ),
                             )
                           ],
                         ),
-                        SizedBox(height: 15,),
+                        const SizedBox(height: 15,),
                         NormalText(
                           text:
                               "You have Successfully canceled your appointment with Mr.Navneet Kumawat on December 24, 2024, 13:00 p.m. 80% of the funds will be Return to your Account.",

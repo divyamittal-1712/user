@@ -40,6 +40,7 @@ class ReviewAllScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 12),
       child: Card(
+        color: AppColor.whiteColor,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 12.0),
           child: Row(
@@ -111,7 +112,7 @@ class ReviewAllScreen extends StatelessWidget {
                     itemBuilder: (context,index) =>
                         Icon(
                           Icons.star,
-                          size: 8,
+                          size: 12,
                           color: AppColor.appYellow,
                         ), onRatingUpdate: (double value) {  },
                 )

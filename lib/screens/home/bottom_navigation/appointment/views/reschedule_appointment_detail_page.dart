@@ -27,10 +27,11 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
       firstDate: DateTime(2000),
       lastDate: DateTime(2101),
     );
-    if (pickedDate != null && pickedDate != _selectedDate)
+    if (pickedDate != null && pickedDate != _selectedDate) {
       setState(() {
         _selectedDate = pickedDate;
       });
+    }
   }
 
   @override
@@ -213,6 +214,7 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
   void _showRescheduleSuccessBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
+      backgroundColor: AppColor.whiteColor,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(25.0),
