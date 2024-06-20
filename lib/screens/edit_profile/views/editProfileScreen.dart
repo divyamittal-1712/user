@@ -50,27 +50,28 @@ class _EditProfilePageState extends State<EditProfilePage> {
               Align(
                   alignment: Alignment.topLeft,
                   child: NormalText(
-                    text: "Enter Full Name",
+                    text: "Your Name",
                     size: 14,
                     fontWeight: FontWeight.w600,
                   )),
               const SizedBox(
-                height: 10,
+                height: 8,
               ),
               Container(
-                height: 58,
+                height: 45,
                 decoration: BoxDecoration(
                     border: Border.all(
                         width: 1, color: AppColor.borderLightGreyColor),
                     color: AppColor.whiteColor,
-                    borderRadius: BorderRadius.circular(10)),
+                    borderRadius: BorderRadius.circular(4)),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(left: 6.0),
                   child: CustomTextField(
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: "Enter Full Name",
                       counterText: "",
+                      hintStyle: TextStyle(color: AppColor.borderLightGreyColor,fontWeight: FontWeight.w400),
                       labelStyle: TextStyle(color: AppColor.appBlack),
                     ),
                     // validator: validateMobileNumber,
@@ -78,32 +79,33 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 ),
               ),
               const SizedBox(
-                height: 10,
+                height: 12,
               ),
               Align(
                   alignment: Alignment.topLeft,
                   child: NormalText(
-                    text: "Enter Email",
+                    text: "Last Name",
                     size: 14,
                     fontWeight: FontWeight.w600,
                   )),
               const SizedBox(
-                height: 10,
+                height: 8,
               ),
               Container(
-                height: 58,
+                height: 45,
                 decoration: BoxDecoration(
                     border: Border.all(
                         width: 1, color: AppColor.borderLightGreyColor),
                     color: AppColor.whiteColor,
-                    borderRadius: BorderRadius.circular(10)),
+                    borderRadius: BorderRadius.circular(4)),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(left: 6.0),
                   child: CustomTextField(
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: "Enter Email",
+                      hintText: "Enter Last Name",
                       counterText: "",
+                      hintStyle: TextStyle(color: AppColor.borderLightGreyColor,fontWeight: FontWeight.w400),
                       labelStyle: TextStyle(color: AppColor.appBlack),
                     ),
                     // validator: validateMobileNumber,
@@ -111,48 +113,84 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 12,
               ),
               Align(
                   alignment: Alignment.topLeft,
                   child: NormalText(
-                    text: "Select Gender",
+                    text: "Email ID",
                     size: 14,
                     fontWeight: FontWeight.w600,
                   )),
               const SizedBox(
-                height: 10,
+                height: 8,
+              ),
+              Container(
+                height: 45,
+                decoration: BoxDecoration(
+                    border: Border.all(
+                        width: 1, color: AppColor.borderLightGreyColor),
+                    color: AppColor.whiteColor,
+                    borderRadius: BorderRadius.circular(4)),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 6.0),
+                  child: CustomTextField(
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: "Enter Email ID",
+                      counterText: "",
+                      hintStyle: TextStyle(color: AppColor.borderLightGreyColor,fontWeight: FontWeight.w400),
+                      labelStyle: TextStyle(color: AppColor.appBlack),
+                    ),
+                    // validator: validateMobileNumber,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Align(
+                  alignment: Alignment.topLeft,
+                  child: NormalText(
+                    text: "Gender",
+                    size: 14,
+                    fontWeight: FontWeight.w600,
+                  )),
+              const SizedBox(
+                height: 8,
               ),
               Container(
                 child: dropDownList(context),
-                height: 68,
-
+                height: 45,
               ),
-
+              const SizedBox(
+                height: 12,
+              ),
               Align(
                   alignment: Alignment.topLeft,
                   child: NormalText(
-                    text: "Select State",
+                    text: "Mobile Number",
                     size: 14,
                     fontWeight: FontWeight.w600,
                   )),
               const SizedBox(
-                height: 10,
+                height: 8,
               ),
               Container(
-                height: 58,
+                height: 45,
                 decoration: BoxDecoration(
                     border: Border.all(
                         width: 1, color: AppColor.borderLightGreyColor),
                     color: AppColor.whiteColor,
-                    borderRadius: BorderRadius.circular(10)),
+                    borderRadius: BorderRadius.circular(4)),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(left: 6.0),
                   child: CustomTextField(
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      hintText: "Select...",
+                      labelText: "+91 9998877445",
                       counterText: "",
+                      hintStyle: TextStyle(color: AppColor.borderLightGreyColor,fontWeight: FontWeight.w400),
                       labelStyle: TextStyle(color: AppColor.appBlack),
                     ),
                     // validator: validateMobileNumber,
@@ -160,7 +198,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 ),
               ),
               SizedBox(
-                height: 10,
+                height: 12,
               ),
               Align(
                   alignment: Alignment.topLeft,
@@ -170,22 +208,23 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     fontWeight: FontWeight.w600,
                   )),
               const SizedBox(
-                height: 10,
+                height: 8,
               ),
               Container(
-                height: 58,
+                height: 45,
                 decoration: BoxDecoration(
                     border: Border.all(
                         width: 1, color: AppColor.borderLightGreyColor),
                     color: AppColor.whiteColor,
-                    borderRadius: BorderRadius.circular(10)),
+                    borderRadius: BorderRadius.circular(4)),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(left: 6.0),
                   child: CustomTextField(
                     decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: "Enter Pin Code",
                       counterText: "",
+                      hintStyle: TextStyle(color: AppColor.borderLightGreyColor,fontWeight: FontWeight.w400),
                       labelStyle: TextStyle(color: AppColor.appBlack),
                     ),
                     // validator: validateMobileNumber,
@@ -193,43 +232,19 @@ class _EditProfilePageState extends State<EditProfilePage> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 28,
               ),
-              Row(
-                children: [
-                  Expanded(
-                    child: DefaultButton(
-                      key: UniqueKey(),
-                      // loadingFlag: provider.isLoading,
-                      onPressed: () {},
-                      text: "Back",
-                      fontSize: 13,
-                      textAlign: TextAlign.center,
-                      fontWeight: FontWeight.w900,
-                      fixedSizeWidth: 0.9,
-                      fontColor: AppColor.blackColor,
-                      color: AppColor.whiteColor,
-                    ),
-                  ),
-                  SizedBox(width: 12,),
-                  Expanded(
-                    child: DefaultButton(
-                      key: UniqueKey(),
-                      // loadingFlag: provider.isLoading,
-                      onPressed: () {},
-                      text: "Save Profile",
-                      fontSize: 13,
-                      textAlign: TextAlign.center,
-                      fontWeight: FontWeight.w900,
-                      fixedSizeWidth: 0.9,
-                      fontColor: AppColor.whiteColor,
-                    ),
-                  )
-                ],
+              DefaultButton(
+                key: UniqueKey(),
+                // loadingFlag: provider.isLoading,
+                onPressed: () {},
+                text: "Save Profile",
+                fontSize: 16,
+                textAlign: TextAlign.center,
+                fontWeight: FontWeight.w500,
+                fixedSizeWidth: 0.9,
+                fontColor: AppColor.whiteColor,
               ),
-              const SizedBox(
-                height: 20,
-              )
             ],
           ),
         ),
@@ -262,9 +277,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
                     value: "",
                     child: NormalText(
                       text: "Select...",
-                      size: 15,
-                      fontWeight: FontWeight.w600,
-                      color: AppColor.darkGreyColor,
+                      size: 16,
+                      fontWeight: FontWeight.w500,
+                      color: AppColor.borderLightGreyColor,
                     ),
                 ),
                 ...dropDownListData.map<DropdownMenuItem<String>>((data) {

@@ -209,33 +209,30 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                           ],
                         ),
                         const SizedBox(
-                          width: 30,
+                          width: 16,
                         ),
                         PopupMenuButton(
                             onSelected: (String value) {
-                              if (value == 'Cancel Event') {
-                                _showCancelAppointmentBottomSheet(context);
-                              } else if (value == 'Reschedule Event') {
-                                Navigator.of(context).pushReplacementNamed(
-                                    RescheduleAppointmentPage.routeName);
-                              }
-                            },
-                            color: AppColor.whiteColor,
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                            itemBuilder: (BuildContext context) {
-                              return {'Cancel Event', 'Reschedule Event'}
-                                  .map((String choice) {
-                                return PopupMenuItem<String>(
-                                  value: choice,
-                                  child: NormalText(
-                                    text: choice,
-                                    size: 12,
-                                    color: AppColor.slateGrayColor,
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                );
-                              }).toList();
-                            })
+                          if (value == 'Cancel Event') {
+                            _showCancelAppointmentBottomSheet(context);
+                          } else if (value == 'Reschedule Event') {
+                            Navigator.of(context).pushReplacementNamed(
+                                RescheduleAppointmentPage.routeName);
+                          }
+                        }, itemBuilder: (BuildContext context) {
+                          return {'Cancel Event', 'Reschedule Event'}
+                              .map((String choice) {
+                            return PopupMenuItem<String>(
+                              value: choice,
+                              child: NormalText(
+                                text: choice,
+                                size: 12,
+                                color: AppColor.slateGrayColor,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            );
+                          }).toList();
+                        })
                       ],
                     ),
                   ),
@@ -254,7 +251,6 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
 
   void _showCancelAppointmentBottomSheet(BuildContext context) {
     showModalBottomSheet(
-      backgroundColor: AppColor.whiteColor,
       context: context,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(

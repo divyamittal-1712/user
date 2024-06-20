@@ -144,14 +144,6 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
                                   ),
                                 ],
                               ),
-                              NormalText(
-                                text: "10+ Year Exp.",
-                                size: 11,
-                                fontWeight: FontWeight.w700,
-                                textOverflow: TextOverflow.ellipsis,
-                                softWarp: true,
-                                maxLine: 1,
-                              ),
                             ],
                           ),
 
@@ -172,20 +164,22 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
                 onPressed: () => _selectDate(context),
                 child: Text('Select date'),
               ),
-
               const SizedBox(height: 20.0),
-              Align(
-                alignment: Alignment.topLeft,
-                child: NormalText(
-                  text: "Select Hours",
-                  size: 14,
-                  fontWeight: FontWeight.w500,
-                  color: AppColor.blackColor,
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  child: NormalText(
+                    text: "Select Hours",
+                    size: 14,
+                    fontWeight: FontWeight.w500,
+                    color: AppColor.appBlack,
+                  ),
                 ),
               ),
-              const SizedBox(height: 20.0),
+              const SizedBox(height: 12.0),
               _gridView(context),
-              const SizedBox(height: 20.0),
+              const SizedBox(height: 25.0),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: SizedBox(
@@ -212,6 +206,8 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
   }
 
   void _showRescheduleSuccessBottomSheet(BuildContext context) {
+    double width = MediaQuery.sizeOf(context).width;
+
     showModalBottomSheet(
       context: context,
       backgroundColor: AppColor.whiteColor,
@@ -246,9 +242,11 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
               ),
               const SizedBox(height: 20.0),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  Expanded(
+                  SizedBox(
+                    width: width/2.6,
                     child: DefaultButton(
                       key: UniqueKey(),
                       // loadingFlag: provider.isLoading,
@@ -266,9 +264,10 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
                     ),
                   ),
                   const SizedBox(
-                    width: 15,
+                    width: 12,
                   ),
-                  Expanded(
+                  SizedBox(
+                    width: width/2.2,
                     child: DefaultButton(
                       key: UniqueKey(),
                       // loadingFlag: provider.isLoading,
@@ -293,31 +292,37 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
 
   Widget _gridView(BuildContext context) {
     double width = MediaQuery.sizeOf(context).width;
-    return GridView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: 80,
-            crossAxisSpacing: 12.0,
-            mainAxisSpacing: 12.0),
-        itemCount: 6,
-        itemBuilder: (context, index) {
-          return Container(
-            decoration:
-                BoxDecoration(
-                    borderRadius: BorderRadius.circular(12.0),
-                border: Border.all(color: AppColor.davyFrayColor,width: 1)
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12.0),
+      child: GridView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          gridDelegate:  SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: width/4,
+              crossAxisSpacing: 10.0,
+              mainAxisSpacing: 10.0,
+            childAspectRatio: 2.2,
+          ),
+          itemCount: 6,
+          itemBuilder: (context, index) {
+            return Container(
+              decoration:
+                  BoxDecoration(
+                      borderRadius: BorderRadius.circular(4.0),
+                  border: Border.all(color: AppColor.davyFrayColor,width: 1)
+                  ),
+              child: Center(
+                child: NormalText(
+                  text: "08:00 AM",
+                  size: 11,
+                  textAlign: TextAlign.center,
+                  fontWeight: FontWeight.w500,
+                  color: AppColor.blackColor,
                 ),
-            child: Center(
-              child: NormalText(
-                text: "08:00 AM",
-                size: 11,
-                textAlign: TextAlign.center,
-                fontWeight: FontWeight.w500,
-                color: AppColor.blackColor,
               ),
-            ),
-          );
-        });
+            );
+          }),
+    );
   }
 }
