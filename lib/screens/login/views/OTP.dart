@@ -34,8 +34,8 @@ class OTPScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColor.pagebg,
       bottomNavigationBar: Container(
-        height: 275,
-        decoration: BoxDecoration(
+        height: 155,
+        decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
             topRight: Radius.circular(40.0),
@@ -45,7 +45,7 @@ class OTPScreen extends StatelessWidget {
         child: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 28.0,vertical: 0.0),
-            child:     Row(
+            child: Row(
               children: [
                 Expanded(
                   child: DefaultButton(
@@ -156,7 +156,7 @@ class OTPScreen extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.w400,
-                              color: AppColor.blueLogin,
+                              color: AppColor.crayolaColor,
                             ),
                           ),
                         ],

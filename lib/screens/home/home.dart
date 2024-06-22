@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Divider(height: 0.6,thickness: 0.6,color: Colors.grey,),
+                // Divider(height: 0.6,thickness: 0.6,color: Colors.grey,),
                 BottomNavigationBar(
                   elevation: 2,
                   currentIndex: provider.navIndex,

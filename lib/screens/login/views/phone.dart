@@ -23,8 +23,8 @@ class PhoneScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColor.pagebg,
       bottomNavigationBar: Container(
-          height: 275,
-          decoration: BoxDecoration(
+          height: 155,
+          decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
                 topRight: Radius.circular(40.0),

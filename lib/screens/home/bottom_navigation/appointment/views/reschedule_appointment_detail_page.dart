@@ -3,6 +3,7 @@ import 'package:user_app/utils/font_family.dart';
 
 import '../../../../../constant/app_assets.dart';
 import '../../../../../utils/app_colors.dart';
+import '../../../../../widgets/custom_text_filed.dart';
 import '../../../../../widgets/default_button.dart';
 import '../../../../../widgets/text_widget.dart';
 import '../../../app_bar/MyAppBar.dart';
@@ -14,10 +15,12 @@ class RescheduleAppointmentDetailPage extends StatefulWidget {
   static const String routeName = '/rescheduleAppointmentDetailPage';
 
   @override
-  State<RescheduleAppointmentDetailPage> createState() => _RescheduleAppointmentDetailPageState();
+  State<RescheduleAppointmentDetailPage> createState() =>
+      _RescheduleAppointmentDetailPageState();
 }
 
-class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentDetailPage> {
+class _RescheduleAppointmentDetailPageState
+    extends State<RescheduleAppointmentDetailPage> {
   DateTime? _selectedDate;
 
   Future<void> _selectDate(BuildContext context) async {
@@ -56,7 +59,7 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
             children: [
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 16.0, horizontal: 12),
+                    const EdgeInsets.symmetric(vertical: 1.0, horizontal: 12),
                 child: Row(
                   children: [
                     Image.asset(
@@ -146,23 +149,45 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
                               ),
                             ],
                           ),
-
                         ],
                       ),
                     ),
                   ],
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4.0),
+                            border: Border.all(color: AppColor.davyFrayColor, width: 1)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: NormalText(
+                            text: _selectedDate == null
+                                ? 'No date selected!'
+                                : '${_selectedDate!.toLocal()}'
+                                    .split(' ')[0],
+                            size: 11,
+                            fontWeight: FontWeight.w500,
+                            color: AppColor.blackColor,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    // Space between TextField and Button
 
-              Text(
-                _selectedDate == null
-                    ? 'No date selected!'
-                    : 'Selected date: ${_selectedDate!.toLocal()}'.split(' ')[0],
-              ),
-              const SizedBox(height: 20.0),
-              ElevatedButton(
-                onPressed: () => _selectDate(context),
-                child: Text('Select date'),
+                    // Button
+                    ElevatedButton(
+                      onPressed: () => _selectDate(context),
+                      child: Text('Select date'),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: 20.0),
               Padding(
@@ -202,7 +227,6 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
         ),
       ),
     );
-
   }
 
   void _showRescheduleSuccessBottomSheet(BuildContext context) {
@@ -223,7 +247,9 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Image.asset(AppAssets.rescheduleSuccessImage),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               NormalText(
                 text: "ReScheduling Success!",
                 size: 24,
@@ -233,7 +259,8 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
               ),
               const SizedBox(height: 15.0),
               NormalText(
-                text: "Appointment successfully changed You will \n receved a notification and the consultant will contact you.",
+                text:
+                    "Appointment successfully changed You will \n receved a notification and the consultant will contact you.",
                 size: 10,
                 color: AppColor.davysGreyColor,
                 fontWeight: FontWeight.w400,
@@ -246,7 +273,7 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   SizedBox(
-                    width: width/2.6,
+                    width: width / 2.6,
                     child: DefaultButton(
                       key: UniqueKey(),
                       // loadingFlag: provider.isLoading,
@@ -267,7 +294,7 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
                     width: 12,
                   ),
                   SizedBox(
-                    width: width/2.2,
+                    width: width / 2.2,
                     child: DefaultButton(
                       key: UniqueKey(),
                       // loadingFlag: provider.isLoading,
@@ -289,7 +316,6 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
     );
   }
 
-
   Widget _gridView(BuildContext context) {
     double width = MediaQuery.sizeOf(context).width;
 
@@ -298,20 +324,18 @@ class _RescheduleAppointmentDetailPageState extends State<RescheduleAppointmentD
       child: GridView.builder(
           physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
-          gridDelegate:  SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: width/4,
-              crossAxisSpacing: 10.0,
-              mainAxisSpacing: 10.0,
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: width / 4,
+            crossAxisSpacing: 10.0,
+            mainAxisSpacing: 10.0,
             childAspectRatio: 2.2,
           ),
           itemCount: 6,
           itemBuilder: (context, index) {
             return Container(
-              decoration:
-                  BoxDecoration(
-                      borderRadius: BorderRadius.circular(4.0),
-                  border: Border.all(color: AppColor.davyFrayColor,width: 1)
-                  ),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(4.0),
+                  border: Border.all(color: AppColor.davyFrayColor, width: 1)),
               child: Center(
                 child: NormalText(
                   text: "08:00 AM",
