@@ -31,22 +31,31 @@ class PhoneScreen extends StatelessWidget {
                 topLeft: Radius.circular(40.0),
             ),
           ),
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 28.0,vertical: 0.0),
-              child: DefaultButton(
-              key: UniqueKey(),
-              // loadingFlag: provider.isLoading,
-              onPressed: () {
-                context.read<PhoneProvider>().otpTap(context);
-              },
-              text: "Continue",
-              textAlign: TextAlign.center,
-              fontWeight: FontWeight.w600,
-              fixedSizeWidth: 0.9,
-              fontColor: AppColor.whiteColor,
-                        ),
-            ),
+          child: Stack(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 28.0,vertical: 16.0),
+                    child: DefaultButton(
+                      key: UniqueKey(),
+                      // loadingFlag: provider.isLoading,
+                      onPressed: () {
+                        context.read<PhoneProvider>().otpTap(context);
+                      },
+                      text: "Continue",
+                      textAlign: TextAlign.center,
+                      fontWeight: FontWeight.w600,
+                      fixedSizeWidth: 0.9,
+                      fontColor: AppColor.whiteColor,
+                    ),
+                  ),
+
+                ],
+              )
+            ],
           ),
         ),
       body: Consumer<PhoneProvider>(

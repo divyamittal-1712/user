@@ -66,6 +66,13 @@ class _RescheduleAppointmentPageState extends State<RescheduleAppointmentPage> {
                 ),
                 value: 'I\'m having a schedule clash',
                 groupValue: _selectedOption,
+                fillColor:MaterialStateColor.resolveWith((states) => _selectedOption=="I\'m having a schedule clash"
+                    ?
+                AppColor.blueLogin
+                    :
+                AppColor.appBlack
+                ),
+
                 onChanged: (String? value) {
                   setState(() {
                     _selectedOption = value!;

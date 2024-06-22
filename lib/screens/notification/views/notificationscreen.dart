@@ -36,6 +36,9 @@ class NotificationPage extends StatelessWidget {
               padding: EdgeInsets.only(left: 12.0, top: 8.0, right: 12.0),
                 child: Card(
                   color: AppColor.whiteColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.0),
+                  ),
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12.0,vertical: 16),
                     child: Column(

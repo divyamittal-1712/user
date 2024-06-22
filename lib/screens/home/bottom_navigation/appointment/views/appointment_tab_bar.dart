@@ -212,6 +212,7 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                           width: 16,
                         ),
                         PopupMenuButton(
+                          color: Colors.white,
                             onSelected: (String value) {
                           if (value == 'Cancel Event') {
                             _showCancelAppointmentBottomSheet(context);
@@ -252,6 +253,7 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
   void _showCancelAppointmentBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,
+      backgroundColor: Colors.white,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(
           top: Radius.circular(25.0),

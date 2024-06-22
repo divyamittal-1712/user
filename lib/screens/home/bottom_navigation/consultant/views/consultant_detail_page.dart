@@ -159,6 +159,9 @@ class ConsultantDetailPage extends StatelessWidget {
               ),
               Card(
                 color: AppColor.whiteColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4.0),
+                ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 12.0, vertical: 15),
@@ -378,6 +381,9 @@ class ConsultantDetailPage extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 5),
       child: Card(
         color: AppColor.whiteColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4.0),
+        ),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 12.0),
             child: Column(

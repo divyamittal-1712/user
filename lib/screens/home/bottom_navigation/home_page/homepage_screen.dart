@@ -151,7 +151,7 @@ class HomePage extends StatelessWidget {
                 },
                 options: CarouselOptions(
                   autoPlay: true,
-                  aspectRatio: 2.0,
+                  aspectRatio: 2.2,
                   enlargeCenterPage: true,
                 ),
               ),
@@ -168,7 +168,7 @@ class HomePage extends StatelessWidget {
                   NormalText(
                     text: "View All",
                     size: 13,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w700,
                     color: AppColor.consultOrange,
                     fontFamily: FontFamily.Rubik,
                   ),
@@ -217,7 +217,7 @@ class HomePage extends StatelessWidget {
                   NormalText(
                     text: "View All",
                     size: 13,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w700,
                     color: AppColor.consultOrange,
                     fontFamily: FontFamily.Rubik,
                   ),
@@ -227,7 +227,7 @@ class HomePage extends StatelessWidget {
                 height: 18,
               ),
               SizedBox(
-                height: 95,
+                height: 98,
                 width: double.infinity,
                 child: ListView.builder(
                     physics: ScrollPhysics(),
@@ -254,7 +254,7 @@ class HomePage extends StatelessWidget {
                   NormalText(
                     text: "View All",
                     size: 13,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w700,
                     color: AppColor.consultOrange,
                     fontFamily: FontFamily.Rubik,
                   ),
@@ -580,26 +580,29 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 width: 50,
               ),
-              Container(
-                decoration: BoxDecoration(
-                    color: AppColor.consultOrange,
-                    borderRadius: BorderRadius.circular(12)),
-                padding:
-                    EdgeInsets.only(left: 15, right: 15, top: 6, bottom: 6),
-                child: Row(
-                  children: [
-                    Image.asset(AppAssets.experience),
-                    SizedBox(width: 4,),
-                    NormalText(
-                      text: "10+ Year Exp.",
-                      size: 8,
-                      fontFamily: FontFamily.Rubik,
-                      textOverflow: TextOverflow.ellipsis,
-                      softWarp: true,
-                      color: AppColor.whiteColor,
-                      maxLine: 1,
-                    ),
-                  ],
+              Padding(
+                padding: const EdgeInsets.only(bottom: 6.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: AppColor.consultOrange,
+                      borderRadius: BorderRadius.circular(12)),
+                  padding:
+                      EdgeInsets.only(left: 15, right: 15, top: 6, bottom: 6),
+                  child: Row(
+                    children: [
+                      Image.asset(AppAssets.experience),
+                      SizedBox(width: 4,),
+                      NormalText(
+                        text: "10+ Year Exp.",
+                        size: 8,
+                        fontFamily: FontFamily.Rubik,
+                        textOverflow: TextOverflow.ellipsis,
+                        softWarp: true,
+                        color: AppColor.whiteColor,
+                        maxLine: 1,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -614,7 +617,7 @@ class HomePage extends StatelessWidget {
       elevation: 0.0,
       color: AppColor.appblue.withOpacity(0.3),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0),
+        borderRadius: BorderRadius.circular(4.0),
       ),
       child: Padding(
         padding:
@@ -690,13 +693,16 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 5,),
+                const SizedBox(height: 4,),
                 NormalText(
                   text: "Vishavjeet Singh Choudhary",
                   size: 12,
                   fontWeight: FontWeight.w500,
                   color: AppColor.textblack,
                   fontFamily: FontFamily.Rubik,
+                ),
+                SizedBox(
+                  height: 2,
                 ),
                 SmallText(
                   text: "Wedding planner | Decore Specialist",
@@ -707,13 +713,13 @@ class HomePage extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              width: 50,
+              width: 54,
             ),
             Container(
               width: 90,
               padding: EdgeInsets.zero,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(7),
+                borderRadius: BorderRadius.circular(4),
                 image: DecorationImage(
                   image: AssetImage(AppAssets.image),
                   fit: BoxFit

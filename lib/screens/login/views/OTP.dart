@@ -42,44 +42,52 @@ class OTPScreen extends StatelessWidget {
             topLeft: Radius.circular(40.0),
           ),
         ),
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 28.0,vertical: 0.0),
-            child: Row(
+        child: Stack(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Expanded(
-                  child: DefaultButton(
-                    key: UniqueKey(),
-                    // loadingFlag: provider.isLoading,
-                    onPressed: () {
-                      context.read<OTPProvider>().phoneTap(context);
-                    },
-                    text: "Back",
-                    textAlign: TextAlign.center,
-                    fontWeight: FontWeight.w600,
-                    fixedSizeWidth: 0.9,
-                    fontColor: AppColor.blackColor,
-                    color: AppColor.whiteColor,
-                  ),
-                ),
-                SizedBox(width: 30,),
-                Expanded(
-                  child: DefaultButton(
-                    key: UniqueKey(),
-                    // loadingFlag: provider.isLoading,
-                    onPressed: () {
-                      context.read<OTPProvider>().homeTap(context);
-                    },
-                    text: "Verify",
-                    textAlign: TextAlign.center,
-                    fontWeight: FontWeight.w600,
-                    fixedSizeWidth: 0.9,
-                    fontColor: AppColor.whiteColor,
-                  ),
+                Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 28.0,vertical: 16.0),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: DefaultButton(
+                            key: UniqueKey(),
+                            // loadingFlag: provider.isLoading,
+                            onPressed: () {
+                              context.read<OTPProvider>().phoneTap(context);
+                            },
+                            text: "Back",
+                            textAlign: TextAlign.center,
+                            fontWeight: FontWeight.w600,
+                            fixedSizeWidth: 0.9,
+                            fontColor: AppColor.blackColor,
+                            color: AppColor.whiteColor,
+                          ),
+                        ),
+                        SizedBox(width: 30,),
+                        Expanded(
+                          child: DefaultButton(
+                            key: UniqueKey(),
+                            // loadingFlag: provider.isLoading,
+                            onPressed: () {
+                              context.read<OTPProvider>().homeTap(context);
+                            },
+                            text: "Verify",
+                            textAlign: TextAlign.center,
+                            fontWeight: FontWeight.w600,
+                            fixedSizeWidth: 0.9,
+                            fontColor: AppColor.whiteColor,
+                          ),
+                        ),
+                      ],
+                    )
                 ),
               ],
-            )
-          ),
+            ),
+          ],
         ),
       ),
 

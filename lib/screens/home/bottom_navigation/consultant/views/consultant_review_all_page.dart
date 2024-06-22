@@ -41,6 +41,9 @@ class ReviewAllScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 12),
       child: Card(
         color: AppColor.whiteColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(4.0),
+        ),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10.0,horizontal: 12.0),
           child: Row(
@@ -51,7 +54,7 @@ class ReviewAllScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
                           height: 35,
@@ -86,6 +89,22 @@ class ReviewAllScreen extends StatelessWidget {
                               ),
                             ],
                           ),
+                        ),
+                        Spacer(),
+                        RatingBar.builder(
+                          initialRating: 3,
+                          maxRating: 1,
+                          direction: Axis.horizontal,
+                          allowHalfRating: true,
+                          itemCount: 5,
+                          itemSize: 22,
+                          // itemPadding: EdgeInsets.symmetric(horizontal:4.0),
+                          itemBuilder: (context,index) =>
+                              Icon(
+                                Icons.star,
+                                size: 12,
+                                color: AppColor.appYellow,
+                              ), onRatingUpdate: (double value) {  },
                         )
                       ],
                     ),
@@ -98,24 +117,6 @@ class ReviewAllScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-              ),
-              Expanded(
-                flex: 1,
-                child: RatingBar.builder(
-                  initialRating: 3,
-                    maxRating: 1,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemSize: 22,
-                    // itemPadding: EdgeInsets.symmetric(horizontal:4.0),
-                    itemBuilder: (context,index) =>
-                        Icon(
-                          Icons.star,
-                          size: 12,
-                          color: AppColor.appYellow,
-                        ), onRatingUpdate: (double value) {  },
-                )
               ),
             ],
           ),

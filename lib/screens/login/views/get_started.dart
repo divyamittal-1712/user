@@ -30,6 +30,21 @@ class GetStartedScreen extends StatelessWidget {
     var height = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: AppColor.whiteColor,
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 40.0,vertical: 16),
+        child: DefaultButton(
+          key: UniqueKey(),
+          // loadingFlag: provider.isLoading,
+          onPressed: () {
+            Navigator.of(context).pushNamedAndRemoveUntil(PhoneScreen.routeName, (route) => false);
+          },
+          text: "Get Started",
+          textAlign: TextAlign.center,
+          fontWeight: FontWeight.w600,
+          fixedSizeWidth: 0.9,
+          fontColor: AppColor.whiteColor,
+        ),
+      ),
       body: Consumer<PhoneProvider>(
         builder: (context, provider, child) {
           return SingleChildScrollView(
@@ -75,23 +90,6 @@ class GetStartedScreen extends StatelessWidget {
                       size: 11,
                     ),
                   ),
-                  const SizedBox(height: 16,),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 40.0),
-                    child: DefaultButton(
-                      key: UniqueKey(),
-                      // loadingFlag: provider.isLoading,
-                      onPressed: () {
-                        Navigator.of(context).pushNamedAndRemoveUntil(PhoneScreen.routeName, (route) => false);
-                      },
-                      text: "Get Started",
-                      textAlign: TextAlign.center,
-                      fontWeight: FontWeight.w600,
-                      fixedSizeWidth: 0.9,
-                      fontColor: AppColor.whiteColor,
-                    ),
-                  ),
-
                 ],
               ),
             ),
