@@ -15,6 +15,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 16.0,
       backgroundColor: AppColor.whiteColor,
       shadowColor: AppColor.lightGray.withOpacity(0.4),
+      surfaceTintColor: AppColor.whiteColor,
       title: Text(title ?? "",style: TextStyle(fontSize: 18,color: AppColor.appBlack)),
 
       leading: leading,
