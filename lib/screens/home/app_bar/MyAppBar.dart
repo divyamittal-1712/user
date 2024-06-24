@@ -12,9 +12,12 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 16.0,
       backgroundColor: AppColor.whiteColor,
+      shadowColor: AppColor.lightGray.withOpacity(0.4),
       title: Text(title ?? "",style: TextStyle(fontSize: 18,color: AppColor.appBlack)),
-        leading: leading,
+
+      leading: leading,
         actions: actions,
       );
   }

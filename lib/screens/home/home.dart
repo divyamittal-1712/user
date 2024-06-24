@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
         bottomNavigationBar:
         Consumer<HomeProvider>(builder: (context, provider, child) {
           return SizedBox(
-            height: width*0.16,
+            height: width*0.154,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [

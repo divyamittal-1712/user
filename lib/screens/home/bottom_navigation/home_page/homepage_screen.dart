@@ -82,25 +82,46 @@ class HomePage extends StatelessWidget {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 24.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.symmetric(
-                          vertical: 15.0, horizontal: 12.0),
-                      hintText: "Search Consultant...",
-                      suffixIcon: Icon(
-                        Icons.search,
-                        color: AppColor.darkGreyColor,
-                      ),
-                      hintStyle: TextStyle(
-                          fontSize: 16,
-                          fontFamily: FontFamily.Rubik,
-                          color: AppColor.cadetBlueColor),
-                      fillColor: AppColor.whiteColor,
-                      filled: true,
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide.none)),
+                padding: const EdgeInsets.only(top: 24.0,left: 1,right: 1),
+                child: Material(
+                  elevation: 2.0,
+                  color: AppColor.whiteColor,
+                  borderRadius: BorderRadius.circular(6.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 15.0, horizontal: 12.0),
+                        hintText: "Search Consultant...",
+                        suffixIcon: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                "|",
+                                style: TextStyle(
+                                    fontSize: 30,
+                                    color: AppColor.borderLightGreyColor),
+                              ),
+                              const SizedBox(width: 5,),
+                              Icon(
+                                Icons.search,
+                                color: AppColor.darkGreyColor,
+                              ),
+
+                            ],
+                          ),
+                        ),
+                        hintStyle: TextStyle(
+                            fontSize: 16,
+                            fontFamily: FontFamily.Rubik,
+                            color: AppColor.cadetBlueColor),
+                        fillColor: AppColor.whiteColor,
+                        filled: true,
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            borderSide: BorderSide.none)),
+                  ),
                 ),
               ),
               const SizedBox(
