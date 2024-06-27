@@ -198,7 +198,7 @@ class _RescheduleAppointmentPageState extends State<RescheduleAppointmentPage> {
                         border: InputBorder.none,
                         hintText: "Reason For Rescheduled",
                         counterText: "",
-                        hintStyle: TextStyle(color: AppColor.borderLightGreyColor,fontWeight: FontWeight.w400),
+                        hintStyle: TextStyle(color: AppColor.darkGreyColor,fontWeight: FontWeight.w400),
                         labelStyle: TextStyle(color: AppColor.appBlack),
                       ),
                       // validator: validateMobileNumber,

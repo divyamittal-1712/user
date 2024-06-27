@@ -49,7 +49,7 @@ class OTPScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 28.0,vertical: 16.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 28.0,vertical: 35.0),
                     child: Row(
                       children: [
                         Expanded(

@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:user_app/screens/home/app_bar/MyAppBar.dart';
 import 'package:user_app/screens/home/bottom_navigation/wallet_page/wallet_screen.dart';
 import 'package:user_app/screens/notification/views/notificationscreen.dart';
@@ -46,6 +47,9 @@ class HomePage extends StatelessWidget {
       'Entertainemnt',
       'DJ',
     ];
+
+    final controller = PageController(viewportFraction: 0.8, keepPage: true);
+
 
     return Scaffold(
       backgroundColor: AppColor.lightGray,
@@ -97,18 +101,18 @@ class HomePage extends StatelessWidget {
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Text(
-                                "|",
-                                style: TextStyle(
-                                    fontSize: 30,
-                                    color: AppColor.borderLightGreyColor),
+                              NormalText(
+                                  text:"|",
+                                size: 40,
+                                color: AppColor.borderLightGreyColor,
+                                fontWeight: FontWeight.w100,
                               ),
                               const SizedBox(width: 5,),
                               Icon(
                                 Icons.search,
                                 color: AppColor.darkGreyColor,
                               ),
-
+                              const SizedBox(width: 10,),
                             ],
                           ),
                         ),
@@ -133,7 +137,7 @@ class HomePage extends StatelessWidget {
                     maxCrossAxisExtent: width / 4, // Maximum width of each item
                     crossAxisSpacing: 10.0, // Horizontal space between items
                     mainAxisSpacing: 10.0, // Vertical space between items
-                    childAspectRatio: 1.2,
+                    childAspectRatio: 1.3,
                     // Aspect ratio of the items
                   ),
                   itemCount: _imageUrls.length,
@@ -199,31 +203,35 @@ class HomePage extends StatelessWidget {
                 height: 15,
               ),
               SizedBox(
-                height: 100,
-                width: double.infinity,
-                child: ListView.builder(
-                    physics: ScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 4,
-                    padding: EdgeInsets.zero,
-                    itemBuilder: (BuildContext context, int index) {
-                      return appointentCard(context);
-                    }),
+                  height: 100,
+                  child: appointentCard(context)
               ),
-              // CarouselSlider.builder(
-              //   itemCount: 4,
-              //   itemBuilder: (BuildContext context, int index, int d) {
-              //     return sliderTile();
-              //   },
-              //   options: CarouselOptions(
-              //     autoPlay: true,
-              //     aspectRatio: 2.0,
-              //     viewportFraction: 1.0,
-              //     enlargeCenterPage: true,
-              //   ),
+              // SizedBox(
+              //   height: 100,
+              //   child: ListView.builder(
+              //       physics: ScrollPhysics(),
+              //       scrollDirection: Axis.horizontal,
+              //       itemCount: 4,
+              //       padding: EdgeInsets.zero,
+              //       itemBuilder: (BuildContext context, int index) {
+              //         return appointentCard(context);
+              //       }),
               // ),
               const SizedBox(
-                height: 10,
+                height: 12,
+              ),
+              SmoothPageIndicator(
+                controller: controller,
+                count: 2,
+                effect: WormEffect(
+                  dotHeight: 8,
+                  dotWidth: 8,
+                  activeDotColor: Colors.black,
+
+                ), // Customize the indicator effect
+              ),
+              const SizedBox(
+                height: 12,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -642,7 +650,7 @@ class HomePage extends StatelessWidget {
       ),
       child: Padding(
         padding:
-            const EdgeInsets.only(top: 4.0, bottom: 4.0, left: 14.0, right: 2),
+            const EdgeInsets.only(top: 3.0, bottom: 3.0, left: 14.0, right: 3),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -734,7 +742,8 @@ class HomePage extends StatelessWidget {
               ],
             ),
             const SizedBox(
-              width: 54,
+              // width: 54,
+              width: 77,
             ),
             Container(
               width: 90,

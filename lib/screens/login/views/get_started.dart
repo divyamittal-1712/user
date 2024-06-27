@@ -31,7 +31,7 @@ class GetStartedScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColor.whiteColor,
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40.0,vertical: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 40.0,vertical: 35),
         child: DefaultButton(
           key: UniqueKey(),
           // loadingFlag: provider.isLoading,

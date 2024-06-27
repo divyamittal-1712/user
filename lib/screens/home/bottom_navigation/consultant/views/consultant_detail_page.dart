@@ -159,6 +159,7 @@ class ConsultantDetailPage extends StatelessWidget {
               ),
               Card(
                 color: AppColor.whiteColor,
+                surfaceTintColor: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(4.0),
                 ),
@@ -283,11 +284,12 @@ class ConsultantDetailPage extends StatelessWidget {
                 text:
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto? Voluptates obcaecati nesciunt consequuntur. Exercitationem laudantium magni eaque expedita atque velit, temporibus omnis eveniet! Debitis, ipsa. Iste consequatur earum, rerum fuga aspernatur veniam perspiciatis hic eum quaerat adipisci officia pariatur veritatis quibusdam! Molestiae, sunt atque facilis tenetur amet nihil repudiandae! ",
                 size: 11,
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w400,
+                lineHeight: 1.5,
                 color: AppColor.auroMetalSaurusColor,
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                padding: const EdgeInsets.symmetric(vertical: 18.0),
                 child: Container(
                   width: double.infinity,
                   decoration: DottedDecoration(
@@ -378,9 +380,10 @@ class ConsultantDetailPage extends StatelessWidget {
 
   Widget featureconsult(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 5),
+      padding: const EdgeInsets.only(top: 8.0,bottom: 8.0,right: 4 ),
       child: Card(
         color: AppColor.whiteColor,
+        surfaceTintColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4.0),
         ),

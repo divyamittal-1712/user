@@ -41,6 +41,7 @@ class ReviewAllScreen extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 12),
       child: Card(
         color: AppColor.whiteColor,
+        surfaceTintColor: Colors.white,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4.0),
         ),
@@ -92,12 +93,12 @@ class ReviewAllScreen extends StatelessWidget {
                         ),
                         Spacer(),
                         RatingBar.builder(
-                          initialRating: 3,
+                          initialRating: 4,
                           maxRating: 1,
                           direction: Axis.horizontal,
                           allowHalfRating: true,
                           itemCount: 5,
-                          itemSize: 22,
+                          itemSize: 18,
                           // itemPadding: EdgeInsets.symmetric(horizontal:4.0),
                           itemBuilder: (context,index) =>
                               Icon(

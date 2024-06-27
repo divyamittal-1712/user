@@ -213,6 +213,7 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                         ),
                         PopupMenuButton(
                           color: Colors.white,
+                            surfaceTintColor: Colors.white,
                             onSelected: (String value) {
                           if (value == 'Cancel Event') {
                             _showCancelAppointmentBottomSheet(context);
