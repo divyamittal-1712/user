@@ -32,7 +32,7 @@ class ListTileText extends StatelessWidget {
         size: 14,
         fontWeight: FontWeight.w400,
         color: textColor ?? AppColor.outerSpaceColor,
-        fontFamily: FontFamily.Rubik,
+        fontFamily: FontFamily.Manrope,
       ),
       trailing: Icon(Icons.arrow_forward_ios_rounded,color: AppColor.smokyBlackColor,size: 14,),
       onTap: onTap,

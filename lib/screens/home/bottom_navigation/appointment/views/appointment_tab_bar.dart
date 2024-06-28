@@ -97,10 +97,10 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
   Widget buildAppointmnetCard(BuildContext context) {
     return ListView.builder(
         itemCount: 10,
-        padding: EdgeInsets.zero,
+        padding: EdgeInsets.only(left: 26),
         itemBuilder: (BuildContext context, int index) {
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            padding: const EdgeInsets.symmetric(horizontal: 0.0),
             child: Column(
               children: [
                 InkWell(
@@ -109,7 +109,7 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                         .pushReplacementNamed(AppointmentDetailPage.routeName);
                   },
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(0.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -182,7 +182,7 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                                   width: 4,
                                 ),
                                 NormalText(
-                                  text: "30 min",
+                                  text: "30 Minutes",
                                   size: 11,
                                   color: AppColor.sonicSilverColor,
                                 )
@@ -191,7 +191,7 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                           ],
                         ),
                         const SizedBox(
-                          width: 30,
+                          width: 14,
                         ),
                         Column(
                           children: [
@@ -209,7 +209,7 @@ class _AppointmentTabBarState extends State<AppointmentTabBar>
                           ],
                         ),
                         const SizedBox(
-                          width: 16,
+                          width: 10,
                         ),
                         PopupMenuButton(
                           color: Colors.white,

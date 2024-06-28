@@ -39,6 +39,10 @@ class AppointmentDetailPage extends StatelessWidget {
             children: [
               Card(
                 color: AppColor.whiteColor,
+                surfaceTintColor: AppColor.whiteColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4.0),
+                ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                       vertical: 16.0, horizontal: 12),
@@ -208,7 +212,7 @@ class AppointmentDetailPage extends StatelessWidget {
                   color: AppColor.whiteColor,
                   surfaceTintColor: AppColor.whiteColor,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
+                    borderRadius: BorderRadius.circular(4.0),
                   ),
                   child: Padding(
                     padding: const EdgeInsets.only(

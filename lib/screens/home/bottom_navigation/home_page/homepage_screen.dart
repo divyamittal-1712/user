@@ -264,7 +264,10 @@ class HomePage extends StatelessWidget {
                     itemCount: 4,
                     padding: EdgeInsets.zero,
                     itemBuilder: (BuildContext context, int index) {
-                      return featureconsult(context);
+                      return Padding(
+                        padding: const EdgeInsets.only(right: 16.0),
+                        child: featureconsult(context),
+                      );
                     }),
               ),
               const SizedBox(

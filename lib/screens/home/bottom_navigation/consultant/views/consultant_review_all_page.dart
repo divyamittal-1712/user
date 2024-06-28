@@ -93,12 +93,12 @@ class ReviewAllScreen extends StatelessWidget {
                         ),
                         Spacer(),
                         RatingBar.builder(
-                          initialRating: 4,
+                          initialRating: 4.5,
                           maxRating: 1,
                           direction: Axis.horizontal,
                           allowHalfRating: true,
                           itemCount: 5,
-                          itemSize: 18,
+                          itemSize: 16,
                           // itemPadding: EdgeInsets.symmetric(horizontal:4.0),
                           itemBuilder: (context,index) =>
                               Icon(

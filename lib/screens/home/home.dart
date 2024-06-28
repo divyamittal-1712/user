@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
               children: [
                 // Divider(height: 0.6,thickness: 0.6,color: Colors.grey,),
                 BottomNavigationBar(
-                  elevation: 2,
+                  elevation: 16,
                   currentIndex: provider.navIndex,
                   selectedItemColor: AppColor.orangeColor,
                   backgroundColor: Colors.white  ,

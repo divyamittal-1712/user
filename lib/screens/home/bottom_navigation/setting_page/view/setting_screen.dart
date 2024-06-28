@@ -33,8 +33,9 @@ class SettingPage extends StatelessWidget {
                   child: NormalText(
                     text: 'Your Account',
                     size: 11,
+                    fontWeight: FontWeight.w400,
                     color: AppColor.philippineGrayColor,
-                    fontFamily: FontFamily.Rubik,
+                    fontFamily: FontFamily.Manrope,
                   ),
                 ),
               ),
@@ -72,7 +73,7 @@ class SettingPage extends StatelessWidget {
                     size: 11,
                     color: AppColor.philippineGrayColor,
                     fontWeight: FontWeight.w400,
-                    fontFamily: FontFamily.Rubik,
+                    fontFamily: FontFamily.Manrope,
                   ),
                 ),
               ),
@@ -87,7 +88,7 @@ class SettingPage extends StatelessWidget {
                   size: 12,
                   fontWeight: FontWeight.w400,
                   color: AppColor.outerSpaceColor,
-                  fontFamily: FontFamily.Rubik,
+                  fontFamily: FontFamily.Manrope,
                 ),
                 trailing: Transform.scale(
                   scale: 0.6,
@@ -109,7 +110,7 @@ class SettingPage extends StatelessWidget {
                   size: 12,
                   fontWeight: FontWeight.w400,
                   color: AppColor.outerSpaceColor,
-                  fontFamily: FontFamily.Rubik,
+                  fontFamily: FontFamily.Manrope,
                 ),
                 trailing: Transform.scale(
                   scale: 0.6,
@@ -131,7 +132,7 @@ class SettingPage extends StatelessWidget {
                   size: 12,
                   fontWeight: FontWeight.w400,
                   color: AppColor.outerSpaceColor,
-                  fontFamily: FontFamily.Rubik,
+                  fontFamily: FontFamily.Manrope,
                 ),
                 trailing: Transform.scale(
                   scale: 0.6,
@@ -161,7 +162,7 @@ class SettingPage extends StatelessWidget {
                     size: 11,
                     color: AppColor.philippineGrayColor,
                     fontWeight: FontWeight.w400,
-                    fontFamily: FontFamily.Rubik,
+                    fontFamily: FontFamily.Manrope,
                   ),
                 ),
               ),
@@ -209,7 +210,7 @@ Widget topLayout(BuildContext context) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 0.0),
     child: Container(
-      color: AppColor.shadowBlueColor.withOpacity(0.3),
+      color: AppColor.shadowBlueColor.withOpacity(0.2),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 18.0,horizontal: 8),
         child: Column(

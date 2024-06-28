@@ -70,7 +70,7 @@ class WalletPage extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 14.0),
                       child: Card(
                         color: AppColor.brightGrayColor,
-                        surfaceTintColor: AppColor.brightGrayColor,
+                        surfaceTintColor: AppColor.brightGrayColor.withOpacity(0.4),
                         shape: RoundedRectangleBorder(
                           borderRadius:
                           BorderRadius.circular(8.0), // Adjust as desired
