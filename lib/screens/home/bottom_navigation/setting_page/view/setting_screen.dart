@@ -18,6 +18,7 @@ class SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.lightGray,
       body: Consumer<SettingProvider>(builder: (context, provider, child) {
         return SingleChildScrollView(
           child: Column(
@@ -206,101 +207,120 @@ class SettingPage extends StatelessWidget {
 
 Widget topLayout(BuildContext context) {
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
+    padding: const EdgeInsets.symmetric(horizontal: 0.0),
+    child: Container(
+      color: AppColor.shadowBlueColor.withOpacity(0.3),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 18.0,horizontal: 8),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              width: 100,
-              height: 116,
-              padding: const EdgeInsets.symmetric(vertical: 12.0),
-              decoration: BoxDecoration(
-                // border: Border.all(color: Colors.black, width: 1),
-                borderRadius: BorderRadius.circular(4),
-                color: AppColor.blackOliveColor,
-                image: DecorationImage(
-                  image: AssetImage(AppAssets.image),
-                  fit: BoxFit
-                      .cover, // You can change this to other fit options as needed
-                ),
-              ),
-            ),
-            const SizedBox(width: 8.0),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Row(
               children: [
-                Row(
-                  children: [
-                    NormalText(
-                      text: 'Rajendra Rao',
-                      size: 16,
+                Padding(
+                  padding: const EdgeInsets.only(left: 10.0),
+                  child: Container(
+                    width: 130,
+                    height: 130,
+                    // padding: const EdgeInsets.symmetric(vertical: 12.0),
+                    /*decoration: BoxDecoration(
+                      // border: Border.all(color: Colors.black, width: 1),
+                      borderRadius: BorderRadius.circular(4),
                       color: AppColor.blackOliveColor,
-                      fontWeight: FontWeight.w600,
+                      image: DecorationImage(
+                        image: AssetImage(AppAssets.image),
+                        fit: BoxFit
+                            .cover, // You can change this to other fit options as needed
+                      ),
+                    ),*/
+                    child: CircleAvatar(
+                      backgroundImage:
+                      AssetImage(AppAssets.consultantProfilePhoto),
+                      backgroundColor: AppColor.whiteColor,
+                      // maxRadius: 35,
+                      // minRadius: 35,
                     ),
-                    const SizedBox(width: 8.0),
-                    SvgPicture.asset(AppSvg.editProfileIcon),
-                  ],
+                  ),
                 ),
-                const SizedBox(height: 8.0),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.email_outlined,
-                      size: 16,
-                      color: AppColor.tileTextColor,
-                    ),
-                    const SizedBox(width: 4.0),
-                    NormalText(
-                      text: 'rajendraRao@gmail.com',
-                      size: 12,
-                      color: AppColor.darkBlueGrayColor,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: FontFamily.Rubik,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 4.0),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.phone,
-                      size: 16,
-                      color: AppColor.tileTextColor,
-                    ),
-                    const SizedBox(width: 4.0),
-                    NormalText(
-                      text: '+91 9966332255',
-                      size: 12,
-                      color: AppColor.darkBlueGrayColor,
-                      fontWeight: FontWeight.w400,
-                      fontFamily: FontFamily.Rubik,
-                    )
-                  ],
+                const SizedBox(width: 8.0),
+                Padding(
+                  padding: const EdgeInsets.only(left: 12.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          NormalText(
+                            text: 'Rajendra Rao',
+                            size: 16,
+                            color: AppColor.blackOliveColor,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          const SizedBox(width: 8.0),
+                          SvgPicture.asset(AppSvg.editProfileIcon),
+                        ],
+                      ),
+                      const SizedBox(height: 8.0),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.email_outlined,
+                            size: 16,
+                            color: AppColor.tileTextColor,
+                          ),
+                          const SizedBox(width: 4.0),
+                          NormalText(
+                            text: 'rajendraRao@gmail.com',
+                            size: 12,
+                            color: AppColor.darkBlueGrayColor,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: FontFamily.Rubik,
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 4.0),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.phone,
+                            size: 16,
+                            color: AppColor.tileTextColor,
+                          ),
+                          const SizedBox(width: 4.0),
+                          NormalText(
+                            text: '+91 9966332255',
+                            size: 12,
+                            color: AppColor.darkBlueGrayColor,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: FontFamily.Rubik,
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
+            /*Container(
+              color: AppColor.lightSilverColor.withOpacity(0.6),
+              padding: const EdgeInsets.all(20.0),
+              width: double.infinity,
+              child: Row(
+                children: [
+                  SvgPicture.asset(AppSvg.walletIcon),
+                  const SizedBox(width: 8.0),
+                  NormalText(
+                    text: '₹999',
+                    size: 15,
+                    color: AppColor.auroMetalSaurusColor,
+                    fontWeight: FontWeight.w600,
+                  )
+                ],
+              ),
+            ),*/
           ],
         ),
-        Container(
-          color: AppColor.lightSilverColor.withOpacity(0.6),
-          padding: const EdgeInsets.all(20.0),
-          width: double.infinity,
-          child: Row(
-            children: [
-              SvgPicture.asset(AppSvg.walletIcon),
-              const SizedBox(width: 8.0),
-              NormalText(
-                text: '₹999',
-                size: 15,
-                color: AppColor.auroMetalSaurusColor,
-                fontWeight: FontWeight.w600,
-              )
-            ],
-          ),
-        ),
-      ],
+      ),
     ),
   );
 }

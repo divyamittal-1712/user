@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter/material.dart';
 import 'package:user_app/constant/app_assets.dart';
@@ -164,104 +165,125 @@ class ConsultantDetailPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(4.0),
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 12.0, vertical: 15),
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                          child: Column(
-                        children: [
-                          NormalText(
-                            text: "Experience",
-                            size: 13,
-                            fontWeight: FontWeight.w600,
-                            textOverflow: TextOverflow.ellipsis,
-                            softWarp: true,
-                            maxLine: 1,
-                            color: AppColor.raisinBlackColor,
+                  padding: const EdgeInsets.all(1.3),
+                  child: DottedBorder(
+                    color: AppColor.platinumColor,
+                    strokeWidth: 1.5,
+                    dashPattern: [6.5, 6],
+                    borderType: BorderType.RRect,
+                    radius: Radius.circular(4),
+                    padding: EdgeInsets.zero,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12.0, vertical: 15),
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(
+                              child: Column(
+                            children: [
+                              NormalText(
+                                text: "Experience",
+                                size: 13,
+                                fontWeight: FontWeight.w600,
+                                textOverflow: TextOverflow.ellipsis,
+                                softWarp: true,
+                                maxLine: 1,
+                                color: AppColor.raisinBlackColor,
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              NormalText(
+                                text: "10+ Years",
+                                size: 11,
+                                fontWeight: FontWeight.w600,
+                                color: AppColor.consultOrange,
+                                textOverflow: TextOverflow.ellipsis,
+                                softWarp: true,
+                                maxLine: 1,
+                              ),
+                            ],
+                          )),
+
+                          Container(
+                            /*width: 0.3,
+                            color: AppColor.darkGreyColor,
+                            child: const SizedBox(
+                              height: 60,
+                            ),*/
+                            decoration: DottedDecoration(
+                              color: AppColor.darkGreyColor,
+                              strokeWidth: 0.3,
+                              linePosition: LinePosition.left,
+                            ),
+                            height: 60,
+                            width: 0.1,
                           ),
-                          const SizedBox(
-                            height: 15,
+                          Expanded(
+                            child: Column(
+                              children: [
+                                NormalText(
+                                  text: "Clients",
+                                  size: 13,
+                                  fontWeight: FontWeight.w600,
+                                  textOverflow: TextOverflow.ellipsis,
+                                  softWarp: true,
+                                  maxLine: 1,
+                                  color: AppColor.raisinBlackColor,
+                                ),
+                                const SizedBox(
+                                  height: 15,
+                                ),
+                                NormalText(
+                                  text: "5000+",
+                                  size: 11,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColor.consultOrange,
+                                  textOverflow: TextOverflow.ellipsis,
+                                  softWarp: true,
+                                  maxLine: 1,
+                                ),
+                              ],
+                            ),
                           ),
-                          NormalText(
-                            text: "10+ Years",
-                            size: 11,
-                            fontWeight: FontWeight.w600,
-                            color: AppColor.consultOrange,
-                            textOverflow: TextOverflow.ellipsis,
-                            softWarp: true,
-                            maxLine: 1,
+                          Container(
+                            decoration: DottedDecoration(
+                              color: AppColor.darkGreyColor,
+                              strokeWidth: 0.3,
+                              linePosition: LinePosition.left,
+                            ),
+                            height: 60,
+                            width: 0.1,
                           ),
+                          Expanded(
+                              child: Column(
+                            children: [
+                              NormalText(
+                                text: "Ratings",
+                                size: 13,
+                                fontWeight: FontWeight.w600,
+                                textOverflow: TextOverflow.ellipsis,
+                                softWarp: true,
+                                maxLine: 1,
+                                color: AppColor.raisinBlackColor,
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              NormalText(
+                                text: "4.8",
+                                size: 11,
+                                fontWeight: FontWeight.w600,
+                                color: AppColor.consultOrange,
+                                textOverflow: TextOverflow.ellipsis,
+                                softWarp: true,
+                                maxLine: 1,
+                              ),
+                            ],
+                          )),
                         ],
-                      )),
-                      Container(
-                        width: 0.3,
-                        color: AppColor.darkGreyColor,
-                        child: const SizedBox(
-                          height: 60,
-                        ),
                       ),
-                      Expanded(
-                        child: Column(
-                          children: [
-                            NormalText(
-                              text: "Clients",
-                              size: 13,
-                              fontWeight: FontWeight.w600,
-                              textOverflow: TextOverflow.ellipsis,
-                              softWarp: true,
-                              maxLine: 1,
-                              color: AppColor.raisinBlackColor,
-                            ),
-                            const SizedBox(
-                              height: 15,
-                            ),
-                            NormalText(
-                              text: "5000+",
-                              size: 11,
-                              fontWeight: FontWeight.w600,
-                              color: AppColor.consultOrange,
-                              textOverflow: TextOverflow.ellipsis,
-                              softWarp: true,
-                              maxLine: 1,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width: 0.3,
-                        color: AppColor.darkGreyColor,
-                        child: const SizedBox(
-                          height: 60,
-                        ),
-                      ),
-                      Expanded(
-                          child: Column(
-                        children: [
-                          NormalText(
-                            text: "Ratings",
-                            size: 13,
-                            fontWeight: FontWeight.w600,
-                            textOverflow: TextOverflow.ellipsis,
-                            softWarp: true,
-                            maxLine: 1,
-                            color: AppColor.raisinBlackColor,
-                          ),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          NormalText(
-                            text: "4.8",
-                            size: 11,
-                            fontWeight: FontWeight.w600,
-                            color: AppColor.consultOrange,
-                            textOverflow: TextOverflow.ellipsis,
-                            softWarp: true,
-                            maxLine: 1,
-                          ),
-                        ],
-                      )),
-                    ],
+                    ),
                   ),
                 ),
               ),

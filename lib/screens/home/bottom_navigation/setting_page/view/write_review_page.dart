@@ -228,6 +228,7 @@ class _WriteReviewScreenState extends State<WriteReviewScreen> {
       barrierColor: AppColor.whiteColor,
       builder: (context) {
         return Dialog(
+          surfaceTintColor: AppColor.whiteColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30.0),
           ),

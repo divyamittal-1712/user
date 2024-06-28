@@ -31,11 +31,12 @@ class BookAppointmentDetailPage extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 15),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 20,),
               NormalText(
                 text: "Event Name",
                 size: 14,
@@ -51,7 +52,7 @@ class BookAppointmentDetailPage extends StatelessWidget {
                     border: Border.all(
                         width: 1, color: AppColor.borderLightGreyColor),
                     color: AppColor.whiteColor,
-                    borderRadius: BorderRadius.circular(10)),
+                    borderRadius: BorderRadius.circular(4)),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: CustomTextField(
@@ -83,7 +84,7 @@ class BookAppointmentDetailPage extends StatelessWidget {
                     border: Border.all(
                         width: 1, color: AppColor.borderLightGreyColor),
                     color: AppColor.whiteColor,
-                    borderRadius: BorderRadius.circular(10)),
+                    borderRadius: BorderRadius.circular(4)),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: CustomTextField(
@@ -117,9 +118,9 @@ class BookAppointmentDetailPage extends StatelessWidget {
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: AppColor.blackOliveColor,
+                      color: AppColor.platinumColor,
                       // Set the enabled border color
-                      width: 0.5,
+                      width: 1,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
@@ -164,6 +165,8 @@ class BookAppointmentDetailPage extends StatelessWidget {
       context: context,
       builder: (context) {
         return Dialog(
+          backgroundColor: AppColor.whiteColor,
+          surfaceTintColor: AppColor.whiteColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30.0),
           ),
@@ -181,7 +184,7 @@ class BookAppointmentDetailPage extends StatelessWidget {
                   NormalText(
                     text: "Appointment Book",
                     size: 24,
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w800,
                     color: AppColor.darkBlueGrayColor,
                     fontFamily: FontFamily.Rubik,
                   ),
@@ -189,7 +192,7 @@ class BookAppointmentDetailPage extends StatelessWidget {
                   NormalText(
                     text: "Appointment Book",
                     size: 12,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w500,
                     color: AppColor.spanishGrayColor,
                     fontFamily: FontFamily.Rubik,
                   ),

@@ -61,113 +61,122 @@ class WalletPage extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 14.0),
-                child: Card(
-                  color: AppColor.brightGrayColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius:
-                        BorderRadius.circular(8.0), // Adjust as desired
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 12.0, vertical: 15),
-                    child: Row(
-                      children: [
-                        const Icon(Icons.wallet_outlined),
-                        const SizedBox(
-                          width: 8,
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 20),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 14.0),
+                      child: Card(
+                        color: AppColor.brightGrayColor,
+                        surfaceTintColor: AppColor.brightGrayColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                          BorderRadius.circular(8.0), // Adjust as desired
                         ),
-                        profileStatus("Deposit", "₹ 700"),
-                        const Spacer(),
-                        SizedBox(
-                            height: 25,
-                            child: DefaultButton(
-                                text: "Recharge",
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                                color: AppColor.raisinBlackColor,
-                                onPressed: () {})),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 20,),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 14.0),
-                child: Card(
-                  color: AppColor.brightGrayColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius:
-                        BorderRadius.circular(8.0), // Adjust as desired
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 12.0, vertical: 15),
-                    child: Row(
-                      children: [
-                        const Icon(Icons.wallet_outlined),
-                        const SizedBox(
-                          width: 8,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0, vertical: 15),
+                          child: Row(
+                            children: [
+                              const Icon(Icons.wallet_outlined),
+                              const SizedBox(
+                                width: 8,
+                              ),
+                              profileStatus("Deposit", "₹ 700"),
+                              const Spacer(),
+                              SizedBox(
+                                  height: 25,
+                                  child: DefaultButton(
+                                      text: "Recharge",
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w400,
+                                      color: AppColor.raisinBlackColor,
+                                      onPressed: () {})),
+                            ],
+                          ),
                         ),
-                        profileStatus("Promotional", "₹ 998"),
-                        const Spacer(),
-                        SvgPicture.asset(
-                          AppSvg.rightArrowIcon,
-                          height: 20,
-                          width: 20,
-                          color: AppColor.quickSliverColor,
-                        )
-                      ],
+                      ),
                     ),
-                  ),
+                    const SizedBox(height: 20,),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 14.0),
+                      child: Card(
+                        color: AppColor.brightGrayColor,
+                        surfaceTintColor: AppColor.brightGrayColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                          BorderRadius.circular(8.0), // Adjust as desired
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0, vertical: 15),
+                          child: Row(
+                            children: [
+                              const Icon(Icons.wallet_outlined),
+                              const SizedBox(
+                                width: 8,
+                              ),
+                              profileStatus("Promotional", "₹ 998"),
+                              const Spacer(),
+                              SvgPicture.asset(
+                                AppSvg.rightArrowIcon,
+                                height: 20,
+                                width: 20,
+                                color: AppColor.quickSliverColor,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 18),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: NormalText(
+                          text: 'Quick Actions',
+                          size: 15,
+                          color: AppColor.textblack,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 18),
+                    WalletTileText(
+                      title: "Transaction History",
+                      subTitle: "For all balance debit & credit",
+                      onTap: () {},
+                      leading: Icons.wallet,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Divider(
+                        color: AppColor.borderLightGreyColor,
+                      ),
+                    ),
+                    WalletTileText(
+                      title: "Support Center",
+                      subTitle: "Get support for failed transactions",
+                      onTap: () {},
+                      leading: Icons.support_agent,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      child: Divider(
+                        color: AppColor.borderLightGreyColor,
+                      ),
+                    ),
+                    WalletTileText(
+                      title: "Wallet Withdrawl Help",
+                      subTitle: "How to add fund in wallet",
+                      onTap: () {},
+                      leading: Icons.insert_chart_outlined,
+                    ),
+                  ],
                 ),
-              ),
-              const SizedBox(height: 18),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Align(
-                  alignment: Alignment.topLeft,
-                  child: NormalText(
-                    text: 'Quick Actions',
-                    size: 15,
-                    color: AppColor.textblack,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 18),
-              WalletTileText(
-                title: "Transaction History",
-                subTitle: "For all balance debit & credit",
-                onTap: () {},
-                leading: Icons.wallet,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Divider(
-                  color: AppColor.borderLightGreyColor,
-                ),
-              ),
-              WalletTileText(
-                title: "Support Center",
-                subTitle: "Get support for failed transactions",
-                onTap: () {},
-                leading: Icons.support_agent,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: Divider(
-                  color: AppColor.borderLightGreyColor,
-                ),
-              ),
-              WalletTileText(
-                title: "Wallet Withdrawl Help",
-                subTitle: "How to add fund in wallet",
-                onTap: () {},
-                leading: Icons.insert_chart_outlined,
-              ),
+              )
             ],
           ),
         );

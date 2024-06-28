@@ -206,6 +206,10 @@ class AppointmentDetailPage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 12),
                 child: Card(
                   color: AppColor.whiteColor,
+                  surfaceTintColor: AppColor.whiteColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                   child: Padding(
                     padding: const EdgeInsets.only(
                         left: 15.0, top: 15.0, bottom: 15),

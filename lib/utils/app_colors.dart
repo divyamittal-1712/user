@@ -66,4 +66,5 @@ class AppColor{
   static Color davyFrayColor= const Color(0xff525252);
   static Color gainsBoroColor= const Color(0xffE0DEDE);
   static Color crayolaColor= const Color(0xff197BFF);
+  static Color shadowBlueColor= const Color(0xff7A83A1);
 }

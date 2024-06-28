@@ -37,10 +37,11 @@ class _BookAppointmentPageState extends State<BookAppointmentPage> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 18.0,vertical: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 20,),
               NormalText(
                   text: "Select Duration",
                   size: 14,
@@ -48,7 +49,7 @@ class _BookAppointmentPageState extends State<BookAppointmentPage> {
                   color: AppColor.textblack),
               const SizedBox(height: 5,),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: Container(
                   decoration: BoxDecoration(
                       border:
@@ -131,6 +132,10 @@ class _BookAppointmentPageState extends State<BookAppointmentPage> {
     }
     return Card(
       color: backColor,
+      surfaceTintColor: backColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8.0),
+      ),
       child: Padding(
         padding: const EdgeInsets.only(left: 15.0, top: 15.0, bottom: 15),
         child: Row(
