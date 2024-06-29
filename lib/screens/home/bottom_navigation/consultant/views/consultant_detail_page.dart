@@ -18,6 +18,19 @@ class ConsultantDetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final List<String> _imageUrls = [
+      'assets/images/portfolio_one.png',
+      'assets/images/portfolio_two.png',
+      'assets/images/portfolio_one.png',
+      'assets/images/portfolio_two.png',
+      'assets/images/portfolio_one.png',
+      'assets/images/portfolio_two.png',
+      'assets/images/portfolio_one.png',
+      'assets/images/portfolio_two.png',
+    ];
+
+
     return Scaffold(
       backgroundColor: AppColor.lightGray,
       appBar: MyAppBar(
@@ -81,7 +94,7 @@ class ConsultantDetailPage extends StatelessWidget {
                             maxLine: 1,
                           ),
                           Divider(
-                            color: AppColor.darkGreyColor,
+                            color: AppColor.borderLightGreyColor,
                             thickness: 0.5, // Adjust thickness as needed
                           ),
                           NormalText(
@@ -94,7 +107,7 @@ class ConsultantDetailPage extends StatelessWidget {
                             maxLine: 1,
                           ),
                           Divider(
-                            color: AppColor.darkGreyColor,
+                            color: AppColor.borderLightGreyColor,
                             thickness: 0.5, // Adjust thickness as needed
                           ),
                           Row(
@@ -287,6 +300,56 @@ class ConsultantDetailPage extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 22,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  NormalText(
+                    text: "Portfolio",
+                    size: 16,
+                    fontWeight: FontWeight.w700,
+                    color: AppColor.textblack,
+                  ),
+                  NormalText(
+                    text: "View All",
+                    size: 13,
+                    fontWeight: FontWeight.w700,
+                    color: AppColor.consultOrange,
+                    fontFamily: FontFamily.Rubik,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 100,
+                width: double.infinity,
+                child: ListView.builder(
+                    physics: ScrollPhysics(),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: _imageUrls.length,
+                    padding: EdgeInsets.zero,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Padding(
+                        padding: const EdgeInsets.only(top: 12.0,left: 0,right: 6),
+                        child: Card(
+                          elevation: 0.0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.asset(
+                              _imageUrls[index],
+                              fit: BoxFit.cover,
+                              width: 80,
+                              height: 60,
+                            ),
+                          ),
+                        ),
+                      );
+                    }),
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 12.0),
                 child: Align(
@@ -467,4 +530,5 @@ class ConsultantDetailPage extends StatelessWidget {
       ),
     );
   }
+
 }
